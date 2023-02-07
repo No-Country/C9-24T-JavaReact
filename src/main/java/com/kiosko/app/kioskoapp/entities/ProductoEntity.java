@@ -21,8 +21,5 @@ public class ProductoEntity {
     private String descripcion;
     private double precio;
     
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "categoria_id",insertable = false,updatable = false)
-    private CategoriaEntity categoria;
+    private Integer categoria_id;
 }
