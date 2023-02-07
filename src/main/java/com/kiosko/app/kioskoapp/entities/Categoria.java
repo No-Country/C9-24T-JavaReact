@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class CategoriaEntity {
+public class Categoria {
     
     @Id
     @GeneratedValue
@@ -20,5 +20,6 @@ public class CategoriaEntity {
     private String imagen;
 
     @OneToMany(mappedBy="categoria_id")
-    private List<ProductoEntity> productos;
+    private List<Producto> productos;
+    
 }

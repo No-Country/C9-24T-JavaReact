@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class ProductoEntity {
+public class Producto {
     
     @Id
     @GeneratedValue

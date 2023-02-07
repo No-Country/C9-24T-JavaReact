@@ -8,11 +8,14 @@ import lombok.Data;
 
 @Entity
 @Data
-public class PedidoEntity {
+public class ProductoPedido {
     
     @Id
     @GeneratedValue
+    private Integer producto_pedido_id;
+    private Integer cantidad;
+    
+    private Integer producto_id;
     private Integer pedido_id;
-    private String estado;
-    private Integer estudiante_id;
+
 }
