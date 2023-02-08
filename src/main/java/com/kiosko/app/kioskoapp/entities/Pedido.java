@@ -6,8 +6,8 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
-@Entity
-@Data
+//@Entity
+//@Data
 public class Pedido {
     
     @Id
