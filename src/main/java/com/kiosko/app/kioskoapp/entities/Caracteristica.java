@@ -1,26 +1,25 @@
 package com.kiosko.app.kioskoapp.entities;
 
 
-import javax.persistence.*;
-
 import lombok.*;
 
+import javax.persistence.*;
+
 @Entity
-@Table(name = "categorias")
+@Table(name = "caracteristicas")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Categoria {
 
+public class Caracteristica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_categoria")
+    @Column(name = "id_caracteristica")
     private Integer id;
+
     private String nombre;
-    @Column(name = "urlimg")
-    private String imagen;
 
 }
