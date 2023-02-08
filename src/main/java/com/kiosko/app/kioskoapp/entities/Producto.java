@@ -1,25 +1,37 @@
 package com.kiosko.app.kioskoapp.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import lombok.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import lombok.Data;
+import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
-@Data
+@Table(name = "productos")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 public class Producto {
-    
+
     @Id
-    @GeneratedValue
-    private Integer producto_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_producto")
+    private Integer id;
 	private String nombre;
     private String descripcion;
-    private double precio;
-    
-    private Integer categoria_id;
+    private BigDecimal precio;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "productos_caracteristicas",
+            joinColumns = { @JoinColumn(name = "id_producto") },
+            inverseJoinColumns = { @JoinColumn(name = "id_caracteristica") })
+    List<Caracteristica> caracteristicas;
+
 }
