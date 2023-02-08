@@ -28,6 +28,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -35,15 +36,17 @@ export default function RecipeReviewCard() {
     setExpanded(!expanded);
   };
 
+
   return (
     <Card sx={{ width: 360 }}>
-      <CardHeader sx={{}}
+      <CardHeader  sx={{ position: 'absolute',
+            zIndex: 2, width:330,}}
         avatar={
-          <ArrowBackIcon/>
+          <ArrowBackIcon sx={{ color:'white' }}/>
         }
         action={
           <IconButton>
-            <ShoppingCartSharpIcon />
+            <ShoppingCartSharpIcon sx={{ color:'white' }}/>
           </IconButton>
         }
       />
@@ -54,21 +57,23 @@ export default function RecipeReviewCard() {
         alt="Paella dish"
       />
       <CardContent>
+        <Typography variant="h5" color="text.primary" sx={{textAlign: "left"}}>
+          This impressive 
+        </Typography>
+        <Typography variant="h6" color="text.secondary" sx={{textAlign: "left",weigth:"bold"}}>
+          $$$$$
+        </Typography>
+
+        <Typography variant="h6" color="text.secondary" sx={{textAlign: "left"}}>
+          Información adicional
+        </Typography>
+
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook
           together with your guests. Add 1 cup of frozen peas along with the
           mussels, if you like.
         </Typography>
       </CardContent>
-
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
       
     </Card>
   );
