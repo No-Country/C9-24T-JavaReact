@@ -10,24 +10,18 @@ import Typography from "@mui/material/Typography";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+const MyCard = styled(Card)`
+height: 100vh;
+`;
+
+
 
 export default function RecipeReviewCard() {
 
 
-
-
   return (
-    <Card sx={{ width: 360 }}>
+    <>
+    <MyCard sx={{ width: 360}}>
       <CardHeader  sx={{ position: 'absolute',
             zIndex: 2, width:330,}}
         avatar={
@@ -57,12 +51,14 @@ export default function RecipeReviewCard() {
           Información adicional
         </Typography>
 
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" sx={{textAlign: "left"}}>
           This impressive paella is a perfect party dish and a fun meal to cook
           together with your guests. Add 1 cup of frozen peas along with the
           mussels, if you like.
         </Typography>
       </CardContent>
-    </Card>
-  );
+    </MyCard>
+    </>
+
+  )
 }
