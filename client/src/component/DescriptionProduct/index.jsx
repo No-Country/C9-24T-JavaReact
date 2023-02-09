@@ -1,14 +1,16 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  IconButton,
+  Typography,
+} from "@mui/material";
 
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
 
 const MyCard = styled(Card)`
 height: 100vh;
@@ -29,7 +31,7 @@ export default function RecipeReviewCard() {
         }
         action={
           <IconButton>
-            <ShoppingCartSharpIcon sx={{ color:'white' }}/>
+            <ShoppingCartSharpIcon sx={{ color: "white" }} />
           </IconButton>
         }
       />
@@ -40,14 +42,26 @@ export default function RecipeReviewCard() {
         alt="Paella dish"
       />
       <CardContent>
-        <Typography variant="h5" color="text.primary" sx={{textAlign: "left"}}>
-          This impressive 
+        <Typography
+          variant="h5"
+          color="text.primary"
+          sx={{ textAlign: "left" }}
+        >
+          This impressive
         </Typography>
-        <Typography variant="h6" color="text.secondary" sx={{textAlign: "left",weigth:"bold"}}>
+        <Typography
+          variant="h6"
+          color="text.secondary"
+          sx={{ textAlign: "left", weigth: "bold" }}
+        >
           $$$$$
         </Typography>
 
-        <Typography variant="h6" color="text.secondary" sx={{textAlign: "left"}}>
+        <Typography
+          variant="h6"
+          color="text.secondary"
+          sx={{ textAlign: "left" }}
+        >
           Información adicional
         </Typography>
 
