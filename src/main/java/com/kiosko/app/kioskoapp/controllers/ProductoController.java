@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.kiosko.app.kioskoapp.entities.ImagenesProductos;
 import com.kiosko.app.kioskoapp.entities.Producto;
 import com.kiosko.app.kioskoapp.repository.ProductoRepository;
 
@@ -43,10 +44,14 @@ public class ProductoController {
     }
 
     @PostMapping
-    public Producto postProductos(@RequestBody Producto producto, @RequestParam("file") MultipartFile ... file) throws IOException {
-        // producto.setImagen(file.getOriginalFilename());
-        // service.uploadFile(file);
-        productoRepository.save(producto);
+    public Producto postProductos(@RequestBody Producto producto, @RequestParam("file") MultipartFile ... files) throws IOException {
+        Producto productoresp = productoRepository.save(producto);
+        for (MultipartFile file : files) {
+            ImagenesProductos imagen = new ImagenesProductos();
+            imagen.setId_producto(productoresp.getId());
+            imagen.setUrl(file.getOriginalFilename());
+            // service.uploadFile(file);
+        }        
         return producto;
     }
 

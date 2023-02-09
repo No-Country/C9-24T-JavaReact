@@ -1,6 +1,8 @@
 package com.kiosko.app.kioskoapp.service;
 
 import org.springframework.stereotype.Component;
+
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
@@ -36,6 +38,20 @@ public class FileService {
 		} catch (MalformedURLException e) {
 			throw new RuntimeException("FAIL!");
 		}
+	}
+
+	public boolean deleteFile(String filename, String ubicacion) {
+
+		Path file = rootLocation.resolve(ubicacion + "/" + filename);
+		File archivo = file.toFile();
+
+		if (archivo.exists() && archivo.canRead()) {
+			if (archivo.delete()) {
+				return true;
+			}
+		}
+		return false;
+			
 	}
 
 }
