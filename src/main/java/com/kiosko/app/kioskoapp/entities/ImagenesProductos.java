@@ -7,11 +7,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
+import lombok.*;
 
 @Entity
 @Table(name = "imagenes_productos")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 public class ImagenesProductos {
     
     @Id
@@ -19,6 +24,4 @@ public class ImagenesProductos {
     @Column(name = "id_imagen")
     private Integer id;
     private String url;
-    
-    private Integer id_producto;
 }

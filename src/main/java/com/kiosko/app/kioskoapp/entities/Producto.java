@@ -35,7 +35,7 @@ public class Producto {
     List<Caracteristica> caracteristicas;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "id_imagen")
+	@JoinColumn(name = "id_producto")
     List<ImagenesProductos> imagenes;
 
 }
