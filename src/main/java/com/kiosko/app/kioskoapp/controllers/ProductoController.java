@@ -48,10 +48,9 @@ public class ProductoController {
         Producto productoresp = productoRepository.save(producto);
         for (MultipartFile file : files) {
             ImagenesProductos imagen = new ImagenesProductos();
-            imagen.setId_producto(productoresp.getId());
             imagen.setUrl(file.getOriginalFilename());
             // service.uploadFile(file);
-        }        
+        }
         return producto;
     }
 
