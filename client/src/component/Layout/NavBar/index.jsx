@@ -6,7 +6,7 @@ import RestoreIcon from "@mui/icons-material/Restore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-export default function SimpleBottomNavigation() {
+export default function NavBar() {
   const [value, setValue] = React.useState(0);
 
   return (
