@@ -46,4 +46,10 @@ public class CategoriaController {
         categoria.setId(id);
         return new ResponseEntity<>(categoriaService.update(categoria), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") int id) throws ResourceNotFoundException {
+        categoriaService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
