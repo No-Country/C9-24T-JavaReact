@@ -57,10 +57,10 @@ export default function RecipeReviewCard() {
     <MyCard>
       <CardHeader  sx={{ position: 'absolute',
             zIndex: 2, width:330,}}
-        avatar={
+        back={
           <ArrowBackIcon sx={{ color:'white' }}/>
         }
-        action={
+        shop={
           <IconButton>
             <ShoppingCartSharpIcon sx={{ color: "white" }} />
           </IconButton>
