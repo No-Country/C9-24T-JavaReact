@@ -4,6 +4,7 @@ import Home from "../component/Home";
 import Description from "../component/pages/DescriptionVew";
 
 import ProductView from "../component/pages/ProductView";
+import CategoryView from "../component/pages/CategoryView";
 
 function RouteController() {
   return (
@@ -11,6 +12,7 @@ function RouteController() {
       <Route path="/" element={<Home />} />
       <Route path="/description" element={<Description />} />
       <Route path="/product" element={<ProductView />} />
+      <Route path="/category" element={<CategoryView />} />
     </Routes>
   );
 }
