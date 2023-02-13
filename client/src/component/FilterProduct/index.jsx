@@ -17,7 +17,7 @@ export default function Filter() {
           direction="row"
           justifyContent="center"
           alignItems="center"
-          spacing={2}
+          spacing={1}
         >
           <FilterAltRoundedIcon sx={{ color: "gray" }} />
           <Select
@@ -27,7 +27,7 @@ export default function Filter() {
             displayEmpty
           >
             <MenuItem value="">
-              <em>Filter</em>
+              <em>Filtro</em>
             </MenuItem>
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>

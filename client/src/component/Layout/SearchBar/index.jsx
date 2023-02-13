@@ -14,9 +14,11 @@ export default function SearchBar() {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="static" sx={{ backgroundColor: "#777777" }}>
           <Toolbar>
-            <ArrowBackIcon sx={{ color: "white" }} />
+            <IconButton>
+              <ArrowBackIcon sx={{ color: "white" }} />
+            </IconButton>
             <Typography
               variant="h6"
               component="div"
