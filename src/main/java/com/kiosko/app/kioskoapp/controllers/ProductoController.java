@@ -1,57 +1,57 @@
 package com.kiosko.app.kioskoapp.controllers;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
+import com.kiosko.app.kioskoapp.dto.ProductoCreateDTO;
+import com.kiosko.app.kioskoapp.dto.ProductoDTO;
+import com.kiosko.app.kioskoapp.dto.mapper.ProductoCreateMapper;
 
+import com.kiosko.app.kioskoapp.exception.ResourceAlreadyExistsException;
+import com.kiosko.app.kioskoapp.exception.ResourceNotFoundException;
+import com.kiosko.app.kioskoapp.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-
-import com.kiosko.app.kioskoapp.entities.ImagenesProductos;
-import com.kiosko.app.kioskoapp.entities.Producto;
-import com.kiosko.app.kioskoapp.repository.ProductoRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/producto")
 public class ProductoController {
-    
-    @Autowired
-    ProductoRepository productoRepository;
 
-    @GetMapping("/all")
-    public List<Producto> getProductoAll() {
-        return productoRepository.findAll();
+    private final IProductoService productoService;
+    private final ProductoCreateMapper productoMapper;
+
+    @Autowired
+    public ProductoController(IProductoService productoService, ProductoCreateMapper productoMapper) {
+        this.productoService = productoService;
+        this.productoMapper = productoMapper;
+    }
+
+    @GetMapping
+    public ResponseEntity<Page<ProductoDTO>> getAll(@RequestParam(required = false, value = "page", defaultValue = "0") int page,
+                                               @RequestParam(required = false, value = "size", defaultValue = "10") int size) {
+        return new ResponseEntity<>(productoService.getAll(page, size), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public Producto getProductosbyId(@PathVariable Integer id) {
-
-        Optional<Producto> producto = productoRepository.findById(id);
-
-        if (producto.isPresent()) {
-            return producto.get();
-        }
-
-        return null;
-
+    public ResponseEntity<ProductoDTO> getById(@PathVariable("id") int id) throws ResourceNotFoundException {
+        return new ResponseEntity<>(productoService.getById(id), HttpStatus.OK);
     }
 
     @PostMapping
-    public Producto postProductos(@RequestBody Producto producto, @RequestParam("file") MultipartFile ... files) throws IOException {
-        Producto productoresp = productoRepository.save(producto);
-        for (MultipartFile file : files) {
-            ImagenesProductos imagen = new ImagenesProductos();
-            imagen.setUrl(file.getOriginalFilename());
-            // service.uploadFile(file);
-        }
-        return producto;
+    public ResponseEntity<ProductoDTO> create(@RequestBody ProductoCreateDTO productoCreateDTO) throws ResourceAlreadyExistsException, ResourceNotFoundException {
+        return new ResponseEntity<>(productoService.create(productoCreateDTO), HttpStatus.OK);
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<ProductoDTO> update(@PathVariable("id") int id, @RequestBody ProductoCreateDTO productoCreateDTO) throws ResourceNotFoundException {
+        return new ResponseEntity<>(productoService.update(productoCreateDTO, id), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") int id) throws ResourceNotFoundException {
+        productoService.delete(id);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
