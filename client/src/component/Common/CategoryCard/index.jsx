@@ -7,12 +7,21 @@ import Typography from "@mui/material/Typography";
 
 export default function CategoryCard() {
   return (
-    <Card sx={{ width: 160, padding: 0, margin: 0 }}>
+    <Card
+      sx={{
+        width: "160px",
+        height: "120px",
+        padding: 0,
+        margin: 0,
+        borderRadius: "15px",
+      }}
+    >
       <CardContent
         sx={{
           width: "160px",
           height: "120px",
           border: "1px solid red",
+          borderRadius: "15px",
           padding: 0,
           marging: 0,
           backgroundColor: "green",
