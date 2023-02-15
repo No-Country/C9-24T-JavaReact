@@ -41,7 +41,7 @@ const DivCarrito = styled(Stack)`
   background: black;
   color: white;
   border-radius: 15px;
-  with: 10em;
+  width: 8em;
   height: 2.5em;
   padding: 0 0.7em;
 `;
