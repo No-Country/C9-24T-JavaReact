@@ -21,7 +21,6 @@ export default function CategoryCard() {
         sx={{
           width: "160px",
           height: "120px",
-          border: "1px solid red",
           borderRadius: "15px",
           padding: 0,
           marging: 0,
@@ -32,7 +31,9 @@ export default function CategoryCard() {
           boxShadow: "unset",
         }}
       >
-        <Typography variant="body2">Bebidas</Typography>
+        <Typography variant="body2" sx={{ marginBottom: "0.5em" }}>
+          Bebidas
+        </Typography>
       </CardContent>
     </Card>
   );

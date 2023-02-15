@@ -13,7 +13,7 @@ export default function NavBar() {
   //   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: 360 }}>
+    <Box sx={{ width: 360, alignSelf: "flex-end" }}>
       <BottomNavigation
         showLabels
         // value={value}
