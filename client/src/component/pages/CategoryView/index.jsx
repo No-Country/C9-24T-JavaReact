@@ -10,16 +10,11 @@ export default function CategoryView() {
   return (
     <>
       <MySearchBar />
-      <Container sx={{ margin: 0, padding: 0 }}>
+      <Container sx={{ margin: 0, padding: "0.5em" }}>
         <Grid
           container
-          spacing={1}
-          sx={{
-            width: 340,
-            margin: "2em",
-            padding: 0,
-            backgroundColor: "blue",
-          }}
+          spacing={0.5}
+          sx={{ width: 340, margin: 0, padding: 0 }}
         >
           {/* <CategoryCard />
           <CategoryCard />
@@ -28,9 +23,13 @@ export default function CategoryView() {
           <Grid
             sx={{
               borderRadius: "15px",
-              background: "red",
+              // background: "blue",
               margin: 0,
-              pading: 0,
+              marginBottom: "0.5em",
+              padding: 0,
+              boxShadow: "none",
+              width: "160px",
+              height: "120px",
             }}
             item
             xs={6}
@@ -41,11 +40,13 @@ export default function CategoryView() {
           <Grid
             sx={{
               borderRadius: "15px",
-              background: "blue",
+              // background: "blue",
               margin: 0,
               padding: 0,
-              // width: "160px",
-              // height: "140px",
+              width: "160px",
+              boxShadow: "none",
+              width: "160px",
+              height: "120px",
             }}
             item
             xs={6}
@@ -56,9 +57,12 @@ export default function CategoryView() {
           <Grid
             sx={{
               borderRadius: "15px",
-              background: "blue",
+              // background: "blue",
               margin: 0,
               pading: 0,
+              boxShadow: "none",
+              width: "160px",
+              height: "120px",
             }}
             item
             xs={6}
@@ -69,9 +73,12 @@ export default function CategoryView() {
           <Grid
             sx={{
               borderRadius: "15px",
-              background: "blue",
+              // background: "blue",
               margin: 0,
               pading: 0,
+              boxShadow: "none",
+              width: "160px",
+              height: "120px",
             }}
             item
             xs={6}
