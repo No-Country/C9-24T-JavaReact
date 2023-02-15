@@ -27,7 +27,7 @@ export default function SearchBar() {
         >
           Bebidas
         </Typography>
-        <IconButton>
+        <IconButton sx={{ marginLeft: "auto" }}>
           <ShoppingCartSharpIcon sx={{ color: "white" }} />
         </IconButton>
       </Toolbar>
