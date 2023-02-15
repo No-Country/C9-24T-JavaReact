@@ -12,26 +12,25 @@ import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
 
 export default function SearchBar() {
   return (
-    <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{ backgroundColor: "#777777" }}>
-          <Toolbar>
-            <IconButton>
-              <ArrowBackIcon sx={{ color: "white" }} />
-            </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, textAlign: "left", marginLeft: "1em" }}
-            >
-              Bebidas
-            </Typography>
-            <IconButton>
-              <ShoppingCartSharpIcon sx={{ color: "white" }} />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </>
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "#777777", width: "360px" }}
+    >
+      <Toolbar>
+        <IconButton>
+          <ArrowBackIcon sx={{ color: "white" }} />
+        </IconButton>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ textAlign: "left", marginLeft: "1em" }}
+        >
+          Bebidas
+        </Typography>
+        <IconButton>
+          <ShoppingCartSharpIcon sx={{ color: "white" }} />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
   );
 }
