@@ -42,8 +42,8 @@ export default function CategoryView() {
               borderRadius: "15px",
               // background: "blue",
               margin: 0,
+              marginBottom: "0.5em",
               padding: 0,
-              width: "160px",
               boxShadow: "none",
               width: "160px",
               height: "120px",
@@ -59,6 +59,7 @@ export default function CategoryView() {
               borderRadius: "15px",
               // background: "blue",
               margin: 0,
+              marginBottom: "0.5em",
               pading: 0,
               boxShadow: "none",
               width: "160px",
@@ -75,6 +76,41 @@ export default function CategoryView() {
               borderRadius: "15px",
               // background: "blue",
               margin: 0,
+              marginBottom: "0.5em",
+              pading: 0,
+              boxShadow: "none",
+              width: "160px",
+              height: "120px",
+            }}
+            item
+            xs={6}
+            md={8}
+          >
+            <CategoryCard />
+          </Grid>
+          <Grid
+            sx={{
+              borderRadius: "15px",
+              // background: "blue",
+              margin: 0,
+              marginBottom: "0.5em",
+              pading: 0,
+              boxShadow: "none",
+              width: "160px",
+              height: "120px",
+            }}
+            item
+            xs={6}
+            md={8}
+          >
+            <CategoryCard />
+          </Grid>
+          <Grid
+            sx={{
+              borderRadius: "15px",
+              // background: "blue",
+              margin: 0,
+              marginBottom: "0.5em",
               pading: 0,
               boxShadow: "none",
               width: "160px",
