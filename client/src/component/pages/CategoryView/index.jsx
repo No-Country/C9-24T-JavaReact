@@ -3,13 +3,20 @@ import CategoryCard from "../../Common/CategoryCard";
 import MySearchBar from "../../Common/MySearchBar";
 import NavBar from "../../Layout/NavBar";
 import FilterProduct from "../../FilterProduct";
-import { Container, Grid } from "@mui/material/";
+import { Container, Grid, Stack, Box, Typography } from "@mui/material/";
 import { blue } from "@mui/material/colors";
 
 export default function CategoryView() {
   return (
-    <>
+    <Stack sx={{ margin: 0, pading: 0 }}>
       <MySearchBar />
+
+      <Typography
+        variant="h6"
+        sx={{ textAlign: "left", padding: "0.5em 0 0 0.5em" }}
+      >
+        Categorias
+      </Typography>
       <Container sx={{ margin: 0, padding: "0.5em" }}>
         <Grid
           container
@@ -124,7 +131,7 @@ export default function CategoryView() {
           </Grid>
         </Grid>
       </Container>
-      <NavBar />
-    </>
+      <NavBar sx={{ alignSelf: "flex-end" }} />
+    </Stack>
   );
 }
