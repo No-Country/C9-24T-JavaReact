@@ -11,7 +11,16 @@ export default function CategoryView() {
     <>
       <MySearchBar />
       <Container sx={{ margin: 0, padding: 0 }}>
-        <Grid container spacing={2} sx={{ width: 340, margin: 0, padding: 0 }}>
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            width: 340,
+            margin: "2em",
+            padding: 0,
+            backgroundColor: "blue",
+          }}
+        >
           {/* <CategoryCard />
           <CategoryCard />
           <CategoryCard />
@@ -19,13 +28,13 @@ export default function CategoryView() {
           <Grid
             sx={{
               borderRadius: "15px",
-              background: "blue",
+              background: "red",
               margin: 0,
               pading: 0,
             }}
-            /* item
+            item
             xs={6}
-            md={8} */
+            md={8}
           >
             <CategoryCard />
           </Grid>
@@ -35,8 +44,8 @@ export default function CategoryView() {
               background: "blue",
               margin: 0,
               padding: 0,
-              width: "160px",
-              height: "140px",
+              // width: "160px",
+              // height: "140px",
             }}
             item
             xs={6}

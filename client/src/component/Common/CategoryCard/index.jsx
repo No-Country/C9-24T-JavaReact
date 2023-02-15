@@ -25,6 +25,9 @@ export default function CategoryCard() {
           padding: 0,
           marging: 0,
           backgroundColor: "green",
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "center",
         }}
       >
         <Typography variant="body2">Bebidas</Typography>
