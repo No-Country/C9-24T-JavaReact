@@ -25,7 +25,6 @@ export default function CategoryCard() {
           borderRadius: "15px",
           padding: 0,
           marging: 0,
-          backgroundColor: "green",
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "center",

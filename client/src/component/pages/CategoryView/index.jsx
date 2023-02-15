@@ -45,7 +45,6 @@ export default function CategoryView() {
               padding: 0,
               width: "160px",
               boxShadow: "none",
-              width: "160px",
               height: "120px",
             }}
             item
