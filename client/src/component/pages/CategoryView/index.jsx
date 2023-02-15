@@ -10,7 +10,6 @@ export default function CategoryView() {
   return (
     <Stack sx={{ margin: 0, pading: 0 }}>
       <MySearchBar />
-
       <Typography
         variant="h6"
         sx={{ textAlign: "left", padding: "0.5em 0 0 0.5em" }}
