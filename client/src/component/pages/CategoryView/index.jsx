@@ -5,10 +5,21 @@ import NavBar from "../../Layout/NavBar";
 import FilterProduct from "../../FilterProduct";
 import { Container, Grid, Stack, Box, Typography } from "@mui/material/";
 import { blue } from "@mui/material/colors";
+import { makeStyles } from "@mui/material/styles";
+
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+  },
+});
 
 export default function CategoryView() {
+  const classes = useStyles();
   return (
-    <Stack sx={{ margin: 0, pading: 0 }}>
+    <Stack
+      className={classes.root}
+      sx={{ margin: 0, pading: 0, height: "100vh" }}
+    >
       <MySearchBar />
       <Typography
         variant="h6"
