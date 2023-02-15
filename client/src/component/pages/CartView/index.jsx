@@ -25,6 +25,34 @@ export default function ProductView() {
         <CartSelectCard />
         <CartSelectCard />
       </Container>
+      <Stack direction="row">
+        <Typography
+          variant="caption"
+          sx={{
+            // display: "inline",
+            textAlign: "left",
+            padding: "0.5em 0 0 0.5em",
+            paddingLeft: "2em",
+            fontWeight: "bold",
+            fontSize: "1.1em",
+          }}
+        >
+          Total:
+        </Typography>
+        <Typography
+          variant="caption"
+          sx={{
+            // display: "inline",
+            textAlign: "right",
+            padding: "0.5em 0 0 0.5em",
+            margin: "0 2em 0 auto",
+            fontWeight: "bold",
+            fontSize: "1.1em",
+          }}
+        >
+          $$$$$$
+        </Typography>
+      </Stack>
       <Stack
         direction="row"
         justifyContent="center"
