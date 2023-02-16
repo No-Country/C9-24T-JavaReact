@@ -11,6 +11,8 @@ import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
 
+import { Link, Outlet } from "react-router-dom";
+
 const MyAppBar = styled(Box)`
   position: fixed;
   bottom: 0;
@@ -23,16 +25,33 @@ export default function NavBar() {
   return (
     <MyAppBar sx={{ width: 360 }}>
       <BottomNavigation
-        showLabels
-        // value={value}
-        /* onChange={(event, newValue) => {
+      // value={value}
+      /* onChange={(event, newValue) => {
           setValue(newValue);
         }} */
       >
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction label="Buscar" icon={<SearchIcon />} />
-        <BottomNavigationAction label="Cuenta" icon={<PersonIcon />} />
+        <Link to="/">
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} showLabel />
+        </Link>
+
+        <Link to="/product">
+          <BottomNavigationAction
+            showLabel
+            label="Buscar"
+            icon={<SearchIcon />}
+          />
+        </Link>
+
+        <Link to="/">
+          <BottomNavigationAction
+            showLabel
+            label="Cuenta"
+            icon={<PersonIcon />}
+          />
+        </Link>
       </BottomNavigation>
+
+      <Outlet />
     </MyAppBar>
   );
 }
