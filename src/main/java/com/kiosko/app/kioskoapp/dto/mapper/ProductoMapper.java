@@ -10,7 +10,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {CategoriaMapper.class, CaracteristicaMapper.class})
+@Mapper(componentModel = "spring", uses = {CategoriaMapper.class, CaracteristicaMapper.class, ImagenMapper.class})
 public interface ProductoMapper {
     ProductoMapper INSTANCE = Mappers.getMapper( ProductoMapper.class );
 
@@ -23,7 +23,8 @@ public interface ProductoMapper {
     @Mappings({
             @Mapping(target = "id", ignore = true),
             @Mapping(target = "caracteristicas", ignore = true),
-            @Mapping(target = "categoria", ignore = true)
+            @Mapping(target = "categoria", ignore = true),
+            @Mapping(target = "imagenes", ignore = true)
     })
     Producto toProducto(ProductoCreateDTO productoCreateDTO);
     ProductoCreateDTO toProductoCreateDTO(Producto producto);

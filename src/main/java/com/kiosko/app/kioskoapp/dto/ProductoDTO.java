@@ -21,4 +21,5 @@ public class ProductoDTO {
 
     private CategoriaDTO categoria;
     private List<CaracteristicaDTO> caracteristicas;
+    private List<ImagenDTO> imagenes;
 }
