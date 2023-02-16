@@ -24,4 +24,6 @@ public class ImagenesProductos {
     @Column(name = "id_imagen")
     private Integer id;
     private String url;
+    @Column(name = "id_producto")
+    private Integer idProducto;
 }

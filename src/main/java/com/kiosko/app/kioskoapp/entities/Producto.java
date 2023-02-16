@@ -35,8 +35,8 @@ public class Producto {
             inverseJoinColumns = { @JoinColumn(name = "id_caracteristica") })
     List<Caracteristica> caracteristicas;
 
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//	@JoinColumn(name = "id_producto")
-//    List<ImagenesProductos> imagenes;
+    @OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_producto")
+    List<ImagenesProductos> imagenes;
 
 }
