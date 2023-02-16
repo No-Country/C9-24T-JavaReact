@@ -1,11 +1,14 @@
 package com.kiosko.app.kioskoapp.controllers;
 
+import com.kiosko.app.kioskoapp.dto.ImagenCreateDTO;
+import com.kiosko.app.kioskoapp.dto.ImagenDTO;
 import com.kiosko.app.kioskoapp.dto.ProductoCreateDTO;
 import com.kiosko.app.kioskoapp.dto.ProductoDTO;
 import com.kiosko.app.kioskoapp.dto.mapper.ProductoCreateMapper;
 
 import com.kiosko.app.kioskoapp.exception.ResourceAlreadyExistsException;
 import com.kiosko.app.kioskoapp.exception.ResourceNotFoundException;
+import com.kiosko.app.kioskoapp.service.IImagenService;
 import com.kiosko.app.kioskoapp.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,17 +16,21 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/producto")
 public class ProductoController {
 
     private final IProductoService productoService;
     private final ProductoCreateMapper productoMapper;
+    private final IImagenService imagenService;
 
     @Autowired
-    public ProductoController(IProductoService productoService, ProductoCreateMapper productoMapper) {
+    public ProductoController(IProductoService productoService, ProductoCreateMapper productoMapper, IImagenService imagenService) {
         this.productoService = productoService;
         this.productoMapper = productoMapper;
+        this.imagenService = imagenService;
     }
 
     @GetMapping
@@ -53,5 +60,29 @@ public class ProductoController {
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/{productoId}/imagen")
+    public ResponseEntity<List<ImagenDTO>> getAllImages(@PathVariable("productoId") int productoId) throws ResourceNotFoundException {
+        return new ResponseEntity<>(imagenService.getAll(productoId), HttpStatus.OK);
+    }
+
+    @GetMapping("/{productoId}/imagen/{imagenId}")
+    public ResponseEntity<ImagenDTO> getImagenById(@PathVariable("productoId") int productoId, @PathVariable("imagenId") int imagenId) throws ResourceNotFoundException {
+        return new ResponseEntity<>(imagenService.getById(imagenId, productoId), HttpStatus.OK);
+    }
+
+    @PostMapping("/{productoId}/imagen")
+    public ResponseEntity<ImagenDTO> createImagen(@RequestBody ImagenCreateDTO imagenCreateDTO, @PathVariable("productoId") int productoId) throws ResourceAlreadyExistsException, ResourceNotFoundException {
+        return new ResponseEntity<>(imagenService.create(imagenCreateDTO, productoId), HttpStatus.OK);
+    }
+
+    @PatchMapping("/{productId}/imagen/{imagenId}")
+    public ResponseEntity<ImagenDTO> updateImagen(@PathVariable("productoId") int productoId,
+                                            @PathVariable("imagenId") int imagenId,
+                                            @RequestBody ImagenCreateDTO imagenCreateDTO) throws ResourceNotFoundException {
+        return new ResponseEntity<>(imagenService.update(imagenCreateDTO, imagenId, productoId), HttpStatus.OK);
+    }
+
+
 
 }
