@@ -2,9 +2,7 @@ package com.kiosko.app.kioskoapp.service.impl;
 
 import com.kiosko.app.kioskoapp.dto.ProductoCreateDTO;
 import com.kiosko.app.kioskoapp.dto.ProductoDTO;
-import com.kiosko.app.kioskoapp.dto.mapper.ProductoCreateMapper;
 import com.kiosko.app.kioskoapp.dto.mapper.ProductoMapper;
-import com.kiosko.app.kioskoapp.entities.Producto;
 import com.kiosko.app.kioskoapp.exception.ResourceAlreadyExistsException;
 import com.kiosko.app.kioskoapp.exception.ResourceNotFoundException;
 import com.kiosko.app.kioskoapp.repository.ProductoRepository;
@@ -25,15 +23,13 @@ public class IProductoServiceImpl implements IProductoService {
     private final ICategoriaService categoriaService;
     private final ICaracteristicaService caracteristicaService;
     private final ProductoMapper productoMapper;
-    private final ProductoCreateMapper productoCreateMapper;
 
     @Autowired
-    public IProductoServiceImpl(ProductoRepository productoRepository, ICategoriaService categoriaService, ICaracteristicaService caracteristicaService, ProductoMapper productoMapper, ProductoCreateMapper productoCreateMapper) {
+    public IProductoServiceImpl(ProductoRepository productoRepository, ICategoriaService categoriaService, ICaracteristicaService caracteristicaService, ProductoMapper productoMapper) {
         this.productoRepository = productoRepository;
         this.categoriaService = categoriaService;
         this.caracteristicaService = caracteristicaService;
         this.productoMapper = productoMapper;
-        this.productoCreateMapper = productoCreateMapper;
     }
 
     @Override

@@ -4,7 +4,6 @@ import com.kiosko.app.kioskoapp.dto.ImagenCreateDTO;
 import com.kiosko.app.kioskoapp.dto.ImagenDTO;
 import com.kiosko.app.kioskoapp.dto.ProductoCreateDTO;
 import com.kiosko.app.kioskoapp.dto.ProductoDTO;
-import com.kiosko.app.kioskoapp.dto.mapper.ProductoCreateMapper;
 
 import com.kiosko.app.kioskoapp.exception.ResourceAlreadyExistsException;
 import com.kiosko.app.kioskoapp.exception.ResourceNotFoundException;
@@ -23,13 +22,11 @@ import java.util.List;
 public class ProductoController {
 
     private final IProductoService productoService;
-    private final ProductoCreateMapper productoMapper;
     private final IImagenService imagenService;
 
     @Autowired
-    public ProductoController(IProductoService productoService, ProductoCreateMapper productoMapper, IImagenService imagenService) {
+    public ProductoController(IProductoService productoService, IImagenService imagenService) {
         this.productoService = productoService;
-        this.productoMapper = productoMapper;
         this.imagenService = imagenService;
     }
 
