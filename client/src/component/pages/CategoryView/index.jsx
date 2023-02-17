@@ -45,7 +45,7 @@ export default function CategoryView() {
               md={8}
             >
               <Link to="/product">
-                <CategoryCard />
+                <CategoryCard isCategory />
               </Link>
             </Grid>
             <Grid

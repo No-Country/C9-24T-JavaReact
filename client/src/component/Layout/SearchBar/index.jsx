@@ -10,6 +10,7 @@ import Container from "@mui/material/Container";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
 import { TopCategory } from "../../Common/TopCategory";
+import { margin } from "@mui/system";
 
 export default function SearchBar({ isSearch, isCategory, isTitle }) {
   return (
@@ -17,7 +18,13 @@ export default function SearchBar({ isSearch, isCategory, isTitle }) {
       position="static"
       sx={{ backgroundColor: "#777777", width: "360px" }}
     >
-      <Toolbar>Nombre de la app {isCategory && <TopCategory />}</Toolbar>
+      <Toolbar>
+        {isCategory ? (
+          <TopCategory />
+        ) : (
+          <h4 style={{ margin: 0 }}>nombre de la app</h4>
+        )}
+      </Toolbar>
     </AppBar>
   );
 }
