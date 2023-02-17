@@ -1,14 +1,14 @@
 import * as React from "react";
 import CardProduct from "../Common/CardProduct";
 import NavBar from "../Layout/NavBar";
-import SearchBar from "../Layout/SearchBar";
+import TopBar from "../Layout/TopBar";
 import FilterProduct from "../FilterProduct";
 import { Container, Grid, Typography } from "@mui/material/";
 
 export default function Home() {
   return (
     <>
-      <SearchBar />
+      <TopBar />
       <Typography
         variant="h6"
         sx={{ textAlign: "center", padding: "1em 0 1em 0.5em" }}

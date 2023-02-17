@@ -1,9 +1,8 @@
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
 
-export default function TopCategory() {
+export default function TopCart() {
   return (
     <>
       <IconButton>
@@ -14,11 +13,8 @@ export default function TopCategory() {
         component="div"
         sx={{ textAlign: "left", marginLeft: "1em" }}
       >
-        Bebidas
+        Resumen de compra
       </Typography>
-      <IconButton sx={{ marginLeft: "auto" }}>
-        <ShoppingCartSharpIcon sx={{ color: "white" }} />
-      </IconButton>
     </>
   );
 }

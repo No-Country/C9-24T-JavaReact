@@ -1,6 +1,6 @@
 import * as React from "react";
 import CartSelectCard from "../../Common/CartSelectCard";
-import SearchBar from "../../Layout/SearchBar";
+import TopBar from "../../Layout/TopBar";
 import { styled } from "@mui/material/styles";
 
 import { Container, Typography, Stack } from "@mui/material/";
@@ -17,7 +17,7 @@ const DivCarrito = styled(Stack)`
 export default function ProductView() {
   return (
     <>
-      <SearchBar isSearch={true} />
+      <TopBar isCart={true} />
 
       <Container sx={{ margin: 0, padding: 0 }}>
         <CartSelectCard />

@@ -1,14 +1,14 @@
 import * as React from "react";
 import CardProduct from "../../Common/CardProduct";
 import NavBar from "../../Layout/NavBar";
-import SearchBar from "../../Layout/SearchBar";
+import TopBar from "../../Layout/TopBar";
 import FilterProduct from "../../FilterProduct";
 import { Container, Grid } from "@mui/material/";
 
 export default function ProductView() {
   return (
     <>
-      <SearchBar isCategory={true} />
+      <TopBar isCategory={true} />
       <FilterProduct sx={{ marginTop: "200px" }} />
       <Container>
         <Grid container spacing={2} sx={{ width: 340 }}>

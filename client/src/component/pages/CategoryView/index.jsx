@@ -1,17 +1,16 @@
 import * as React from "react";
 import CategoryCard from "../../Common/CategoryCard";
-import MySearchBar from "../../Common/MySearchBar";
+import TopBar from "../../Layout/TopBar";
 import NavBar from "../../Layout/NavBar";
 import FilterProduct from "../../FilterProduct";
 import { Container, Grid, Stack, Box, Typography } from "@mui/material/";
-import { blue } from "@mui/material/colors";
 
 import { Link } from "react-router-dom";
 
 export default function CategoryView() {
   return (
     <Stack sx={{ margin: 0, pading: 0, height: "100vh" }}>
-      <MySearchBar />
+      <TopBar isSearch={true} />
       <Box>
         <Typography
           variant="h6"
@@ -25,14 +24,9 @@ export default function CategoryView() {
             spacing={0.5}
             sx={{ width: 340, margin: 0, padding: 0 }}
           >
-            {/* <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard /> */}
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 padding: 0,
@@ -51,7 +45,6 @@ export default function CategoryView() {
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 padding: 0,
@@ -68,7 +61,6 @@ export default function CategoryView() {
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 pading: 0,
@@ -85,7 +77,6 @@ export default function CategoryView() {
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 pading: 0,
@@ -102,7 +93,6 @@ export default function CategoryView() {
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 pading: 0,
@@ -119,7 +109,6 @@ export default function CategoryView() {
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 pading: 0,
@@ -136,7 +125,6 @@ export default function CategoryView() {
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 pading: 0,
@@ -153,7 +141,6 @@ export default function CategoryView() {
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 pading: 0,
@@ -170,7 +157,6 @@ export default function CategoryView() {
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 pading: 0,
@@ -187,7 +173,6 @@ export default function CategoryView() {
             <Grid
               sx={{
                 borderRadius: "15px",
-                // background: "blue",
                 margin: 0,
                 marginBottom: "0.5em",
                 pading: 0,
