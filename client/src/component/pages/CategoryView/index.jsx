@@ -6,6 +6,8 @@ import FilterProduct from "../../FilterProduct";
 import { Container, Grid, Stack, Box, Typography } from "@mui/material/";
 import { blue } from "@mui/material/colors";
 
+import { Link } from "react-router-dom";
+
 export default function CategoryView() {
   return (
     <Stack sx={{ margin: 0, pading: 0, height: "100vh" }}>
@@ -42,7 +44,9 @@ export default function CategoryView() {
               xs={6}
               md={8}
             >
-              <CategoryCard />
+              <Link to="/product">
+                <CategoryCard />
+              </Link>
             </Grid>
             <Grid
               sx={{

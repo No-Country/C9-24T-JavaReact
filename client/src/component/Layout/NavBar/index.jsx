@@ -34,7 +34,7 @@ export default function NavBar() {
           <BottomNavigationAction label="Home" icon={<HomeIcon />} showLabel />
         </Link>
 
-        <Link to="/product">
+        <Link to="/category">
           <BottomNavigationAction
             showLabel
             label="Buscar"

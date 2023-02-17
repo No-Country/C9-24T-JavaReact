@@ -9,15 +9,23 @@ import Container from "@mui/material/Container";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
-import { TopCategory } from "../../Common/TopCategory";
 
-export default function SearchBar({ isSearch, isCategory, isTitle }) {
+export function TopCategory() {
   return (
-    <AppBar
-      position="static"
-      sx={{ backgroundColor: "#777777", width: "360px" }}
-    >
-      <Toolbar>Nombre de la app {isCategory && <TopCategory />}</Toolbar>
-    </AppBar>
+    <>
+      <IconButton>
+        <ArrowBackIcon sx={{ color: "white" }} />
+      </IconButton>
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{ textAlign: "left", marginLeft: "1em" }}
+      >
+        Bebidas
+      </Typography>
+      <IconButton sx={{ marginLeft: "auto" }}>
+        <ShoppingCartSharpIcon sx={{ color: "white" }} />
+      </IconButton>
+    </>
   );
 }

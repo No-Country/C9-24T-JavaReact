@@ -8,7 +8,7 @@ import { Container, Grid } from "@mui/material/";
 export default function ProductView() {
   return (
     <>
-      <SearchBar />
+      <SearchBar isCategory={true} />
       <FilterProduct sx={{ marginTop: "200px" }} />
       <Container>
         <Grid container spacing={2} sx={{ width: 340 }}>

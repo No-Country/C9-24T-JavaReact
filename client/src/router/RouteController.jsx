@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../component/Home";
 import Description from "../component/pages/DescriptionVew";
-
 import ProductView from "../component/pages/ProductView";
 import CategoryView from "../component/pages/CategoryView";
 import CartView from "../component/pages/CartView";

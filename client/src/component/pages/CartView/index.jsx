@@ -17,7 +17,7 @@ const DivCarrito = styled(Stack)`
 export default function ProductView() {
   return (
     <>
-      <SearchBar />
+      <SearchBar isSearch={true} />
 
       <Container sx={{ margin: 0, padding: 0 }}>
         <CartSelectCard />
