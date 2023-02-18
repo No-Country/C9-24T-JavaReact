@@ -4,6 +4,7 @@ import TopBar from "../../Layout/TopBar";
 import NavBar from "../../Layout/NavBar";
 import FilterProduct from "../../FilterProduct";
 import { Container, Grid, Stack, Box, Typography } from "@mui/material/";
+import BDcategory from "../../../assets/BDcategory.json";
 
 import { Link } from "react-router-dom";
 
@@ -24,7 +25,32 @@ export default function CategoryView() {
             spacing={0.5}
             sx={{ width: 340, margin: 0, padding: 0 }}
           >
-            <Grid
+            {BDcategory.map((dato) => (
+              <Grid
+                key={dato.id}
+                sx={{
+                  borderRadius: "15px",
+                  margin: 0,
+                  marginBottom: "0.5em",
+                  padding: 0,
+                  boxShadow: "none",
+                  width: "160px",
+                  height: "120px",
+                }}
+                item
+                xs={6}
+                md={8}
+              >
+                <Link to={`/product`}>
+                  <CategoryCard
+                    isCategory
+                    title={dato.nombre}
+                    img={dato.imagen}
+                  />
+                </Link>
+              </Grid>
+            ))}
+            {/* <Grid
               sx={{
                 borderRadius: "15px",
                 margin: 0,
@@ -39,10 +65,13 @@ export default function CategoryView() {
               md={8}
             >
               <Link to="/product">
+                 {BDproducts.maps((dato) => (
+                  <CategoryCard isCategory title={dato.content.nombre} />
+                ))}
                 <CategoryCard isCategory />
               </Link>
-            </Grid>
-            <Grid
+            </Grid> */}
+            {/* <Grid
               sx={{
                 borderRadius: "15px",
                 margin: 0,
@@ -185,7 +214,7 @@ export default function CategoryView() {
               md={8}
             >
               <CategoryCard />
-            </Grid>
+            </Grid> */}
           </Grid>
         </Container>
       </Box>

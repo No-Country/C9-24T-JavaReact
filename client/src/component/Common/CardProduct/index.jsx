@@ -9,14 +9,14 @@ import {
 } from "@mui/material";
 import { fontWeight } from "@mui/system";
 
-export default function CardProduct() {
+export default function CardProduct({ title, precio, img }) {
   return (
     <Card sx={{ width: 156, borderRadius: "15px" }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="128"
-          image="https://plus.unsplash.com/premium_photo-1669495128216-5ab3274ec078?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
+          image={`${img}`}
           alt="green iguana"
         />
         <CardContent>
@@ -25,14 +25,14 @@ export default function CardProduct() {
             component="div"
             sx={{ textAlign: "left", fontWeight: "bold" }}
           >
-            Nombre de producto
+            {title}
           </Typography>
           <Typography
             variant="body2"
             color="text.secondary"
             sx={{ textAlign: "left" }}
           >
-            $$$$$
+            {`$ ${precio}`}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -2,10 +2,11 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function CategoryCard() {
+export default function CategoryCard({ title, img }) {
   return (
     <Card
       sx={{
@@ -13,10 +14,15 @@ export default function CategoryCard() {
         height: "120px",
         padding: 0,
         margin: 0,
+        backgroundImage: `url(
+          ${img}
+        )`,
+        backgroundSize: "cover",
         borderRadius: "15px",
         boxShadow: "unset",
       }}
     >
+      {/* <CardMedia image={`${img}`} component="img" /> */}
       <CardContent
         sx={{
           width: "160px",
@@ -27,12 +33,13 @@ export default function CategoryCard() {
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "center",
-          backgroundColor: "#d3d3d3",
+          // backgroundColor: "red",
           boxShadow: "unset",
         }}
       >
         <Typography variant="body2" sx={{ marginBottom: "0.5em" }}>
-          Bebidas
+          {title}
+          {console.log(img)}
         </Typography>
       </CardContent>
     </Card>
