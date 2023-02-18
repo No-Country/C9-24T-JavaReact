@@ -38,6 +38,12 @@ public class IProductoServiceImpl implements IProductoService {
     }
 
     @Override
+    public Page<ProductoDTO> getAllByCategoria(int page, int size, int categoriaId) throws ResourceNotFoundException {
+        categoriaService.getById(categoriaId);
+        return productoRepository.findByCategoriaId(PageRequest.of(page, size), categoriaId).map(productoMapper::toProductoDTO);
+    }
+
+    @Override
     public ProductoDTO getById(Integer id) throws ResourceNotFoundException {
         return productoMapper.toProductoDTO(
                 productoRepository.findById(id)
@@ -50,6 +56,7 @@ public class IProductoServiceImpl implements IProductoService {
         ProductoDTO producto = productoMapper.toProductoDTO(productoCreateDTO);
         producto.setCategoria(categoriaService.getById(productoCreateDTO.getIdcategoria()));
         producto.setCaracteristicas(new ArrayList<>());
+        if(productoCreateDTO.getCaracteristicasIds() == null) productoCreateDTO.setCaracteristicasIds(new ArrayList<>());
         for (Integer caracteristicasId : productoCreateDTO.getCaracteristicasIds()) {
             producto.getCaracteristicas().add(caracteristicaService.getById(caracteristicasId));
         }

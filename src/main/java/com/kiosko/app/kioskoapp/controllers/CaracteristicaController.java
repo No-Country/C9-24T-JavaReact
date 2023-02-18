@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/caracteristica")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CaracteristicaController {
     private final ICaracteristicaService caracteristicaService;
     private final CaracteristicaMapper caracteristicaMapper;
@@ -37,7 +38,7 @@ public class CaracteristicaController {
 
     @PostMapping
     public ResponseEntity<CaracteristicaDTO> create(@RequestBody CaracteristicaCreateDTO caracteristicaCreateDTO) throws ResourceAlreadyExistsException {
-        return new ResponseEntity<>(caracteristicaService.create(caracteristicaCreateDTO), HttpStatus.OK);
+        return new ResponseEntity<>(caracteristicaService.create(caracteristicaCreateDTO), HttpStatus.CREATED);
     }
 
     @PatchMapping("/{id}")

@@ -19,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/producto")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProductoController {
 
     private final IProductoService productoService;
@@ -43,7 +44,7 @@ public class ProductoController {
 
     @PostMapping
     public ResponseEntity<ProductoDTO> create(@RequestBody ProductoCreateDTO productoCreateDTO) throws ResourceAlreadyExistsException, ResourceNotFoundException {
-        return new ResponseEntity<>(productoService.create(productoCreateDTO), HttpStatus.OK);
+        return new ResponseEntity<>(productoService.create(productoCreateDTO), HttpStatus.CREATED);
     }
 
     @PatchMapping("/{id}")
@@ -70,7 +71,7 @@ public class ProductoController {
 
     @PostMapping("/{productoId}/imagen")
     public ResponseEntity<ImagenDTO> createImagen(@RequestBody ImagenCreateDTO imagenCreateDTO, @PathVariable("productoId") int productoId) throws ResourceAlreadyExistsException, ResourceNotFoundException {
-        return new ResponseEntity<>(imagenService.create(imagenCreateDTO, productoId), HttpStatus.OK);
+        return new ResponseEntity<>(imagenService.create(imagenCreateDTO, productoId), HttpStatus.CREATED);
     }
 
     @PatchMapping("/{productId}/imagen/{imagenId}")
@@ -78,6 +79,12 @@ public class ProductoController {
                                             @PathVariable("imagenId") int imagenId,
                                             @RequestBody ImagenCreateDTO imagenCreateDTO) throws ResourceNotFoundException {
         return new ResponseEntity<>(imagenService.update(imagenCreateDTO, imagenId, productoId), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{productId}/imagen/{imagenId}")
+    public ResponseEntity<?> deleteImagen(@PathVariable("productoId") int productoId, @PathVariable("imagenId") int imagenId) throws ResourceNotFoundException {
+        imagenService.delete(imagenId, productoId);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
