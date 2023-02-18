@@ -1,0 +1,200 @@
+{
+  "content": [
+    {
+      "id": 101,
+      "nombre": "sierra de los andes",
+      "descripcion": "agua mineral de los andes",
+      "precio": 100,
+      "stock": 10,
+      "categoria": {
+        "id": 5,
+        "nombre": "aguas",
+        "imagen": "https://i.blogs.es/1cbc97/collage_sanwich/1366_2000.jpg"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://http2.mlstatic.com/D_NQ_NP_720324-MLA49590956564_042022-O.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "nombre": "nestle pureza vital",
+      "descripcion": "agua mineral con proteinas",
+      "precio": 200,
+      "stock": 10,
+      "categoria": {
+        "id": 5,
+        "nombre": "aguas",
+        "imagen": "https://i.blogs.es/1cbc97/collage_sanwich/1366_2000.jpg"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene lactosa"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://kioscokoala.com.ar/wp-content/uploads/2020/09/Agua_Nestle_x_1_Litro-324x324.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "nombre": "cofler blockazo",
+      "descripcion": "el mejor chocolate de tu infancia ",
+      "precio": 350,
+      "stock": 10,
+      "categoria": {
+        "id": 7,
+        "nombre": "chocolates",
+        "imagen": "http://cdn.shopify.com/s/files/1/0507/0071/4176/collections/TabletaChocolateconLechex45grs_1200x630.jpg?v=1614616596"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene lactosa"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://forexport.tradicionesargentinas.com/wp-content/uploads/2020/06/cofler-1-kg.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "nombre": "milka oreo",
+      "descripcion": "el chocolate con sabor a galleta",
+      "precio": 450,
+      "stock": 10,
+      "categoria": {
+        "id": 7,
+        "nombre": "chocolates",
+        "imagen": "http://cdn.shopify.com/s/files/1/0507/0071/4176/collections/TabletaChocolateconLechex45grs_1200x630.jpg?v=1614616596"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene lactosa"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://wowco.com.ar/img/producto/mediana/1664-337-chocolate-milka-155-gramos-oreo-blanco-wowco-importados.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "nombre": "rocklets 150g",
+      "descripcion": "rocklets tu mejor golosina",
+      "precio": 450,
+      "stock": 10,
+      "categoria": {
+        "id": 8,
+        "nombre": "golosinas",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_896669-MLA51720786124_092022-O.webp"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://www.arcor.com/ar/uploads/product_images/90101010763.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "nombre": "globo pop",
+      "descripcion": "el chupetin que necesitas comerte",
+      "precio": 150,
+      "stock": 10,
+      "categoria": {
+        "id": 8,
+        "nombre": "golosinas",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_896669-MLA51720786124_092022-O.webp"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        },
+        {
+          "id": 2,
+          "nombre": "contiene lactosa"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-scHHpV7X.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    }
+  ]
+}
