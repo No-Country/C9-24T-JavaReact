@@ -32,6 +32,11 @@ export default function ProductView() {
           </Grid>
         </Grid>
       </Container>
+      <ul>
+        <li>sasas</li>
+        <li>ddasd</li>
+        <li>dasdas</li>
+      </ul>
       <NavBar />
     </>
   );

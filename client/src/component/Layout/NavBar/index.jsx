@@ -25,8 +25,13 @@ export default function NavBar() {
   return (
     <MyAppBar sx={{ width: 360 }}>
       <BottomNavigation
-      // value={value}
-      /* onChange={(event, newValue) => {
+        sx={{
+          justifyContent: "space-around",
+          alignItems: "center",
+          textDecoration: "none",
+        }}
+        // value={value}
+        /* onChange={(event, newValue) => {
           setValue(newValue);
         }} */
       >
