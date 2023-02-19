@@ -1,22 +1,17 @@
 const initialState = {
   product: [],
   orders: [],
+  category: [],
 };
 
 export default function rootReducer(state = initialState, actions) {
   switch (actions.type) {
-    case "GET_PRODUCT": {
+    case "GET_CATEGORY": {
       return {
         ...state,
-        product: actions.payload,
+        category: actions.payload,
         queryParams: actions.query,
       };
     }
-
-    case "POST_PRODUCT":
-      return {
-        ...state,
-        seller: actions.payload,
-      };
   }
 }

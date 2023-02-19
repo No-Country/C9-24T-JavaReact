@@ -1,14 +1,23 @@
-import * as React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import CategoryCard from "../../Common/CategoryCard";
 import TopBar from "../../Layout/TopBar";
 import NavBar from "../../Layout/NavBar";
 import FilterProduct from "../../FilterProduct";
 import { Container, Grid, Stack, Box, Typography } from "@mui/material/";
 import BDcategory from "../../../assets/BDcategory.json";
+import { getCategory } from "../../../redux/action";
 
 import { Link } from "react-router-dom";
 
 export default function CategoryView() {
+  const dispatch = useDispatch();
+  const category = useSelector((state) => state.category);
+
+  useEffect(() => {
+    dispatch(getCategory());
+  }, [dispatch]);
+
   return (
     <Stack sx={{ margin: 0, pading: 0, height: "100vh" }}>
       <TopBar isSearch={true} />
@@ -25,7 +34,7 @@ export default function CategoryView() {
             spacing={0.5}
             sx={{ width: 340, margin: 0, padding: 0 }}
           >
-            {BDcategory.map((dato) => (
+            {category.map((dato) => (
               <Grid
                 key={dato.id}
                 sx={{

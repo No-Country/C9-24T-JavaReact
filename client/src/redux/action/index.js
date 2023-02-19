@@ -1,15 +1,15 @@
 import axios from "axios";
-import BDproducts from "../../assets/BD.json";
 
-const urlAPI = "BDproducts";
+// const urlAPI = process.env.API_REACT_APP;
 
-export function getProduct() {
+export function getCategory() {
   return async function (dispatch) {
     try {
-      const product = await axios.get(`${urlAPI}/product`);
+      const category = await axios.get("http://3.88.177.40:8080/categoria");
+      console.log(category);
       dispatch({
-        type: "GET_PRODUCT",
-        payload: product.data,
+        type: "GET_CATEGORY",
+        payload: category.data,
       });
     } catch (error) {
       console.log(error);
