@@ -1,6 +1,4 @@
 const initialState = {
-  product: [],
-  orders: [],
   category: [],
 };
 
@@ -10,7 +8,6 @@ export default function rootReducer(state = initialState, actions) {
       return {
         ...state,
         category: actions.payload,
-        queryParams: actions.query,
       };
     }
   }

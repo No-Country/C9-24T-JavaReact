@@ -39,7 +39,6 @@ export default function CategoryCard({ title, img }) {
       >
         <Typography variant="body2" sx={{ marginBottom: "0.5em" }}>
           {title}
-          {console.log(img)}
         </Typography>
       </CardContent>
     </Card>

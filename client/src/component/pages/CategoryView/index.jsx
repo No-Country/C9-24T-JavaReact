@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CategoryCard from "../../Common/CategoryCard";
 import TopBar from "../../Layout/TopBar";
@@ -12,7 +12,11 @@ import { Link } from "react-router-dom";
 
 export default function CategoryView() {
   const dispatch = useDispatch();
-  const category = useSelector((state) => state.category);
+  const state = useSelector((state) => state);
+
+  console.log(state);
+
+  // const [nombre, setNombre] = useState(category.nombre);
 
   useEffect(() => {
     dispatch(getCategory());
@@ -34,7 +38,7 @@ export default function CategoryView() {
             spacing={0.5}
             sx={{ width: 340, margin: 0, padding: 0 }}
           >
-            {category.map((dato) => (
+            {state.category.map((dato) => (
               <Grid
                 key={dato.id}
                 sx={{
