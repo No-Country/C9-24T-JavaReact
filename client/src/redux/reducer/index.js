@@ -1,5 +1,6 @@
 const initialState = {
   category: [],
+  product: [],
 };
 
 export default function rootReducer(state = initialState, actions) {
@@ -8,6 +9,13 @@ export default function rootReducer(state = initialState, actions) {
       return {
         ...state,
         category: actions.payload,
+      };
+    }
+
+    case "GET_PRODUCT": {
+      return {
+        ...state,
+        product: actions.payload,
       };
     }
   }

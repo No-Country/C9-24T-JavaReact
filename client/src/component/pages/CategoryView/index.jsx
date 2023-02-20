@@ -38,7 +38,7 @@ export default function CategoryView() {
             spacing={0.5}
             sx={{ width: 340, margin: 0, padding: 0 }}
           >
-            {state.category.map((dato) => (
+            {BDcategory.map((dato) => (
               <Grid
                 key={dato.id}
                 sx={{
