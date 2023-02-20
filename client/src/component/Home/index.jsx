@@ -27,15 +27,16 @@ export default function Home() {
       </Typography>
       <Container>
         <Grid container spacing={2} sx={{ width: 340 }}>
-          {state.product.map((dato) => (
-            <Grid key={dato.id} item xs={6} md={8}>
-              <CardProduct
-                title={dato.nombre}
-                precio={dato.precio}
-                img={dato.imagenes[0].url}
-              />
-            </Grid>
-          ))}
+          {state?.product &&
+            state.product.map((dato) => (
+              <Grid key={dato.id} item xs={6} md={8}>
+                <CardProduct
+                  title={dato.nombre}
+                  precio={dato.precio}
+                  img={dato.imagenes[0].url}
+                />
+              </Grid>
+            ))}
           {/* <Grid item xs={6} md={4}>
             <CardProduct />
           </Grid>

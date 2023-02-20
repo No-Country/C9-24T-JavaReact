@@ -38,31 +38,32 @@ export default function CategoryView() {
             spacing={0.5}
             sx={{ width: 340, margin: 0, padding: 0 }}
           >
-            {BDcategory.map((dato) => (
-              <Grid
-                key={dato.id}
-                sx={{
-                  borderRadius: "15px",
-                  margin: 0,
-                  marginBottom: "0.5em",
-                  padding: 0,
-                  boxShadow: "none",
-                  width: "160px",
-                  height: "120px",
-                }}
-                item
-                xs={6}
-                md={8}
-              >
-                <Link to={`/product`}>
-                  <CategoryCard
-                    isCategory
-                    title={dato.nombre}
-                    img={dato.imagen}
-                  />
-                </Link>
-              </Grid>
-            ))}
+            {state?.category &&
+              state.category.map((dato) => (
+                <Grid
+                  key={dato.id}
+                  sx={{
+                    borderRadius: "15px",
+                    margin: 0,
+                    marginBottom: "0.5em",
+                    padding: 0,
+                    boxShadow: "none",
+                    width: "160px",
+                    height: "120px",
+                  }}
+                  item
+                  xs={6}
+                  md={8}
+                >
+                  <Link to={`/product`}>
+                    <CategoryCard
+                      isCategory
+                      title={dato.nombre}
+                      img={dato.imagen}
+                    />
+                  </Link>
+                </Grid>
+              ))}
             {/* <Grid
               sx={{
                 borderRadius: "15px",
