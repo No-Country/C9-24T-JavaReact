@@ -20,6 +20,7 @@ import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
 import { Link, useParams } from "react-router-dom";
 import { getProductDescription } from "../../../redux/action";
+import { validarImg } from "../../../helpers";
 
 const MyCard = styled(Card)`
   width: 360px;
@@ -30,15 +31,6 @@ const ViewProduct = styled(Container)`
   height: 100vh;
   padding: 0;
 `;
-
-// const DivProduct = styled(Box)`
-// background:black;
-// color:white;
-// border-radius:15px;
-// with:10em;
-// height:2.5em;
-// padding:0 0.5em
-// `;
 
 const DivCarrito = styled(Stack)`
   background: black;
@@ -77,7 +69,7 @@ export default function RecipeReviewCard() {
         <CardMedia
           component="img"
           height="194"
-          image={`${state && state.productDescription.imagenes[0].url}`}
+          image={`${state && validarImg(state.productDescription.imagenes)}`}
           alt="Paella dish"
         />
         <CardContent>
