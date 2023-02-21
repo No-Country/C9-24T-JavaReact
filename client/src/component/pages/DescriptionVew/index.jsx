@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { styled } from "@mui/material/styles";
 import {
   Card,
@@ -17,6 +18,8 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
+import { Link, useParams } from "react-router-dom";
+import { getProductDescription } from "../../../redux/action";
 
 const MyCard = styled(Card)`
   width: 360px;
@@ -47,6 +50,14 @@ const DivCarrito = styled(Stack)`
 `;
 
 export default function RecipeReviewCard() {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  const { id } = useParams();
+
+  useEffect(() => {
+    dispatch(getProductDescription(id));
+  }, [id]);
+
   return (
     <ViewProduct>
       <MyCard>
@@ -66,7 +77,10 @@ export default function RecipeReviewCard() {
         <CardMedia
           component="img"
           height="194"
-          image="https://plus.unsplash.com/premium_photo-1669495128216-5ab3274ec078?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
+          image={`${
+            state?.productDescription &&
+            state.productDescription.imagenes[1].url
+          }`}
           alt="Paella dish"
         />
         <CardContent>
@@ -75,14 +89,14 @@ export default function RecipeReviewCard() {
             color="text.primary"
             sx={{ textAlign: "left" }}
           >
-            This impressive
+            {state.productDescription && state.productDescription.nombre}
           </Typography>
           <Typography
             variant="h6"
             color="text.secondary"
             sx={{ textAlign: "left", weigth: "bold" }}
           >
-            $$$$$
+            $ {state.productDescription && state.productDescription.precio}
           </Typography>
 
           <Typography
@@ -98,9 +112,7 @@ export default function RecipeReviewCard() {
             color="text.secondary"
             sx={{ textAlign: "left" }}
           >
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
+            {state.productDescription && state.productDescription.descripcion}
           </Typography>
         </CardContent>
       </MyCard>
@@ -126,11 +138,17 @@ export default function RecipeReviewCard() {
           </IconButton>
         </DivCarrito>
 
-        <DivCarrito direction="row" justifyContent="center" alignItems="center">
-          <Typography variant="p" component="p" sx={{}}>
-            agregar al carrito
-          </Typography>
-        </DivCarrito>
+        <Link to="/cart">
+          <DivCarrito
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Typography variant="p" component="p" sx={{}}>
+              agregar al carrito
+            </Typography>
+          </DivCarrito>
+        </Link>
 
         {/* <Button variant="contained">
         agregar al carrito
