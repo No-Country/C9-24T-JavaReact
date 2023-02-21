@@ -55,7 +55,7 @@ export default function CategoryView() {
                   xs={6}
                   md={8}
                 >
-                  <Link to={`/product`}>
+                  <Link to={`/products/${dato.id}`}>
                     <CategoryCard
                       isCategory
                       title={dato.nombre}

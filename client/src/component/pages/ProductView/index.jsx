@@ -5,8 +5,10 @@ import TopBar from "../../Layout/TopBar";
 import FilterProduct from "../../FilterProduct";
 import { Container, Grid } from "@mui/material/";
 import BDproduct from "../../../assets/BD.json";
+import { useParams } from "react-router-dom";
 
 export default function ProductView() {
+  const { id } = useParams();
   return (
     <>
       <TopBar isCategory={true} />
