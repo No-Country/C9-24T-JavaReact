@@ -77,10 +77,7 @@ export default function RecipeReviewCard() {
         <CardMedia
           component="img"
           height="194"
-          image={`${
-            state?.productDescription &&
-            state.productDescription.imagenes[1].url
-          }`}
+          image={`${state && state.productDescription.imagenes[0].url}`}
           alt="Paella dish"
         />
         <CardContent>
@@ -89,14 +86,14 @@ export default function RecipeReviewCard() {
             color="text.primary"
             sx={{ textAlign: "left" }}
           >
-            {state.productDescription && state.productDescription.nombre}
+            {state && state.productDescription.nombre}
           </Typography>
           <Typography
             variant="h6"
             color="text.secondary"
             sx={{ textAlign: "left", weigth: "bold" }}
           >
-            $ {state.productDescription && state.productDescription.precio}
+            $ {state && state.productDescription.precio}
           </Typography>
 
           <Typography
@@ -112,7 +109,7 @@ export default function RecipeReviewCard() {
             color="text.secondary"
             sx={{ textAlign: "left" }}
           >
-            {state.productDescription && state.productDescription.descripcion}
+            {state && state.productDescription.descripcion}
           </Typography>
         </CardContent>
       </MyCard>
