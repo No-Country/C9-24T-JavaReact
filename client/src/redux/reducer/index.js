@@ -18,5 +18,7 @@ export default function rootReducer(state = initialState, actions) {
         product: actions.payload,
       };
     }
+    default:
+      state;
   }
 }
