@@ -11,7 +11,7 @@ function RouteController() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/description" element={<Description />} />
-      <Route path="/product" element={<ProductView />} />
+      <Route path="/products/:id" element={<ProductView />} />
       <Route path="/category" element={<CategoryView />} />
       <Route path="/cart" element={<CartView />} />
     </Routes>
