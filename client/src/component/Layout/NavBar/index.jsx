@@ -20,6 +20,8 @@ const MyAppBar = styled(Box)`
 `;
 
 export default function NavBar() {
+
+  function handleBuscar()
   //   const [value, setValue] = React.useState(0);
 
   return (
@@ -39,13 +41,12 @@ export default function NavBar() {
           <BottomNavigationAction label="Home" icon={<HomeIcon />} showLabel />
         </Link>
 
-        <Link to="/category">
-          <BottomNavigationAction
-            showLabel
-            label="Buscar"
-            icon={<SearchIcon />}
-          />
-        </Link>
+        <BottomNavigationAction
+          showLabel
+          label="Buscar"
+          icon={<SearchIcon />}
+          onClick={()=>{handleBuscar}}
+        />
 
         <Link to="/">
           <BottomNavigationAction
