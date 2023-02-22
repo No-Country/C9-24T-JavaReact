@@ -32,7 +32,7 @@ export default function CategoryView() {
         >
           Categorias
         </Typography>
-        <Container sx={{ margin: 0, padding: "0.5em" }}>
+        <Container sx={{ margin: 0, padding: "0.5em", marginBottom: "10em" }}>
           <Grid
             container
             spacing={0.5}

@@ -5,6 +5,7 @@ import Description from "../component/pages/DescriptionVew";
 import ProductView from "../component/pages/ProductView";
 import CategoryView from "../component/pages/CategoryView";
 import CartView from "../component/pages/CartView";
+import LoginView from "../component/pages/LoginView";
 
 function RouteController() {
   return (
@@ -14,6 +15,7 @@ function RouteController() {
       <Route path="/products/:id" element={<ProductView />} />
       <Route path="/category" element={<CategoryView />} />
       <Route path="/cart" element={<CartView />} />
+      <Route path="/login" element={<LoginView />} />
     </Routes>
   );
 }

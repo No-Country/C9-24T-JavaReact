@@ -37,7 +37,10 @@ export default function CategoryCard({ title, img }) {
           boxShadow: "unset",
         }}
       >
-        <Typography variant="body2" sx={{ marginBottom: "0.5em" }}>
+        <Typography
+          variant="subtitle1"
+          sx={{ marginBottom: "0.5em", fontWeight: "bold" }}
+        >
           {title}
         </Typography>
       </CardContent>
