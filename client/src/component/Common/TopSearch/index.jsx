@@ -1,4 +1,7 @@
 import * as React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { togleSearch } from "../../../redux/action";
+
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
@@ -44,14 +47,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function TopSearch() {
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  const handleremoveBuscar = () => {
+    dispatch(togleSearch(false));
+  };
+
   return (
     <>
-      <Search>
+      <Search onBlur={handleremoveBuscar}>
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
-          placeholder="Search…"
+          placeholder="Buscar..."
           inputProps={{ "aria-label": "search" }}
         />
       </Search>

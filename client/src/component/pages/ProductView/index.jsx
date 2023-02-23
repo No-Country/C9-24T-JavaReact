@@ -16,7 +16,7 @@ export default function ProductView() {
 
   useEffect(() => {
     dispatch(getCategoryProducts(id));
-  }, [id]);
+  }, [dispatch, id]);
 
   return (
     <>

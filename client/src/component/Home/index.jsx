@@ -14,8 +14,6 @@ export default function Home() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
-  const [bar, setBar] = useState(false);
-
   console.log(state);
 
   useEffect(() => {
@@ -23,6 +21,7 @@ export default function Home() {
   }, [dispatch]);
   return (
     <>
+      {/* {bar?<TopBar isBuscar="true" />:<TopBar isBuscar="true" />} */}
       <TopBar />
       <Typography
         variant="h6"

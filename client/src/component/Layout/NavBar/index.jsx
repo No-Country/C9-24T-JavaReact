@@ -1,6 +1,9 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 
+import { useSelector, useDispatch } from "react-redux";
+import { togleSearch } from "../../../redux/action";
+
 import { AppBar, Box } from "@mui/material/";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -20,9 +23,14 @@ const MyAppBar = styled(Box)`
 `;
 
 export default function NavBar() {
+  const dispatch = useDispatch();
 
-  function handleBuscar()
-  //   const [value, setValue] = React.useState(0);
+  const handleAddBuscar = () => {
+    dispatch(togleSearch(true));
+  };
+  const handleremoveBuscar = () => {
+    dispatch(togleSearch(false));
+  };
 
   return (
     <MyAppBar sx={{ width: 360 }}>
@@ -38,14 +46,19 @@ export default function NavBar() {
         }} */
       >
         <Link to="/">
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} showLabel />
+          <BottomNavigationAction
+            label="Home"
+            icon={<HomeIcon />}
+            showLabel
+            onClick={handleremoveBuscar}
+          />
         </Link>
 
         <BottomNavigationAction
           showLabel
           label="Buscar"
           icon={<SearchIcon />}
-          onClick={()=>{handleBuscar}}
+          onClick={handleAddBuscar}
         />
 
         <Link to="/">

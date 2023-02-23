@@ -27,6 +27,7 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 
   /* background-color: red; */
 }

@@ -71,3 +71,16 @@ export function getProduct() {
     }
   };
 }
+
+export function togleSearch(search) {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@navbar/togleSearch",
+        payload: search,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

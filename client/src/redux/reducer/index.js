@@ -3,6 +3,7 @@ const initialState = {
   product: [],
   categoryProducts: [],
   productDescription: [],
+  search: false,
 };
 
 export default function rootReducer(state = initialState, actions) {
@@ -32,6 +33,12 @@ export default function rootReducer(state = initialState, actions) {
       return {
         ...state,
         productDescription: actions.payload,
+      };
+    }
+    case "@navbar/togleSearch": {
+      return {
+        ...state,
+        search: actions.payload,
       };
     }
 
