@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { styled } from "@mui/material/styles";
+import { Link, useParams } from "react-router-dom";
+// *************redux***************
+import { getProductDescription } from "../../../redux/action";
+
+// *************Component materials***************
 import {
   Card,
   CardHeader,
@@ -13,13 +18,11 @@ import {
   Button,
   Box,
 } from "@mui/material";
-
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
+// *************Component icons***************
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
-import { Link, useParams } from "react-router-dom";
-import { getProductDescription } from "../../../redux/action";
+// *************Component others***************
+import { TopDescription } from "../../Common/TopDescription";
 import { validarImg } from "../../../helpers";
 
 const MyCard = styled(Card)`
@@ -48,24 +51,12 @@ export default function RecipeReviewCard() {
 
   useEffect(() => {
     dispatch(getProductDescription(id));
-  }, [id]);
+  }, [dispatch, id]);
 
   return (
     <ViewProduct>
       <MyCard>
-        <CardHeader
-          sx={{ position: "absolute", zIndex: 2, width: 330 }}
-          avatar={
-            <IconButton>
-              <ArrowBackIcon sx={{ color: "white" }} />
-            </IconButton>
-          }
-          action={
-            <IconButton>
-              <ShoppingCartSharpIcon sx={{ color: "white" }} />
-            </IconButton>
-          }
-        />
+        <TopDescription />
         <CardMedia
           component="img"
           height="194"
