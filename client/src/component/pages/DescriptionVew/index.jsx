@@ -25,14 +25,14 @@ import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
 import { TopDescription } from "../../Common/TopDescription";
 import { validarImg } from "../../../helpers";
 
-const MyCard = styled(Card)`
-  width: 360px;
-  height: 80vh;
-`;
-
 const ViewProduct = styled(Container)`
   height: 100vh;
   padding: 0;
+`;
+
+const MyCard = styled(Card)`
+  width: 360px;
+  height: 80vh;
 `;
 
 const DivCarrito = styled(Stack)`
@@ -58,8 +58,9 @@ export default function RecipeReviewCard() {
       <MyCard>
         <TopDescription />
         <CardMedia
+          // sx={{ marginTop: "-13px" }}
           component="img"
-          height="194"
+          height="275"
           image={`${state && validarImg(state.productDescription.imagenes)}`}
           alt="Paella dish"
         />
@@ -129,10 +130,6 @@ export default function RecipeReviewCard() {
             </Typography>
           </DivCarrito>
         </Link>
-
-        {/* <Button variant="contained">
-        agregar al carrito
-      </Button> */}
       </Stack>
     </ViewProduct>
   );
