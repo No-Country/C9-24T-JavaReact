@@ -4,6 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Link, useParams } from "react-router-dom";
 // *************redux***************
 import { getProductDescription } from "../../../redux/action";
+import { agregarProductoCarrito } from "../../../redux/action";
 
 // *************Component materials***************
 import {
@@ -18,11 +19,14 @@ import {
   Button,
   Box,
 } from "@mui/material";
+
 // *************Component icons***************
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
+
 // *************Component others***************
 import { TopDescription } from "../../Common/TopDescription";
+
 import { validarImg } from "../../../helpers";
 
 const ViewProduct = styled(Container)`
@@ -45,6 +49,8 @@ const DivCarrito = styled(Stack)`
 `;
 
 export default function RecipeReviewCard() {
+  const [counter, setCounter] = useState(0);
+
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const { id } = useParams();
@@ -53,6 +59,30 @@ export default function RecipeReviewCard() {
     dispatch(getProductDescription(id));
   }, [dispatch, id]);
 
+  const handleReducir = () => {
+    console.log("sdasdas");
+    if (counter <= 0) {
+      setCounter(0);
+    } else {
+      setCounter(counter - 1);
+    }
+  };
+
+  const handleAumenta = () => {
+    if (counter < state.productDescription.stock) {
+      setCounter(counter + 1);
+    } else {
+      setCounter(state.productDescription.stock);
+    }
+  };
+
+  const handleAgregar = () => {
+    dispatch(
+      agregarProductoCarrito({ product: state.productDescription, counter })
+    );
+  };
+
+  console.log(state);
   return (
     <ViewProduct>
       <MyCard>
@@ -110,11 +140,11 @@ export default function RecipeReviewCard() {
           alignItems="center"
           spacing={2}
         >
-          <IconButton>
+          <IconButton onClick={handleReducir}>
             <RemoveCircleRoundedIcon sx={{ color: "white" }} />
           </IconButton>
-          <Typography variant="p">1</Typography>
-          <IconButton>
+          <Typography variant="p">{counter}</Typography>
+          <IconButton onClick={handleAumenta}>
             <AddCircleRoundedIcon sx={{ color: "white" }} />
           </IconButton>
         </DivCarrito>
@@ -124,6 +154,7 @@ export default function RecipeReviewCard() {
             direction="row"
             justifyContent="center"
             alignItems="center"
+            onClick={handleAgregar}
           >
             <Typography variant="p" component="p" sx={{}}>
               agregar al carrito

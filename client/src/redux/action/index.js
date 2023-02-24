@@ -84,3 +84,16 @@ export function togleSearch(search) {
     }
   };
 }
+
+export function agregarProductoCarrito({ product, counter }) {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@carrito/cantidadProducto",
+        payload: { product, counter },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

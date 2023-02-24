@@ -1,4 +1,7 @@
 import * as React from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+
 import CartSelectCard from "../../Common/CartSelectCard";
 import TopBar from "../../Layout/TopBar";
 import { styled } from "@mui/material/styles";
@@ -15,6 +18,9 @@ const DivCarrito = styled(Stack)`
 `;
 
 export default function ProductView() {
+  const state = useSelector((state) => state);
+
+  console.log(state);
   return (
     <>
       <TopBar isCart={true} />

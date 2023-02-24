@@ -4,6 +4,7 @@ const initialState = {
   categoryProducts: [],
   productDescription: [],
   search: false,
+  itemsCarrito: [],
 };
 
 export default function rootReducer(state = initialState, actions) {
@@ -39,6 +40,12 @@ export default function rootReducer(state = initialState, actions) {
       return {
         ...state,
         search: actions.payload,
+      };
+    }
+    case "@carrito/cantidadProducto": {
+      return {
+        ...state,
+        itemsCarrito: [...state.itemsCarrito, actions.payload],
       };
     }
 
