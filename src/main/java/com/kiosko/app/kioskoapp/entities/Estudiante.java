@@ -1,18 +1,27 @@
 package com.kiosko.app.kioskoapp.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-import lombok.Data;
+import lombok.*;
 
-//@Entity
-//@Data
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "estudiantes")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Estudiante {
     @Id
-    @GeneratedValue
-    private Integer estudiante_id;
-    private String nombre;
-    private String apellido;
-    private Long saldo;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_estudiante")
+    private Integer id;
+    @OneToOne
+    @JoinColumn(name = "id_usuario")
+    private AppUser usuario;
+    @ManyToOne
+    @JoinColumn(name = "id_padre")
+    private AppUser padre;
+    private BigDecimal saldo;
 }
