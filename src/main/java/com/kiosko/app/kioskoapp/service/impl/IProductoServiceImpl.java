@@ -15,9 +15,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 
 @Service
+@Transactional
 public class IProductoServiceImpl implements IProductoService {
     private final ProductoRepository productoRepository;
     private final ICategoriaService categoriaService;
