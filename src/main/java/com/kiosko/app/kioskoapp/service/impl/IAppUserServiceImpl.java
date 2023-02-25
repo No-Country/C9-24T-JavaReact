@@ -90,4 +90,10 @@ public class IAppUserServiceImpl implements IAppUserService {
         return userMapper.appUserToUserProfile(
                 userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found")));
     }
+
+    @Override
+    public UserProfile getProfileByDni(String dni) throws ResourceNotFoundException {
+        return userMapper.appUserToUserProfile(
+                userRepository.findByDni(dni).orElseThrow(() -> new ResourceNotFoundException("Usuario con dni " + dni + "no encontrado")));
+    }
 }

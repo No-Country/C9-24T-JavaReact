@@ -17,4 +17,5 @@ public interface IAppUserService extends UserDetailsService {
 
     Optional<AppUser> findByEmail(String email);
     UserProfile getProfileByEmail(String email);
+    UserProfile getProfileByDni(String dni) throws ResourceNotFoundException;
 }
