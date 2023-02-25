@@ -60,7 +60,6 @@ export default function RecipeReviewCard() {
   }, [dispatch, id]);
 
   const handleReducir = () => {
-    console.log("sdasdas");
     if (counter <= 0) {
       setCounter(0);
     } else {

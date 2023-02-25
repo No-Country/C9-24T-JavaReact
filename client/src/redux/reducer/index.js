@@ -1,3 +1,5 @@
+// REDUCERS: son funciones puras(solo se debe VER,OBTENER y DEVOLVER el estado , sin mutarlo ) que toman como parametro el estado anteriror y la acction y regresa un nuevo estado.
+
 const initialState = {
   category: [],
   product: [],

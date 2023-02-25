@@ -1,4 +1,5 @@
 import axios from "axios";
+// ACTION CREATORS : son funciones que devuelven una acción!
 
 // const urlAPI = process.env.REACT_APP_API;
 
