@@ -22,6 +22,11 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
+    @ExceptionHandler({ForbidenException.class})
+    public ResponseEntity<String> forbidenException(ForbidenException ex) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(ex.getMessage());
+    }
+
     @ExceptionHandler({HttpMessageNotReadableException.class})
     public ResponseEntity<String> httpMessageNotReadableException(HttpMessageNotReadableException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
