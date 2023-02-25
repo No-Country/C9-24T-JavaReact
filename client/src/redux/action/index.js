@@ -98,3 +98,16 @@ export function agregarProductoCarrito({ product, counter }) {
     }
   };
 }
+
+export function getProductoCarrito() {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@carrito/productos",
+        payload: { product, counter },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

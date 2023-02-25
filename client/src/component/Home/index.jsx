@@ -13,8 +13,10 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
+  // const carrito = useSelector((state) => state && state.itemsCarrito);
 
   console.log(state);
+  // console.log(carrito && carrito);
 
   useEffect(() => {
     dispatch(getCategory());

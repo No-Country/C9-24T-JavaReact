@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { useSelector, useDispatch } from "react-redux";
 
 import CartSelectCard from "../../Common/CartSelectCard";
@@ -7,6 +6,7 @@ import TopBar from "../../Layout/TopBar";
 import { styled } from "@mui/material/styles";
 
 import { Container, Typography, Stack } from "@mui/material/";
+import NavBar from "../../Layout/NavBar";
 
 const DivCarrito = styled(Stack)`
   background: black;
@@ -17,7 +17,7 @@ const DivCarrito = styled(Stack)`
   padding: 0 0.7em;
 `;
 
-export default function ProductView() {
+export default function CartView() {
   const state = useSelector((state) => state);
 
   console.log(state);
@@ -26,10 +26,14 @@ export default function ProductView() {
       <TopBar isCart={true} />
 
       <Container sx={{ margin: 0, padding: 0 }}>
-        <CartSelectCard />
-        <CartSelectCard />
-        <CartSelectCard />
-        <CartSelectCard />
+        {state.itemsCarrito.map((dato) => (
+          <CartSelectCard
+            img={dato.product.imagenes[0].url}
+            nombre={dato.product.nombre}
+            precio={dato.product.precio}
+            cant={dato.counter}
+          />
+        ))}
       </Container>
       <Stack direction="row">
         <Typography
@@ -72,6 +76,7 @@ export default function ProductView() {
           </Typography>
         </DivCarrito>
       </Stack>
+      <NavBar />
     </>
   );
 }
