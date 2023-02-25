@@ -39,7 +39,8 @@ public class SecurityConfig {
     private static final String[] FREE_GET_REQUEST = {
             "/caracteristica/**",
             "/categoria/**",
-            "/producto/**"
+            "/producto/**",
+            "/usuario/**",
     };
 
 
