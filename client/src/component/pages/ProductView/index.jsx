@@ -9,7 +9,9 @@ import { Container, Grid } from "@mui/material/";
 import { Link, useParams } from "react-router-dom";
 import { getCategoryProducts } from "../../../redux/action";
 
-export default function ProductView() {
+import { validarImg } from "../../../helpers";
+
+export default function CartView() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const { id } = useParams();
@@ -17,7 +19,7 @@ export default function ProductView() {
   useEffect(() => {
     dispatch(getCategoryProducts(id));
   }, [dispatch, id]);
-
+  console.log(state);
   return (
     <>
       <TopBar isCategory={true} />

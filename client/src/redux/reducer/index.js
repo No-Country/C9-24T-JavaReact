@@ -1,10 +1,12 @@
+// REDUCERS: son funciones puras(solo se debe VER,OBTENER y DEVOLVER el estado , sin mutarlo ) que toman como parametro el estado anteriror y la acction y regresa un nuevo estado.
+
 const initialState = {
   category: [],
   product: [],
   categoryProducts: [],
   productDescription: [],
   search: false,
-  cart: [],
+  itemsCarrito: [],
 };
 
 export default function rootReducer(state = initialState, actions) {
@@ -40,6 +42,12 @@ export default function rootReducer(state = initialState, actions) {
       return {
         ...state,
         search: actions.payload,
+      };
+    }
+    case "@carrito/cantidadProducto": {
+      return {
+        ...state,
+        itemsCarrito: [...state.itemsCarrito, actions.payload],
       };
     }
 

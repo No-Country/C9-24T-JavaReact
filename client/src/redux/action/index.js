@@ -1,4 +1,5 @@
 import axios from "axios";
+// ACTION CREATORS : son funciones que devuelven una acción!
 
 // const urlAPI = process.env.REACT_APP_API;
 
@@ -85,18 +86,28 @@ export function togleSearch(search) {
   };
 }
 
-export function addCart(payload, verificator) {
-  if (verificator) {
-    console.log("MODIFY_CART");
-    return {
-      type: "MODIFY_CART",
-      payload,
-    };
-  } else {
-    console.log("ADD_CART");
-    return {
-      type: "ADD_CART",
-      payload,
-    };
-  }
+export function agregarProductoCarrito({ product, counter }) {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@carrito/cantidadProducto",
+        payload: { product, counter },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function getProductoCarrito() {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@carrito/productos",
+        payload: { product, counter },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }

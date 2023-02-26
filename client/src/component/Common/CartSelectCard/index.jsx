@@ -10,15 +10,17 @@ import Typography from "@mui/material/Typography";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
 
-export default function CartSelectCard() {
+export default function CartSelectCard({ img, nombre, precio, cant }) {
   const theme = useTheme();
+
+  console.log(precio);
 
   return (
     <Card sx={{ display: "flex", borderRadius: "15px", margin: "1em" }}>
       <CardMedia
         component="img"
         sx={{ width: 100, height: 100 }}
-        image="https://plus.unsplash.com/premium_photo-1669495128216-5ab3274ec078?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
+        image={`${img}`}
         alt="Live from space album cover"
       />
       <Box sx={{ display: "flex", flexDirection: "column", width: 220 }}>
@@ -28,7 +30,7 @@ export default function CartSelectCard() {
             variant="caption"
             sx={{ textAlign: "left", fontWeight: "bold" }}
           >
-            Nombre del producto
+            {nombre}
           </Typography>
           <Typography
             variant="subtitle1"
@@ -36,7 +38,7 @@ export default function CartSelectCard() {
             component="div"
             sx={{ textAlign: "left" }}
           >
-            $$$$$$
+            ${precio}
           </Typography>
         </CardContent>
         <Box
@@ -51,7 +53,7 @@ export default function CartSelectCard() {
           <IconButton aria-label="remove">
             <RemoveCircleRoundedIcon />
           </IconButton>
-          <Typography variant="p">1</Typography>
+          <Typography variant="p">{cant}</Typography>
           <IconButton aria-label="add">
             <AddCircleRoundedIcon />
           </IconButton>

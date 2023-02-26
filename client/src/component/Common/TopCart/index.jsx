@@ -1,11 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export default function TopCart() {
+  const navigate = useNavigate();
+  function handleBack() {
+    navigate(-1);
+  }
   return (
     <>
-      <IconButton>
+      <IconButton onClick={handleBack}>
         <ArrowBackIcon sx={{ color: "white" }} />
       </IconButton>
       <Typography
