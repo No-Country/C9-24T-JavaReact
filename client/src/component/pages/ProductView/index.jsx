@@ -19,7 +19,7 @@ export default function CartView() {
   useEffect(() => {
     dispatch(getCategoryProducts(id));
   }, [dispatch, id]);
-  console.log(state);
+
   return (
     <>
       <TopBar isCategory={true} />

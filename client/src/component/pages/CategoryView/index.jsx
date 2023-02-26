@@ -14,8 +14,6 @@ export default function CategoryView() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
-  console.log(state);
-
   // const [nombre, setNombre] = useState(category.nombre);
 
   useEffect(() => {

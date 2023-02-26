@@ -60,7 +60,23 @@ export default function rootReducer(state = initialState, actions) {
       });
       return { ...state, itemsCarrito: updatedElements };
 
+    case "@carrito/counterModify": {
+      const indice = state.itemsCarrito.findIndex(
+        (elemento) => elemento.idProduct === actions.payload.idProduct
+      );
+      return {
+        ...state,
+        itemsCarrito: [...state.itemsCarrito.slice(0, indice), actions.payload],
+      };
+      /* const cambiado = [
+        ...copia.slice(0, indice),
+        5,
+        ...copia.slice(indice + 1),
+      ]; */
+    }
+
     default:
       state;
   }
 }
+// cart: [state.cart.filter(c => c.postId !== actions.payload.postId), actions.payload]

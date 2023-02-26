@@ -19,10 +19,8 @@ export function getCategory() {
 }
 
 export function getCategoryProducts(id) {
-  console.log(id, "ACTION");
   return async function (dispatch) {
     try {
-      console.log(id, "ACTION try");
       const product = await axios.get(
         `http://3.88.177.40:8080/categoria/${id}/productos`
       );
@@ -105,6 +103,19 @@ export function updateProductoCarrito(id, data) {
       dispatch({
         type: "@carrito/actualizarCounterProducto",
         payload: { id, data },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function conterModify({ idProduct, counter }) {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@carrito/counterModify",
+        payload: { idProduct, counter },
       });
     } catch (error) {
       console.log(error);
