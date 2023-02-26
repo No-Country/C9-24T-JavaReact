@@ -4,6 +4,7 @@ const initialState = {
   categoryProducts: [],
   productDescription: [],
   search: false,
+  cart: [],
 };
 
 export default function rootReducer(state = initialState, actions) {
@@ -41,6 +42,21 @@ export default function rootReducer(state = initialState, actions) {
         search: actions.payload,
       };
     }
+
+    case "ADD_CART":
+      return {
+        ...state,
+        cart: [...state.cart, actions.payload],
+      };
+
+    case "MODIFY_CART":
+      return {
+        ...state,
+        cart: [
+          state.cart.filter((c) => c.postId !== actions.payload.postId),
+          actions.payload,
+        ],
+      };
 
     default:
       state;

@@ -53,6 +53,17 @@ export default function RecipeReviewCard() {
     dispatch(getProductDescription(id));
   }, [dispatch, id]);
 
+  const handleCart = (input) => {
+    if (input.amount > 0) {
+      if (cart.find((c) => c?.postId === input?.postId)) {
+        console.log("hola");
+        dispatch(addCart(input, true));
+      } else {
+        dispatch(addCart(input, false));
+      }
+    }
+  };
+
   return (
     <ViewProduct>
       <MyCard>
@@ -124,6 +135,15 @@ export default function RecipeReviewCard() {
             direction="row"
             justifyContent="center"
             alignItems="center"
+            onClick={() =>
+              handleCart({
+                amount: orders.amount,
+                image: state.productDescription.imagen,
+                price: state.productDescription.precio,
+                name: state.productDescription.nombre,
+                productId: validarImg(state.productDescription.imagenes),
+              })
+            }
           >
             <Typography variant="p" component="p" sx={{}}>
               agregar al carrito

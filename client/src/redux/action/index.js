@@ -84,3 +84,19 @@ export function togleSearch(search) {
     }
   };
 }
+
+export function addCart(payload, verificator) {
+  if (verificator) {
+    console.log("MODIFY_CART");
+    return {
+      type: "MODIFY_CART",
+      payload,
+    };
+  } else {
+    console.log("ADD_CART");
+    return {
+      type: "ADD_CART",
+      payload,
+    };
+  }
+}
