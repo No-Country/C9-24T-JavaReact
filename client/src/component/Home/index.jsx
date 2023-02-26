@@ -15,7 +15,6 @@ export default function Home() {
   const state = useSelector((state) => state);
   // const carrito = useSelector((state) => state && state.itemsCarrito);
 
-  console.log(state);
   // console.log(carrito && carrito);
 
   useEffect(() => {

@@ -19,10 +19,8 @@ export function getCategory() {
 }
 
 export function getCategoryProducts(id) {
-  console.log(id, "ACTION");
   return async function (dispatch) {
     try {
-      console.log(id, "ACTION try");
       const product = await axios.get(
         `http://3.88.177.40:8080/categoria/${id}/productos`
       );
@@ -86,12 +84,12 @@ export function togleSearch(search) {
   };
 }
 
-export function agregarProductoCarrito({ product, counter }) {
+export function agregarProductoCarrito({ idProduct, counter }) {
   return async function (dispatch) {
     try {
       dispatch({
         type: "@carrito/cantidadProducto",
-        payload: { product, counter },
+        payload: { idProduct, counter },
       });
     } catch (error) {
       console.log(error);
@@ -105,6 +103,19 @@ export function getProductoCarrito() {
       dispatch({
         type: "@carrito/productos",
         payload: { product, counter },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function conterModify({ idProduct, counter }) {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@carrito/counterModify",
+        payload: { idProduct, counter },
       });
     } catch (error) {
       console.log(error);

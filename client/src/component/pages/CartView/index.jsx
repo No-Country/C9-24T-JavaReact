@@ -21,18 +21,14 @@ export default function CartView() {
   const state = useSelector((state) => state);
 
   console.log(state);
+
   return (
     <>
       <TopBar isCart={true} />
 
       <Container sx={{ margin: 0, padding: 0 }}>
         {state.itemsCarrito.map((dato) => (
-          <CartSelectCard
-            img={dato.product.imagenes[0].url}
-            nombre={dato.product.nombre}
-            precio={dato.product.precio}
-            cant={dato.counter}
-          />
+          <CartSelectCard key={dato.idProduct} idProduct={dato.idProduct} />
         ))}
       </Container>
       <Stack direction="row">

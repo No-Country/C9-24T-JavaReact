@@ -77,11 +77,13 @@ export default function RecipeReviewCard() {
 
   const handleAgregar = () => {
     dispatch(
-      agregarProductoCarrito({ product: state.productDescription, counter })
+      agregarProductoCarrito({
+        idProduct: state.productDescription.id,
+        counter,
+      })
     );
   };
 
-  console.log(state);
   return (
     <ViewProduct>
       <MyCard>
