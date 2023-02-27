@@ -40,6 +40,22 @@ public class UsuarioController {
         return new ResponseEntity<>(userService.getProfileByEmail(getUserEmail()), HttpStatus.OK);
     }
 
+    @GetMapping("/padre")
+    public ResponseEntity<UserProfile> getPadreProfile() throws BadRequestException {
+        UserProfile profile = userService.getProfileByEmail(getUserEmail());
+        if (profile.getRol() != Rol.PADRE) throw new BadRequestException("El usuario no es padre");
+        return new ResponseEntity<>(userService.getProfileByEmail(getUserEmail()), HttpStatus.OK);
+    }
+
+    @GetMapping("/estudiante")
+    public ResponseEntity<EstudianteDTO> getEstudiante() throws BadRequestException, ResourceNotFoundException {
+        AppUser user = getUser();
+        if(!Objects.equals(user.getAppUserRole().getNombre(), Rol.ESTUDIANTE.toString())) throw new BadRequestException("El usuario logeado no es estudiante");
+        EstudianteDTO estudiante = estudianteService.getEstudianteByDni(user.getDni());
+        return new ResponseEntity<>(estudiante, HttpStatus.OK);
+    }
+
+
 
     @PostMapping("/padre")
     public ResponseEntity<UserProfile> registerPadre(@RequestBody UserRegistration userRegistration) throws ResourceAlreadyExistsException, ResourceNotFoundException {
@@ -47,16 +63,18 @@ public class UsuarioController {
     }
 
     @GetMapping("/padre/{dni}")
-    public ResponseEntity<UserProfile> getPadreByDni(@PathVariable("dni") String dni) throws ResourceNotFoundException, ForbidenException {
+    public ResponseEntity<UserProfile> getPadreByDni(@PathVariable("dni") String dni) throws ResourceNotFoundException, ForbidenException, BadRequestException {
         AppUser user = getUser();
-        if(!Objects.equals(user.getDni(), dni) || !Objects.equals(user.getAppUserRole().getNombre(), Rol.ADMIN.toString())) throw new ForbidenException("");
+        if(!Objects.equals(user.getDni(), dni) && !Objects.equals(user.getAppUserRole().getNombre(), Rol.ADMIN.toString())) throw new ForbidenException("Solamente un administrador o el usuario dueño de este recurso pueden acceder a él");
+        UserProfile profile = userService.getProfileByDni(dni);
+        if (profile.getRol() != Rol.PADRE) throw new BadRequestException("El perfil solicitado no es un padre");
         return new ResponseEntity<>(userService.getProfileByDni(dni), HttpStatus.OK);
     }
 
     @GetMapping("/padre/{dni}/estudiante")
     public ResponseEntity<List<EstudianteDTO>> getAllEstudiantesByPadre(@PathVariable("dni") String dni) throws ForbidenException {
         AppUser user = getUser();
-        if(!Objects.equals(user.getDni(), dni) || !Objects.equals(user.getAppUserRole().getNombre(), Rol.ADMIN.toString())) throw new ForbidenException("");
+        if(!Objects.equals(user.getDni(), dni) && !Objects.equals(user.getAppUserRole().getNombre(), Rol.ADMIN.toString())) throw new ForbidenException("");
         return new ResponseEntity<>(estudianteService.getAllEstudiantesByDniPadre(dni), HttpStatus.OK);
     }
 
@@ -66,11 +84,12 @@ public class UsuarioController {
     }
 
     @GetMapping("/estudiante/{dni}")
-    public ResponseEntity<EstudianteDTO> getEstudianteByDni(@PathVariable("dni") String dni) throws ResourceNotFoundException, ForbidenException {
+    public ResponseEntity<EstudianteDTO> getEstudianteByDni(@PathVariable("dni") String dni) throws ResourceNotFoundException, ForbidenException, BadRequestException {
         AppUser user = getUser();
         EstudianteDTO estudianteDTO = estudianteService.getEstudianteByDni(dni);
-        if(!Objects.equals(user.getDni(), dni) || !Objects.equals(user.getAppUserRole().getNombre(), Rol.ADMIN.toString())) throw new ForbidenException("");
-        return new ResponseEntity<>(estudianteService.getEstudianteByDni(dni), HttpStatus.OK);
+        if(!Objects.equals(user.getDni(), dni) && !Objects.equals(user.getAppUserRole().getNombre(), Rol.ADMIN.toString())) throw new ForbidenException("Solamente un administrador o el usuario dueño de este recurso pueden acceder a él");
+        if(estudianteDTO.getUsuario().getRol() != Rol.ESTUDIANTE) throw new BadRequestException("El usuario no es un estudiante");
+        return new ResponseEntity<>(estudianteDTO, HttpStatus.OK);
     }
 
 
