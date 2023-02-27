@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
