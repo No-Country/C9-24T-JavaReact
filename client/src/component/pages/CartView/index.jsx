@@ -20,6 +20,8 @@ const DivCarrito = styled(Stack)`
 export default function CartView() {
   const state = useSelector((state) => state);
 
+  //  hacer una funcion para calcular el total precio de los productos.
+
   console.log(state.itemsCarrito, "cart");
   return (
     <>
@@ -69,7 +71,7 @@ export default function CartView() {
         justifyContent="center"
         alignItems="center"
         spacing={2}
-        sx={{ padding: "1em", height: "40px" }}
+        sx={{ padding: "2em 0 5em 0", height: "40px" }}
       >
         <DivCarrito direction="row" justifyContent="center" alignItems="center">
           <Typography variant="p" component="p" sx={{}}>

@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 // *************redux***************
 import { getProductDescription } from "../../../redux/action";
 import { agregarProductoCarrito } from "../../../redux/action";
+import { updateProductoCarrito } from "../../../redux/action";
 
 // *************Component materials***************
 import {
@@ -76,15 +77,23 @@ export default function RecipeReviewCard() {
   };
 
   const handleAgregar = () => {
-    dispatch(
-      agregarProductoCarrito({
-        idProduct: state.productDescription.id,
-        counter,
-      })
+    const esta = state.itemsCarrito.some(
+      (item) => item.idProduct == state.productDescription.id
     );
+
+    if (!esta) {
+      dispatch(
+        agregarProductoCarrito({
+          idProduct: state.productDescription.id,
+          counter,
+        })
+      );
+    } else {
+      dispatch(updateProductoCarrito(state.productDescription.id, { counter }));
+      console.log(state.itemsCarrito, "actu");
+    }
   };
 
-  console.log(state.itemsCarrito, "desc");
   return (
     <ViewProduct>
       <MyCard>
