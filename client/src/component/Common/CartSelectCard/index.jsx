@@ -10,17 +10,24 @@ import Typography from "@mui/material/Typography";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
 
-export default function CartSelectCard({ img, nombre, precio, cant }) {
-  const theme = useTheme();
+// *****************HELPERS****************
+import { validarImg } from "../../../helpers";
 
-  console.log(precio);
+// *****************HOOKS****************
+import { useCounterProduct } from "../../../hooks/useCounterProduct";
+
+export default function CartSelectCard({ idProducto }) {
+  const { counter, producto, incrementarCounter, disminuirCounter } =
+    useCounterProduct(idProducto);
+
+  // console.log(producto);
 
   return (
     <Card sx={{ display: "flex", borderRadius: "15px", margin: "1em" }}>
       <CardMedia
         component="img"
         sx={{ width: 100, height: 100 }}
-        image={`${img}`}
+        image={`${validarImg(producto.imagenes)}`}
         alt="Live from space album cover"
       />
       <Box sx={{ display: "flex", flexDirection: "column", width: 220 }}>
@@ -30,7 +37,7 @@ export default function CartSelectCard({ img, nombre, precio, cant }) {
             variant="caption"
             sx={{ textAlign: "left", fontWeight: "bold" }}
           >
-            {nombre}
+            {producto.nombre}
           </Typography>
           <Typography
             variant="subtitle1"
@@ -38,7 +45,7 @@ export default function CartSelectCard({ img, nombre, precio, cant }) {
             component="div"
             sx={{ textAlign: "left" }}
           >
-            ${precio}
+            ${producto.precio}
           </Typography>
         </CardContent>
         <Box
@@ -50,11 +57,11 @@ export default function CartSelectCard({ img, nombre, precio, cant }) {
             pb: 1, */
           }}
         >
-          <IconButton aria-label="remove">
+          <IconButton onClick={disminuirCounter} aria-label="remove">
             <RemoveCircleRoundedIcon />
           </IconButton>
-          <Typography variant="p">{cant}</Typography>
-          <IconButton aria-label="add">
+          <Typography variant="p">{counter}</Typography>
+          <IconButton onClick={incrementarCounter} aria-label="add">
             <AddCircleRoundedIcon />
           </IconButton>
         </Box>

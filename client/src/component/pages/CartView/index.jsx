@@ -20,7 +20,7 @@ const DivCarrito = styled(Stack)`
 export default function CartView() {
   const state = useSelector((state) => state);
 
-  console.log(state);
+  console.log(state.itemsCarrito, "cart");
   return (
     <>
       <TopBar isCart={true} />
@@ -28,10 +28,11 @@ export default function CartView() {
       <Container sx={{ margin: 0, padding: 0 }}>
         {state.itemsCarrito.map((dato) => (
           <CartSelectCard
-            img={dato.product.imagenes[0].url}
-            nombre={dato.product.nombre}
-            precio={dato.product.precio}
-            cant={dato.counter}
+            key={dato.idProduct}
+            idProducto={dato.idProduct}
+            // img={dato.product.imagenes[0].url}
+            // nombre={dato.product.nombre}
+            // precio={dato.product.precio}
           />
         ))}
       </Container>

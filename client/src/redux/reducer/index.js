@@ -57,14 +57,14 @@ export default function rootReducer(state = initialState, actions) {
         cart: [...state.cart, actions.payload],
       };
 
-    case "MODIFY_CART":
-      return {
-        ...state,
-        cart: [
-          state.cart.filter((c) => c.postId !== actions.payload.postId),
-          actions.payload,
-        ],
-      };
+    case "@carrito/actualizarCounterProducto":
+      const updatedElements = state.itemsCarrito.map((element) => {
+        if (element.idProduct === actions.payload.id) {
+          return { ...element, ...actions.payload.data };
+        }
+        return element;
+      });
+      return { ...state, itemsCarrito: updatedElements };
 
     default:
       state;
