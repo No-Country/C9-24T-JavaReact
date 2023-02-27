@@ -6,10 +6,13 @@ import com.kiosko.app.kioskoapp.dto.UserRegistration;
 import com.kiosko.app.kioskoapp.dto.mapper.RolMapper;
 import com.kiosko.app.kioskoapp.dto.mapper.UserMapper;
 import com.kiosko.app.kioskoapp.entities.AppUser;
+import com.kiosko.app.kioskoapp.entities.Estudiante;
+import com.kiosko.app.kioskoapp.exception.BadRequestException;
 import com.kiosko.app.kioskoapp.exception.ResourceAlreadyExistsException;
 import com.kiosko.app.kioskoapp.exception.ResourceNotFoundException;
 import com.kiosko.app.kioskoapp.repository.AppUserRepository;
 import com.kiosko.app.kioskoapp.repository.AppUserRoleRepository;
+import com.kiosko.app.kioskoapp.repository.EstudianteRepository;
 import com.kiosko.app.kioskoapp.service.IAppUserService;
 import com.kiosko.app.kioskoapp.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +30,16 @@ import java.util.Optional;
 public class IAppUserServiceImpl implements IAppUserService {
     private final AppUserRepository userRepository;
     private final AppUserRoleRepository userRoleRepository;
+    private final EstudianteRepository estudianteRepository;
     private final UserMapper userMapper;
     private final RolMapper rolMapper;
     private final BCryptPasswordEncoder encoder;
 
     @Autowired
-    public IAppUserServiceImpl(AppUserRepository userRepository, AppUserRoleRepository userRoleRepository, UserMapper userMapper, RolMapper rolMapper, BCryptPasswordEncoder encoder) {
+    public IAppUserServiceImpl(AppUserRepository userRepository, AppUserRoleRepository userRoleRepository, EstudianteRepository estudianteRepository, UserMapper userMapper, RolMapper rolMapper, BCryptPasswordEncoder encoder) {
         this.userRepository = userRepository;
         this.userRoleRepository = userRoleRepository;
+        this.estudianteRepository = estudianteRepository;
         this.userMapper = userMapper;
         this.rolMapper = rolMapper;
         this.encoder = encoder;
@@ -95,5 +100,12 @@ public class IAppUserServiceImpl implements IAppUserService {
     public UserProfile getProfileByDni(String dni) throws ResourceNotFoundException {
         return userMapper.appUserToUserProfile(
                 userRepository.findByDni(dni).orElseThrow(() -> new ResourceNotFoundException("Usuario con dni " + dni + "no encontrado")));
+    }
+
+    @Override
+    public UserProfile getPadreByDniHijo(String dniHijo) throws ResourceNotFoundException, BadRequestException {
+        Estudiante estudiante = estudianteRepository.findByUsuarioDni(dniHijo).orElseThrow(() -> new ResourceNotFoundException("Estudiante no encontrado"));
+        return userMapper.appUserToUserProfile(estudiante.getPadre());
+
     }
 }
