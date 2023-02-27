@@ -33,12 +33,13 @@ export default function NavBar() {
   };
 
   return (
-    <MyAppBar sx={{ width: 360 }}>
+    <MyAppBar sx={{ width: "360px" }}>
       <BottomNavigation
         sx={{
           justifyContent: "space-around",
           alignItems: "center",
           textDecoration: "none",
+          backgroundColor: "#673AB7",
         }}
         // value={value}
         /* onChange={(event, newValue) => {

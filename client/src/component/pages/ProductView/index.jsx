@@ -8,6 +8,7 @@ import FilterProduct from "../../FilterProduct";
 import { Container, Grid } from "@mui/material/";
 import { Link, useParams } from "react-router-dom";
 import { getCategoryProducts } from "../../../redux/action";
+import { capitalizeFirstLetter } from "../../../helpers";
 
 import { validarImg } from "../../../helpers";
 
@@ -31,7 +32,7 @@ export default function CartView() {
               <Grid key={dato.id} item xs={6} md={8}>
                 <Link to={`/description/${dato.id}`}>
                   <CardProduct
-                    title={dato.nombre}
+                    title={capitalizeFirstLetter(dato.nombre)}
                     precio={dato.precio}
                     img={dato.imagenes[0].url}
                   />

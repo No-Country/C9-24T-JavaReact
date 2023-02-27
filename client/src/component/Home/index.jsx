@@ -9,6 +9,7 @@ import { Container, Grid, Typography } from "@mui/material/";
 import { getCategory } from "../../redux/action";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
+import { capitalizeFirstLetter } from "../../helpers";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -47,7 +48,12 @@ export default function Home() {
       <Box>
         <Typography
           variant="h6"
-          sx={{ textAlign: "left", padding: "0.5em 0 0 0.5em" }}
+          sx={{
+            textAlign: "left",
+            padding: "0.5em 0 0 0.5em",
+            fontSize: "14px",
+            fontFamily: "roboto",
+          }}
         >
           Categorias
         </Typography>
@@ -77,7 +83,7 @@ export default function Home() {
                   <Link to={`/products/${dato.id}`}>
                     <CategoryCard
                       isCategory
-                      title={dato.nombre}
+                      title={capitalizeFirstLetter(dato.nombre)}
                       img={dato.imagen}
                     />
                   </Link>

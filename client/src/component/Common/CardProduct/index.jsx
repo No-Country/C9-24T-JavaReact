@@ -23,16 +23,16 @@ export default function CardProduct({ title, precio, img }) {
           <Typography
             variant="caption"
             component="div"
-            sx={{ textAlign: "left", fontWeight: "bold" }}
+            sx={{ textAlign: "left" }}
           >
             {title}
           </Typography>
           <Typography
             variant="body2"
-            color="text.secondary"
-            sx={{ textAlign: "left" }}
+            color="black"
+            sx={{ textAlign: "left", fontWeight: "bold", fontSize: "12px" }}
           >
-            {`$ ${precio}`}
+            {`$${precio}`}
           </Typography>
         </CardContent>
       </CardActionArea>

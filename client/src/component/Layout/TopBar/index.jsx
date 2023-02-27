@@ -6,13 +6,15 @@ import TopCategory from "../../Common/TopCategory";
 import TopSearch from "../../Common/TopSearch";
 import TopCart from "../../Common/TopCart";
 
+import kioscoApp from "../../../assets/imagenes/kioscoApp_white.png";
+
 export default function TopBar({ isSearch, isCategory, isTitle, isCart }) {
   const state = useSelector((state) => state);
 
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#777777", width: "360px" }}
+      sx={{ backgroundColor: "#673AB7", width: "360px" }}
     >
       <Toolbar>
         {/* {console.log(state && state.search)} */}
@@ -25,7 +27,7 @@ export default function TopBar({ isSearch, isCategory, isTitle, isCart }) {
         ) : isCategory ? (
           <TopCategory />
         ) : (
-          <h4 style={{ margin: 0 }}>nombre de la app</h4>
+          <img src={kioscoApp} alt="" />
         )}
       </Toolbar>
     </AppBar>

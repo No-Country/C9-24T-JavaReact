@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { styled } from "@mui/material/styles";
 import { Link, useParams } from "react-router-dom";
+import { capitalizeFirstLetter } from "../../../helpers";
 // *************redux***************
 import { getProductDescription } from "../../../redux/action";
 import { agregarProductoCarrito } from "../../../redux/action";
@@ -40,7 +41,7 @@ const MyCard = styled(Card)`
 `;
 
 const DivCarrito = styled(Stack)`
-  background: black;
+  background: #00838f;
   color: white;
   border-radius: 15px;
   width: 8em;
@@ -99,14 +100,16 @@ export default function RecipeReviewCard() {
           <Typography
             variant="h5"
             color="text.primary"
-            sx={{ textAlign: "left" }}
+            sx={{ textAlign: "left", fontWeight: "bold" }}
           >
-            {state && state.productDescription.nombre}
+            {state && state.productDescription.nombre
+              ? capitalizeFirstLetter(state.productDescription.nombre)
+              : state.productDescription.nombre}
           </Typography>
           <Typography
             variant="h6"
             color="text.secondary"
-            sx={{ textAlign: "left", weigth: "bold" }}
+            sx={{ textAlign: "left", weigth: "bold", color: "black" }}
           >
             $ {state && state.productDescription.precio}
           </Typography>
@@ -114,7 +117,7 @@ export default function RecipeReviewCard() {
           <Typography
             variant="h6"
             color="text.secondary"
-            sx={{ textAlign: "left" }}
+            sx={{ textAlign: "left", color: "black" }}
           >
             Información adicional
           </Typography>
@@ -133,7 +136,8 @@ export default function RecipeReviewCard() {
         justifyContent="center"
         alignItems="center"
         spacing={2}
-        sx={{ padding: "1em" }}
+        sx={{ padding: "8px" }}
+        backgroundColor="#673AB7"
       >
         <DivCarrito
           direction="row"
@@ -157,8 +161,12 @@ export default function RecipeReviewCard() {
             alignItems="center"
             onClick={handleAgregar}
           >
-            <Typography variant="p" component="p" sx={{}}>
-              agregar al carrito
+            <Typography
+              variant="p"
+              component="p"
+              sx={{ fontFamily: "roboto", textDecoration: "none" }}
+            >
+              AGREGAR
             </Typography>
           </DivCarrito>
         </Link>
