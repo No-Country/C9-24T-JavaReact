@@ -41,6 +41,7 @@ public class SecurityConfig {
             "/categoria/**",
             "/producto/**",
             "/usuario/**",
+            "/carga/**"
     };
 
 
