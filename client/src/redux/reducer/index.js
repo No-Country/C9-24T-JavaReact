@@ -44,27 +44,36 @@ export default function rootReducer(state = initialState, actions) {
         search: actions.payload,
       };
     }
-    case "@carrito/cantidadProducto": {
+    case "@carrito/agregarProducto": {
       return {
         ...state,
         itemsCarrito: [...state.itemsCarrito, actions.payload],
       };
     }
 
-    case "ADD_CART":
-      return {
-        ...state,
-        cart: [...state.cart, actions.payload],
-      };
+    case "@carrito/actualizarCounterProducto":
+      const updatedElements = state.itemsCarrito.map((element) => {
+        if (element.idProduct === actions.payload.id) {
+          return { ...element, ...actions.payload.data };
+        }
+        return element;
+      });
+      return { ...state, itemsCarrito: updatedElements };
 
-    case "MODIFY_CART":
+    case "@carrito/counterModify": {
+      const indice = state.itemsCarrito.findIndex(
+        (elemento) => elemento.idProduct === actions.payload.idProduct
+      );
       return {
         ...state,
-        cart: [
-          state.cart.filter((c) => c.postId !== actions.payload.postId),
-          actions.payload,
-        ],
+        itemsCarrito: [...state.itemsCarrito.slice(0, indice), actions.payload],
       };
+      /* const cambiado = [
+        ...copia.slice(0, indice),
+        5,
+        ...copia.slice(indice + 1),
+      ]; */
+    }
 
     case "@carrito/counterModify": {
       const indice = state.itemsCarrito.findIndex(

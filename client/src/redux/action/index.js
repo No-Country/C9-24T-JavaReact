@@ -88,7 +88,7 @@ export function agregarProductoCarrito({ idProduct, counter }) {
   return async function (dispatch) {
     try {
       dispatch({
-        type: "@carrito/cantidadProducto",
+        type: "@carrito/agregarProducto",
         payload: { idProduct, counter },
       });
     } catch (error) {
@@ -97,12 +97,12 @@ export function agregarProductoCarrito({ idProduct, counter }) {
   };
 }
 
-export function getProductoCarrito() {
+export function updateProductoCarrito(id, data) {
   return async function (dispatch) {
     try {
       dispatch({
-        type: "@carrito/productos",
-        payload: { product, counter },
+        type: "@carrito/actualizarCounterProducto",
+        payload: { id, data },
       });
     } catch (error) {
       console.log(error);

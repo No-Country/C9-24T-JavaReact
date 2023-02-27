@@ -20,15 +20,22 @@ const DivCarrito = styled(Stack)`
 export default function CartView() {
   const state = useSelector((state) => state);
 
-  console.log(state);
+  //  hacer una funcion para calcular el total precio de los productos.
 
+  console.log(state.itemsCarrito, "cart");
   return (
     <>
       <TopBar isCart={true} />
 
       <Container sx={{ margin: 0, padding: 0 }}>
         {state.itemsCarrito.map((dato) => (
-          <CartSelectCard key={dato.idProduct} idProduct={dato.idProduct} />
+          <CartSelectCard
+            key={dato.idProduct}
+            idProducto={dato.idProduct}
+            // img={dato.product.imagenes[0].url}
+            // nombre={dato.product.nombre}
+            // precio={dato.product.precio}
+          />
         ))}
       </Container>
       <Stack direction="row">
@@ -64,7 +71,7 @@ export default function CartView() {
         justifyContent="center"
         alignItems="center"
         spacing={2}
-        sx={{ padding: "1em", height: "40px" }}
+        sx={{ padding: "2em 0 5em 0", height: "40px" }}
       >
         <DivCarrito direction="row" justifyContent="center" alignItems="center">
           <Typography variant="p" component="p" sx={{}}>

@@ -12,58 +12,24 @@ import axios from "axios";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
 
-import { conterModify } from "../../../redux/action";
-
+// *****************HELPERS****************
 import { validarImg } from "../../../helpers";
 
-export default function CartSelectCard({ idProduct }) {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state);
-  const theme = useTheme();
-  const [product, setProduct] = useState({});
+// *****************HOOKS****************
+import { useCounterProduct } from "../../../hooks/useCounterProduct";
 
-  const productState = state.itemsCarrito.find(
-    (prod) => prod.idProduct === idProduct
-  );
+export default function CartSelectCard({ idProducto }) {
+  const { counter, producto, incrementarCounter, disminuirCounter } =
+    useCounterProduct(idProducto);
 
-  console.log(productState, "ESTADO");
-
-  // let customers = useSelector((state) => state.customer);
-  // let customer = customers?.find((c) => c.email === user?.email);
-
-  useEffect(() => {
-    axios
-      .get(`http://3.88.177.40:8080/producto/${idProduct}`)
-      .then((response) => {
-        setProduct(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [idProduct]);
-
-  const handleReducir = () => {
-    if (productState.counter <= 1) {
-      dispatch(conterModify(idProduct, 1));
-    } else {
-      dispatch(conterModify(idProduct, productState.counter - 1));
-    }
-  };
-
-  const handleAumenta = () => {
-    if (counter < state.productDescription.stock) {
-      setCounter(counter + 1);
-    } else {
-      setCounter(state.productDescription.stock);
-    }
-  };
+  // console.log(producto);
 
   return (
     <Card sx={{ display: "flex", borderRadius: "15px", margin: "1em" }}>
       <CardMedia
         component="img"
         sx={{ width: 100, height: 100 }}
-        image={`${validarImg(product.imagenes)}`} // `${state && validarImg(state.productDescription.imagenes)}`
+        image={`${validarImg(producto.imagenes)}`}
         alt="Live from space album cover"
       />
       <Box sx={{ display: "flex", flexDirection: "column", width: 220 }}>
@@ -73,7 +39,7 @@ export default function CartSelectCard({ idProduct }) {
             variant="caption"
             sx={{ textAlign: "left", fontWeight: "bold" }}
           >
-            {product.nombre}
+            {producto.nombre}
           </Typography>
           <Typography
             variant="subtitle1"
@@ -81,7 +47,7 @@ export default function CartSelectCard({ idProduct }) {
             component="div"
             sx={{ textAlign: "left" }}
           >
-            ${product.precio}
+            ${producto.precio}
           </Typography>
         </CardContent>
         <Box
@@ -93,11 +59,11 @@ export default function CartSelectCard({ idProduct }) {
             pb: 1, */
           }}
         >
-          <IconButton aria-label="remove" onClick={handleReducir}>
+          <IconButton onClick={disminuirCounter} aria-label="remove">
             <RemoveCircleRoundedIcon />
           </IconButton>
-          <Typography variant="p">{productState.counter}</Typography>
-          <IconButton aria-label="add" onClick={handleAumenta}>
+          <Typography variant="p">{counter}</Typography>
+          <IconButton onClick={incrementarCounter} aria-label="add">
             <AddCircleRoundedIcon />
           </IconButton>
         </Box>
