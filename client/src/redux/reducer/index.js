@@ -44,18 +44,12 @@ export default function rootReducer(state = initialState, actions) {
         search: actions.payload,
       };
     }
-    case "@carrito/cantidadProducto": {
+    case "@carrito/agregarProducto": {
       return {
         ...state,
         itemsCarrito: [...state.itemsCarrito, actions.payload],
       };
     }
-
-    case "ADD_CART":
-      return {
-        ...state,
-        cart: [...state.cart, actions.payload],
-      };
 
     case "@carrito/actualizarCounterProducto":
       const updatedElements = state.itemsCarrito.map((element) => {

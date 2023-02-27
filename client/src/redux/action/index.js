@@ -90,7 +90,7 @@ export function agregarProductoCarrito({ idProduct, counter }) {
   return async function (dispatch) {
     try {
       dispatch({
-        type: "@carrito/cantidadProducto",
+        type: "@carrito/agregarProducto",
         payload: { idProduct, counter },
       });
     } catch (error) {

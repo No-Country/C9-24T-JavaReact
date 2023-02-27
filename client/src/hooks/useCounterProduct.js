@@ -24,17 +24,29 @@ export function useCounterProduct(id) {
       });
   }, [id]);
 
-  // console.log(producto);
-  // console.log(itemCarrito);
+  useEffect(() => {
+    dispatch(updateProductoCarrito(id, { counter }));
+  }, [counter]);
+
+  console.log("****************");
+  console.log(state);
+  console.log(state.itemsCarrito);
+  console.log(itemCarrito);
 
   const incrementarCounter = () => {
-    setCounter(counter + 1);
-    dispatch(updateProductoCarrito(id, { counter }));
-    console.log(state.itemsCarrito);
+    if (counter < producto.stock) {
+      setCounter(itemCarrito.counter + 1);
+    } else {
+      setCounter(producto.stock);
+    }
   };
 
   const disminuirCounter = () => {
-    setCounter(counter - 1);
+    if (counter <= 1) {
+      setCounter(1);
+    } else {
+      setCounter(itemCarrito.counter - 1);
+    }
   };
 
   return { counter, producto, incrementarCounter, disminuirCounter };
