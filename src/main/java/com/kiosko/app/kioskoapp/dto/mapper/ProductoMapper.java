@@ -28,5 +28,6 @@ public interface ProductoMapper {
     })
     Producto toProducto(ProductoCreateDTO productoCreateDTO);
     ProductoCreateDTO toProductoCreateDTO(Producto producto);
+    ProductoCreateDTO toProductoCreateDTO(ProductoDTO producto);
     ProductoDTO toProductoDTO(ProductoCreateDTO productoCreateDTO);
 }

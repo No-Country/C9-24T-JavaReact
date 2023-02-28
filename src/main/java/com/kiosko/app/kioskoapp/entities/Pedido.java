@@ -1,18 +1,30 @@
 package com.kiosko.app.kioskoapp.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-import lombok.Data;
+import lombok.*;
 
-//@Entity
-//@Data
+import java.util.List;
+
+@Entity
+@Table(name = "pedidos")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 public class Pedido {
     
     @Id
-    @GeneratedValue
-    private Integer pedido_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pedido")
+    private Integer id;
     private String estado;
-    private Integer estudiante_id;
+    @ManyToOne
+    @JoinColumn(name = "id_estudiante")
+    private Estudiante estudiante;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_producto_pedido")
+    private List<ProductoPedido> productos;
 }

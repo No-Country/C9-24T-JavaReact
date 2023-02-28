@@ -62,6 +62,7 @@ public class SecurityConfig {
                     auth.antMatchers(FREE_ENDPOINTS).permitAll();
                     auth.antMatchers(HttpMethod.GET, FREE_GET_REQUEST).permitAll();
                     auth.antMatchers(HttpMethod.GET, "/usuario").authenticated();
+                    auth.antMatchers(HttpMethod.POST, "/pedido").hasRole("ESTUDIANTE");
                     auth.antMatchers("/**").hasRole("ADMIN");
                 })
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
