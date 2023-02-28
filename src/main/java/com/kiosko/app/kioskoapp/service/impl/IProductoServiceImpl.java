@@ -40,6 +40,16 @@ public class IProductoServiceImpl implements IProductoService {
     }
 
     @Override
+    public Page<ProductoDTO> getAllSearchWithStock(int page, int size, String search) {
+        return productoRepository.findByNombreContainingAndStockGreaterThan(PageRequest.of(page, size), search, 0).map(productoMapper::toProductoDTO);
+    }
+
+    @Override
+    public Page<ProductoDTO> getAllSearch(int page, int size, String search) {
+        return productoRepository.findByNombreContaining(PageRequest.of(page, size), search).map(productoMapper::toProductoDTO);
+    }
+
+    @Override
     public Page<ProductoDTO> getAllByCategoria(int page, int size, int categoriaId) throws ResourceNotFoundException {
         categoriaService.getById(categoriaId);
         return productoRepository.findByCategoriaId(PageRequest.of(page, size), categoriaId).map(productoMapper::toProductoDTO);

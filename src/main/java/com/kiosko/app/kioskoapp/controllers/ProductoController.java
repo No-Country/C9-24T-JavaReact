@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,9 +33,12 @@ public class ProductoController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<ProductoDTO>> getAll(@RequestParam(required = false, value = "page", defaultValue = "0") int page,
-                                               @RequestParam(required = false, value = "size", defaultValue = "10") int size) {
-        return new ResponseEntity<>(productoService.getAll(page, size), HttpStatus.OK);
+    public ResponseEntity<Page<ProductoDTO>> getAll(
+            @RequestParam(required = false, value = "page", defaultValue = "0") int page,
+            @RequestParam(required = false, value = "size", defaultValue = "10") int size,
+            @RequestParam(required = false, value = "search", defaultValue = "") String search) {
+        if(isAdmin()) return new ResponseEntity<>(productoService.getAllSearch(page, size, search), HttpStatus.OK);
+        return new ResponseEntity<>(productoService.getAllSearchWithStock(page, size, search), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -85,6 +89,10 @@ public class ProductoController {
     public ResponseEntity<?> deleteImagen(@PathVariable("productoId") int productoId, @PathVariable("imagenId") int imagenId) throws ResourceNotFoundException {
         imagenService.delete(imagenId, productoId);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    private Boolean isAdmin() {
+        return SecurityContextHolder.getContext().getAuthentication().getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
     }
 
 

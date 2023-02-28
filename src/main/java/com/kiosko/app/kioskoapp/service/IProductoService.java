@@ -10,6 +10,10 @@ import java.util.List;
 
 public interface IProductoService {
     Page<ProductoDTO> getAll(int page, int size);
+
+    Page<ProductoDTO> getAllSearchWithStock(int page, int size, String search);
+    Page<ProductoDTO> getAllSearch(int page, int size, String search);
+
     Page<ProductoDTO> getAllByCategoria(int page, int size, int categoriaId) throws ResourceNotFoundException;
     ProductoDTO getById(Integer id) throws ResourceNotFoundException;
     ProductoDTO create(ProductoCreateDTO productoCreateDTO) throws ResourceAlreadyExistsException, ResourceNotFoundException;
