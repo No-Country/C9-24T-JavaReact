@@ -74,6 +74,7 @@ export default function LoginView() {
               borderRadius: "15px",
               padding: "1em 3em",
               lineHeight: "16px",
+              backgroundColor: "#00838F",
             }}
           >
             Iniciar Sesión

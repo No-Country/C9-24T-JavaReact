@@ -32,27 +32,32 @@ export default function Home() {
       >
         ¡Te damos la bienvenida!
       </Typography>
-
-      <Typography
-        variant="h5"
-        sx={{ textAlign: "center", padding: "1em 0 1em 0.5em" }}
+      <Box
+        sx={{
+          backgroundColor: "#00838F",
+          boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.25)",
+          borderRadius: "15px",
+          padding: "1em",
+          margin: "0.5em",
+        }}
       >
-        saldo
-      </Typography>
-      {/* <Container>
-        <Grid container spacing={2} sx={{ width: 340 }}>
-          {state?.product &&
-            state.product.map((dato) => (
-              <Grid key={dato.id} item xs={6} md={8}>
-                <CardProduct
-                  title={dato.nombre}
-                  precio={dato.precio}
-                  img={dato.imagenes[0].url}
-                />
-              </Grid>
-            ))}
-        </Grid>
-      </Container> */}
+        <Typography
+          sx={{
+            color: "white",
+          }}
+        >
+          Tusaldo disponible es
+        </Typography>
+        <Typography
+          sx={{
+            color: "white",
+            fontSize: "20px",
+            fontWeight: "bold",
+          }}
+        >
+          $2000
+        </Typography>
+      </Box>
       <Box>
         <Typography
           variant="h6"
