@@ -11,6 +11,7 @@ import axios from "axios";
 
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
+import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
 
 // *****************HELPERS****************
 import { validarImg } from "../../../helpers";
@@ -19,8 +20,13 @@ import { validarImg } from "../../../helpers";
 import { useCounterProduct } from "../../../hooks/useCounterProduct";
 
 export default function CartSelectCard({ idProducto }) {
-  const { counter, producto, incrementarCounter, disminuirCounter } =
-    useCounterProduct(idProducto);
+  const {
+    counter,
+    producto,
+    incrementarCounter,
+    disminuirCounter,
+    eliminarProd,
+  } = useCounterProduct(idProducto);
 
   // console.log(producto);
 
@@ -59,12 +65,34 @@ export default function CartSelectCard({ idProducto }) {
             pb: 1, */
           }}
         >
-          <IconButton onClick={disminuirCounter} aria-label="remove">
-            <RemoveCircleRoundedIcon />
-          </IconButton>
+          {counter === 1 ? (
+            <IconButton
+              onClick={() => eliminarProd(idProducto)}
+              aria-label="remove"
+            >
+              <DeleteForeverRoundedIcon
+                sx={{
+                  color: "red",
+                }}
+              />
+            </IconButton>
+          ) : (
+            <IconButton onClick={disminuirCounter} aria-label="remove">
+              <RemoveCircleRoundedIcon
+                sx={{
+                  color: "#00838F",
+                }}
+              />
+            </IconButton>
+          )}
+
           <Typography variant="p">{counter}</Typography>
           <IconButton onClick={incrementarCounter} aria-label="add">
-            <AddCircleRoundedIcon />
+            <AddCircleRoundedIcon
+              sx={{
+                color: "#00838F",
+              }}
+            />
           </IconButton>
         </Box>
       </Box>

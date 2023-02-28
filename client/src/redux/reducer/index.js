@@ -98,6 +98,21 @@ export default function rootReducer(state = initialState, actions) {
       ]; */
     }
 
+    case "@carrito/eliminarProducto": {
+      const indice = state.itemsCarrito.findIndex(
+        (elemento) => elemento.idProduct === actions.payload.idProduct
+      );
+
+      console.log(indice, "INDICE");
+      return {
+        ...state,
+        itemsCarrito: [
+          ...state.itemsCarrito.slice(0, indice),
+          ...state.itemsCarrito.slice(indice + 1),
+        ],
+      };
+    }
+
     default:
       state;
   }

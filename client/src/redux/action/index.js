@@ -140,3 +140,16 @@ export function getSaldoUser() {
       });
   };
 }
+
+export function removeProduct(idProduct) {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@carrito/eliminarProducto",
+        payload: { idProduct },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

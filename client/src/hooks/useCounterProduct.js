@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateProductoCarrito } from "../redux/action";
+import { updateProductoCarrito, removeProduct } from "../redux/action";
 
 import { getProduct } from "../services/product";
 
@@ -49,5 +49,16 @@ export function useCounterProduct(id) {
     }
   };
 
-  return { counter, producto, incrementarCounter, disminuirCounter };
+  const eliminarProd = (idProducto) => {
+    dispatch(removeProduct(idProducto));
+    console.log(itemCarrito, state, "MUESTRA");
+  };
+
+  return {
+    counter,
+    producto,
+    incrementarCounter,
+    disminuirCounter,
+    eliminarProd,
+  };
 }

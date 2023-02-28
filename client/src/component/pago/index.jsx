@@ -78,7 +78,7 @@ export const Pago = () => {
         spacing={2}
         sx={{
           padding: "0.2em 0 0.2em 0",
-          height: "40px",
+          // height: "40px",
           backgroundColor: "#673AB7",
           height: "3.625em",
         }}
