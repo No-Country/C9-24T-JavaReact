@@ -75,8 +75,7 @@ public class ICargaServiceImpl implements ICargaService {
         estudianteDTO.setSaldo(estudianteDTO.getSaldo().add(new BigDecimal(monto)));
         carga.setEstudiante(estudianteMapper.estudianteDtoToEstudiante(estudianteDTO));
         carga.setPadre(userMapper.userProfileToAppUser(estudianteDTO.getPadre()));
-//        carga.getEstudiante().setSaldo(carga.getEstudiante().getSaldo().add(carga.getMonto()) );
-//        estudianteRepository.save(carga.getEstudiante());
+        estudianteRepository.save(carga.getEstudiante());
         return cargaMapper.cargaToCargaDto(
                 cargaRepository.save(carga)
         );
