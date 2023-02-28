@@ -7,6 +7,7 @@ const initialState = {
   productDescription: [],
   search: false,
   itemsCarrito: [],
+  saldo: null,
 };
 
 export default function rootReducer(state = initialState, actions) {
@@ -15,6 +16,13 @@ export default function rootReducer(state = initialState, actions) {
       return {
         ...state,
         category: actions.payload,
+      };
+    }
+
+    case "GET_SALDO": {
+      return {
+        ...state,
+        saldo: actions.payload,
       };
     }
 

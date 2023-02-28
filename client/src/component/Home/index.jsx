@@ -6,7 +6,7 @@ import NavBar from "../Layout/NavBar";
 import TopBar from "../Layout/TopBar";
 import FilterProduct from "../FilterProduct";
 import { Container, Grid, Typography } from "@mui/material/";
-import { getCategory } from "../../redux/action";
+import { getCategory, getSaldoUser } from "../../redux/action";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import { capitalizeFirstLetter } from "../../helpers";
@@ -16,9 +16,10 @@ export default function Home() {
   const state = useSelector((state) => state);
   // const carrito = useSelector((state) => state && state.itemsCarrito);
 
-  // console.log(carrito && carrito);
+  console.log(state);
 
   useEffect(() => {
+    dispatch(getSaldoUser());
     dispatch(getCategory());
   }, [dispatch]);
   return (
@@ -30,6 +31,13 @@ export default function Home() {
         sx={{ textAlign: "center", padding: "1em 0 1em 0.5em" }}
       >
         ¡Te damos la bienvenida!
+      </Typography>
+
+      <Typography
+        variant="h5"
+        sx={{ textAlign: "center", padding: "1em 0 1em 0.5em" }}
+      >
+        saldo
       </Typography>
       {/* <Container>
         <Grid container spacing={2} sx={{ width: 340 }}>

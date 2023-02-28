@@ -1,4 +1,6 @@
 import axios from "axios";
+
+import { getSaldo } from "../../services/saldo";
 // ACTION CREATORS : son funciones que devuelven una acción!
 
 // const urlAPI = process.env.REACT_APP_API;
@@ -120,5 +122,21 @@ export function conterModify({ idProduct, counter }) {
     } catch (error) {
       console.log(error);
     }
+  };
+}
+
+export function getSaldoUser() {
+  return async function (dispatch) {
+    getSaldo(true)
+      .then((saldo) => {
+        console.log(saldo.monto);
+        dispatch({
+          type: "GET_SALDO",
+          payload: saldo.monto,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 }
