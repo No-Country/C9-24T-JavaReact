@@ -27,6 +27,11 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(ex.getMessage());
     }
 
+    @ExceptionHandler({InsufficientFundsException.class})
+    public ResponseEntity<String> insufficientFunds(InsufficientFundsException ex) {
+        return ResponseEntity.status(HttpStatus.PAYMENT_REQUIRED).body(ex.getMessage());
+    }
+
     @ExceptionHandler({HttpMessageNotReadableException.class})
     public ResponseEntity<String> httpMessageNotReadableException(HttpMessageNotReadableException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
