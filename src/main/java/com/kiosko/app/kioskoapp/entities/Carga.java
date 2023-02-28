@@ -17,7 +17,7 @@ public class Carga {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     @ManyToOne
-    @JoinColumn(name = "id_estudiante")
+    @JoinColumn(name = "id_estudiante", insertable = false, updatable = false)
     private Estudiante estudiante;
     @ManyToOne
     @JoinColumn(name = "id_padre")
