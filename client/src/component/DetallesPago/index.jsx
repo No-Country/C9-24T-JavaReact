@@ -1,5 +1,6 @@
 import { Container, Typography, Stack, Box } from "@mui/material/";
 import { convertCurrency } from "../../helpers";
+import { useSelector, useDispatch } from "react-redux";
 
 export const DetallesPago = ({ title, monto }) => {
   return (
@@ -28,7 +29,9 @@ export const DetallesPago = ({ title, monto }) => {
           fontSize: "0.875rem",
         }}
       >
-        {convertCurrency({ currency: "USD", value: monto })}
+        {title !== "Descuento"
+          ? convertCurrency({ currency: "USD", value: monto })
+          : `- ${convertCurrency({ currency: "USD", value: monto })}`}
       </Typography>
     </Stack>
   );

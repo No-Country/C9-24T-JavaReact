@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -33,6 +33,25 @@ const ContainerPago = styled(Box)`
 
 export const Pago = () => {
   const saldo = useSelector((state) => state && state.saldo);
+  const items = useSelector((state) => state.itemsCarrito);
+  const [total, setTotal] = useState(0);
+
+  const totalPagar = (productos) => {
+    const pagar = productos.reduce(
+      (acumulado, producto) => acumulado + producto.precio * producto.counter,
+      0
+    );
+    return pagar;
+  };
+
+  useEffect(() => {
+    setTotal(totalPagar(items));
+  }, []);
+
+  useEffect(() => {
+    setTotal(totalPagar(items));
+  }, [items]);
+  console.log(total);
 
   console.log(saldo, "cartt");
 
@@ -49,7 +68,7 @@ export const Pago = () => {
         <AccordionDetails>
           <DetallesPago title="Saldo" monto={saldo} />
           <DetallesPago title="Descuento" monto={0} />
-          <DetallesPago title="Total" />
+          <DetallesPago title="Total" monto={total} />
         </AccordionDetails>
       </Accordion>
       <Stack

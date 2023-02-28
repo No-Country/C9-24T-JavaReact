@@ -86,12 +86,12 @@ export function togleSearch(search) {
   };
 }
 
-export function agregarProductoCarrito({ idProduct, counter }) {
+export function agregarProductoCarrito({ idProduct, counter, precio }) {
   return async function (dispatch) {
     try {
       dispatch({
         type: "@carrito/agregarProducto",
-        payload: { idProduct, counter },
+        payload: { idProduct, counter, precio },
       });
     } catch (error) {
       console.log(error);

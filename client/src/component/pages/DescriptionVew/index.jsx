@@ -18,6 +18,7 @@ import {
   Typography,
   Container,
   Stack,
+  Chip,
   Button,
   Box,
 } from "@mui/material";
@@ -76,24 +77,33 @@ export default function RecipeReviewCard() {
     }
   };
 
-  const handleAgregar = () => {
-    const esta = state.itemsCarrito.some(
-      (item) => item.idProduct == state.productDescription.id
-    );
-
-    if (!esta) {
-      dispatch(
-        agregarProductoCarrito({
-          idProduct: state.productDescription.id,
-          counter,
-        })
+  const handleAgregar = (e) => {
+    if (counter !== 0) {
+      const esta = state.itemsCarrito.some(
+        (item) => item.idProduct == state.productDescription.id
       );
+
+      if (!esta) {
+        dispatch(
+          agregarProductoCarrito({
+            idProduct: state.productDescription.id,
+            counter,
+            precio: state.productDescription.precio,
+          })
+        );
+      } else {
+        dispatch(
+          updateProductoCarrito(state.productDescription.id, { counter })
+        );
+        console.log(state.itemsCarrito, "actu");
+      }
     } else {
-      dispatch(updateProductoCarrito(state.productDescription.id, { counter }));
-      console.log(state.itemsCarrito, "actu");
+      console.log(e.target);
+      e.preventDefault();
     }
   };
 
+  // console.log(state.productDescription.stock);
   return (
     <ViewProduct>
       <MyCard>
@@ -106,15 +116,26 @@ export default function RecipeReviewCard() {
           alt="Paella dish"
         />
         <CardContent>
-          <Typography
-            variant="h5"
-            color="text.primary"
-            sx={{ textAlign: "left", fontWeight: "bold" }}
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
           >
-            {state && state.productDescription.nombre
-              ? capitalizeFirstLetter(state.productDescription.nombre)
-              : state.productDescription.nombre}
-          </Typography>
+            <Typography
+              component="h5"
+              variant="h5"
+              color="text.primary"
+              sx={{ textAlign: "left", fontWeight: "bold" }}
+            >
+              {state && state.productDescription.nombre
+                ? capitalizeFirstLetter(state.productDescription.nombre)
+                : state.productDescription.nombre}
+            </Typography>
+            {state && state.productDescription.stock === 0 && (
+              <Chip label="Sin Stock" color="warning" size="small" />
+            )}
+          </Stack>
+
           <Typography
             variant="h6"
             color="text.secondary"
@@ -163,7 +184,7 @@ export default function RecipeReviewCard() {
           </IconButton>
         </DivCarrito>
 
-        <Link to="/cart">
+        <Link sx={{ color: "red" }} to="/cart">
           <DivCarrito
             direction="row"
             justifyContent="center"
