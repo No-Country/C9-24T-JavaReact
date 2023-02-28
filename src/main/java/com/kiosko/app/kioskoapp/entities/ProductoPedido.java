@@ -5,7 +5,7 @@ import javax.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "productos")
+@Table(name = "productos_pedidos")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,7 +15,7 @@ import lombok.*;
 public class ProductoPedido {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto_pedido")
     private Integer id;
     private Integer cantidad;
