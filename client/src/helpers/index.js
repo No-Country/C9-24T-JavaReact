@@ -11,3 +11,12 @@ export function validarImg(arrImg) {
 export function capitalizeFirstLetter(word) {
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
+export const convertCurrency = ({ currency, value }) => {
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    minimumFractionDigits: 2,
+    currency,
+  });
+  return formatter.format(value);
+};

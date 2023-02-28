@@ -8,8 +8,8 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ShoppingCartSharpIcon from "@mui/icons-material/ShoppingCartSharp";
 
 const MyCardHeader = styled(CardHeader)`
-  background-color: black;
-  opacity: 0.15;
+  // background-color: black;
+  // opacity: 0.15;
 `;
 
 export function TopDescription() {
@@ -24,16 +24,15 @@ export function TopDescription() {
         position: "absolute",
         zIndex: 2,
         width: 330,
-        BackgroundColor: "red",
       }}
       avatar={
         <IconButton onClick={handleBack}>
-          <ArrowBackIcon sx={{ color: "white" }} />
+          <ArrowBackIcon sx={{ color: "#673AB7" }} />
         </IconButton>
       }
       action={
         <IconButton>
-          <ShoppingCartSharpIcon sx={{ color: "white" }} />
+          <ShoppingCartSharpIcon sx={{ color: "#673AB7" }} />
         </IconButton>
       }
     />

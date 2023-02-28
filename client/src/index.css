@@ -30,6 +30,13 @@ body {
   text-decoration: none;
 }
 
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+/* .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+  margin: 1px 0;
+} */
 /* h1 {
   font-size: 3.2em;
   line-height: 1.1;

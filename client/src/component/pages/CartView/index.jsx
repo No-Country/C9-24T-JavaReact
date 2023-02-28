@@ -2,20 +2,10 @@ import * as React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import CartSelectCard from "../../Common/CartSelectCard";
-import TopBar from "../../Layout/TopBar";
-import { styled } from "@mui/material/styles";
+import { Pago } from "../../pago";
+import { Container } from "@mui/material/";
 
-import { Container, Typography, Stack } from "@mui/material/";
-import NavBar from "../../Layout/NavBar";
-
-const DivCarrito = styled(Stack)`
-  background: black;
-  color: white;
-  border-radius: 15px;
-  width: 10em;
-  height: 2.5em;
-  padding: 0 0.7em;
-`;
+import { Main, NavBar, TopBar } from "../../Layout";
 
 export default function CartView() {
   const state = useSelector((state) => state);
@@ -26,60 +16,22 @@ export default function CartView() {
   return (
     <>
       <TopBar isCart={true} />
+      <Main sx={{ paddingBottom: "7em" }}>
+        <Container sx={{ margin: 0, padding: "0.1em 0 0 0" }}>
+          {state.itemsCarrito.map((dato) => (
+            <CartSelectCard
+              key={dato.idProduct}
+              idProducto={dato.idProduct}
+              // img={dato.product.imagenes[0].url}
+              // nombre={dato.product.nombre}
+              // precio={dato.product.precio}
+            />
+          ))}
+        </Container>
+      </Main>
+      <Pago />
 
-      <Container sx={{ margin: 0, padding: 0 }}>
-        {state.itemsCarrito.map((dato) => (
-          <CartSelectCard
-            key={dato.idProduct}
-            idProducto={dato.idProduct}
-            // img={dato.product.imagenes[0].url}
-            // nombre={dato.product.nombre}
-            // precio={dato.product.precio}
-          />
-        ))}
-      </Container>
-      <Stack direction="row">
-        <Typography
-          variant="caption"
-          sx={{
-            // display: "inline",
-            textAlign: "left",
-            padding: "0.5em 0 0 0.5em",
-            paddingLeft: "2em",
-            fontWeight: "bold",
-            fontSize: "1.1em",
-          }}
-        >
-          Total:
-        </Typography>
-        <Typography
-          variant="caption"
-          sx={{
-            // display: "inline",
-            textAlign: "right",
-            padding: "0.5em 0 0 0.5em",
-            margin: "0 2em 0 auto",
-            fontWeight: "bold",
-            fontSize: "1.1em",
-          }}
-        >
-          $$$$$$
-        </Typography>
-      </Stack>
-      <Stack
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        spacing={2}
-        sx={{ padding: "2em 0 5em 0", height: "40px" }}
-      >
-        <DivCarrito direction="row" justifyContent="center" alignItems="center">
-          <Typography variant="p" component="p" sx={{}}>
-            Finalizar compra
-          </Typography>
-        </DivCarrito>
-      </Stack>
-      <NavBar />
+      {/* <NavBar /> */}
     </>
   );
 }

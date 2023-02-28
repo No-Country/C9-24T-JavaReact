@@ -15,7 +15,7 @@ function miGet() {
     // Si el trabajo se realiza correctamente, llama a resolve
     resolve({
       data: {
-        monto: 5000,
+        monto: 3000,
       },
     });
 

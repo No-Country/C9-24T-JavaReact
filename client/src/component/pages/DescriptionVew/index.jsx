@@ -38,16 +38,15 @@ const ViewProduct = styled(Container)`
 
 const MyCard = styled(Card)`
   width: 360px;
-  height: 80vh;
+  height: 90vh;
 `;
 
 const DivCarrito = styled(Stack)`
   background: #00838f;
   color: white;
   border-radius: 15px;
-  width: 8em;
+  width: 10rem;
   height: 2.5em;
-  padding: 0 0.7em;
 `;
 
 export default function RecipeReviewCard() {
@@ -146,7 +145,7 @@ export default function RecipeReviewCard() {
         justifyContent="center"
         alignItems="center"
         spacing={2}
-        sx={{ padding: "8px" }}
+        sx={{ height: "3.625em", padding: "0.3em 0.2em" }}
         backgroundColor="#673AB7"
       >
         <DivCarrito
@@ -171,11 +170,7 @@ export default function RecipeReviewCard() {
             alignItems="center"
             onClick={handleAgregar}
           >
-            <Typography
-              variant="p"
-              component="p"
-              sx={{ fontFamily: "roboto", textDecoration: "none" }}
-            >
+            <Typography variant="p" component="p" sx={{ fontFamily: "roboto" }}>
               AGREGAR
             </Typography>
           </DivCarrito>

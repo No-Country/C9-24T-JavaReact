@@ -8,12 +8,12 @@ import TopCart from "../../Common/TopCart";
 
 import kioscoApp from "../../../assets/imagenes/kioscoApp_white.png";
 
-export default function TopBar({ isSearch, isCategory, isTitle, isCart }) {
+export function TopBar({ isSearch, isCategory, isTitle, isCart }) {
   const state = useSelector((state) => state);
 
   return (
     <AppBar
-      position="static"
+      position="fixed"
       sx={{ backgroundColor: "#673AB7", width: "360px" }}
     >
       <Toolbar>

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CategoryCard from "../../Common/CategoryCard";
-import TopBar from "../../Layout/TopBar";
-import NavBar from "../../Layout/NavBar";
+// import TopBar from "../../Layout/TopBar";
+// import NavBar from "../../Layout/NavBar";
+import { Main, NavBar, TopBar } from "../../Layout";
+
 import FilterProduct from "../../FilterProduct";
 import { Container, Grid, Stack, Box, Typography } from "@mui/material/";
 import BDcategory from "../../../assets/BDcategory.json";

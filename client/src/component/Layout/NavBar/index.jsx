@@ -7,9 +7,7 @@ import { togleSearch } from "../../../redux/action";
 import { AppBar, Box } from "@mui/material/";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-// import RestoreIcon from "@mui/icons-material/Restore";
-// import FavoriteIcon from "@mui/icons-material/Favorite";
-// import LocationOnIcon from "@mui/icons-material/LocationOn";
+
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
@@ -22,7 +20,7 @@ const MyAppBar = styled(Box)`
   z-index: 1100;
 `;
 
-export default function NavBar() {
+export function NavBar() {
   const dispatch = useDispatch();
 
   const handleAddBuscar = () => {
