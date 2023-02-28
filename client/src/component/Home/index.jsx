@@ -31,20 +31,32 @@ export default function Home() {
       >
         ¡Te damos la bienvenida!
       </Typography>
-      {/* <Container>
-        <Grid container spacing={2} sx={{ width: 340 }}>
-          {state?.product &&
-            state.product.map((dato) => (
-              <Grid key={dato.id} item xs={6} md={8}>
-                <CardProduct
-                  title={dato.nombre}
-                  precio={dato.precio}
-                  img={dato.imagenes[0].url}
-                />
-              </Grid>
-            ))}
-        </Grid>
-      </Container> */}
+      <Box
+        sx={{
+          backgroundColor: "#00838F",
+          boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.25)",
+          borderRadius: "15px",
+          padding: "1em",
+          margin: "0.5em",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "white",
+          }}
+        >
+          Tusaldo disponible es
+        </Typography>
+        <Typography
+          sx={{
+            color: "white",
+            fontSize: "20px",
+            fontWeight: "bold",
+          }}
+        >
+          $2000
+        </Typography>
+      </Box>
       <Box>
         <Typography
           variant="h6"
