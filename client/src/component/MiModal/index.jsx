@@ -1,20 +1,21 @@
-import {
-  Container,
-  Typography,
-  Stack,
-  Box,
-  Modal,
-  Button,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from "@mui/material/";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
-export const MiModal = (open) => {
+import { Typography, Stack, Box, Modal, Button } from "@mui/material/";
+
+export const MiModal = () => {
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const backHome = () => {
+    navigate("/");
+  };
+
   return (
     <Modal
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      open={open}
+      open={true}
       // onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
@@ -66,20 +67,12 @@ export const MiModal = (open) => {
           </Typography>
         </Box>
         <Button
+          onClick={backHome}
           sx={{ fontWeight: "700", marginLeft: "auto", color: "#00838F" }}
         >
           Aceptar
         </Button>
       </Stack>
-
-      {/* <Box sx={{ backgroundColor: "white" }}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-          Text in a modal
-        </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-        </Typography>
-      </Box> */}
     </Modal>
   );
 };
