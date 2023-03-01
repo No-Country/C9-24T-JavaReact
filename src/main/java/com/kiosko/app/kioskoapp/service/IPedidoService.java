@@ -14,6 +14,6 @@ public interface IPedidoService {
     List<PedidoDTO> getByEstudianteDni(String dniEstudiante) throws ResourceNotFoundException;
     List<PedidoDTO> getByPadreDni(String dniPadre) throws ResourceNotFoundException;
     PedidoDTO createPedido(PedidoCreateDTO pedido, String dniEstudiante) throws ResourceNotFoundException, InsufficientFundsException, BadRequestException;
-    PedidoDTO cancelarPedidoByID(Integer id) throws ResourceNotFoundException;
+    PedidoDTO cancelarPedidoByID(Integer id) throws ResourceNotFoundException, BadRequestException;
 
 }

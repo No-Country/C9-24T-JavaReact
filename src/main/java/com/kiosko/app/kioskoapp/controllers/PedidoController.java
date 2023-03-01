@@ -2,6 +2,7 @@ package com.kiosko.app.kioskoapp.controllers;
 
 import com.kiosko.app.kioskoapp.dto.PedidoCreateDTO;
 import com.kiosko.app.kioskoapp.dto.PedidoDTO;
+import com.kiosko.app.kioskoapp.dto.ProductoDTO;
 import com.kiosko.app.kioskoapp.entities.AppUser;
 import com.kiosko.app.kioskoapp.exception.BadRequestException;
 import com.kiosko.app.kioskoapp.exception.InsufficientFundsException;
@@ -16,6 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -53,11 +55,12 @@ public class PedidoController {
 
     @PostMapping
     public ResponseEntity<PedidoDTO> createPedido(@RequestBody PedidoCreateDTO pedido) throws InsufficientFundsException, BadRequestException, ResourceNotFoundException {
+        if (pedido.getProductos().stream().anyMatch(p -> p.getCantidad() <= 0)) throw new BadRequestException("La cantidad de un producto debe ser mayor a 0");
         return new ResponseEntity<>(pedidoService.createPedido(pedido, getUser().getDni()), HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}/cancelar")
-    public ResponseEntity<PedidoDTO> cancelarPedidoById(@PathVariable("id") Integer id) throws ResourceNotFoundException {
+    public ResponseEntity<PedidoDTO> cancelarPedidoById(@PathVariable("id") Integer id) throws ResourceNotFoundException, BadRequestException {
         return new ResponseEntity<>(pedidoService.cancelarPedidoByID(id), HttpStatus.OK);
     }
 

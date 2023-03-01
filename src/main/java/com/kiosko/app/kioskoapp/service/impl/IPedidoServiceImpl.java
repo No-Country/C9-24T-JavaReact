@@ -22,6 +22,7 @@ import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @Transactional
@@ -108,8 +109,9 @@ public class IPedidoServiceImpl implements IPedidoService {
     }
 
     @Override
-    public PedidoDTO cancelarPedidoByID(Integer id) throws ResourceNotFoundException {
+    public PedidoDTO cancelarPedidoByID(Integer id) throws ResourceNotFoundException, BadRequestException {
         Pedido pedido = pedidoRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Pedido con id " + id + " no encontrado"));
+        if (Objects.equals(pedido.getEstado(), "cancelado")) throw new BadRequestException("El pedido ya se encontraba cancelado");
         actualizarSaldoEstudiante(estudianteMapper.estudianteToEstudianteDTO(pedido.getEstudiante()), getTotal(productoPedidoMapper.productoPedidosToProductoPedidoDtos(pedido.getProductos())).negate());
         pedido.setEstado("cancelado");
         return pedidoMapper.pedidoToPedidoDto(pedidoRepository.save(pedido));
