@@ -11,7 +11,7 @@ import { fontWeight } from "@mui/system";
 
 export default function CardProduct({ title, precio, img }) {
   return (
-    <Card sx={{ width: 156, borderRadius: "15px" }}>
+    <Card sx={{ width: 156, borderRadius: "15px", margin: "auto" }}>
       <CardActionArea>
         <CardMedia
           component="img"
