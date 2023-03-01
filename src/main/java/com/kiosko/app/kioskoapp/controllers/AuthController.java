@@ -1,6 +1,7 @@
 package com.kiosko.app.kioskoapp.controllers;
 
 import com.kiosko.app.kioskoapp.dto.*;
+import com.kiosko.app.kioskoapp.dto.mapper.UserMapper;
 import com.kiosko.app.kioskoapp.entities.AppUser;
 import com.kiosko.app.kioskoapp.service.IAppUserService;
 import com.kiosko.app.kioskoapp.util.JWTUtil;
@@ -21,12 +22,14 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final IAppUserService userService;
     private final JWTUtil jwtUtil;
+    private final UserMapper userMapper;
 
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager, IAppUserService userService, JWTUtil jwtUtil) {
+    public AuthController(AuthenticationManager authenticationManager, IAppUserService userService, JWTUtil jwtUtil, UserMapper userMapper) {
         this.authenticationManager = authenticationManager;
         this.userService = userService;
         this.jwtUtil = jwtUtil;
+        this.userMapper = userMapper;
     }
 
     @PostMapping("/login")
@@ -36,7 +39,7 @@ public class AuthController {
             UserDetails userDetails = userService.loadUserByUsername(request.getEmail());
             AppUser appUser = userService.findByEmail(userDetails.getUsername()).get();
             String jwt = jwtUtil.generateToken(appUser);
-            return new ResponseEntity<>(new AuthenticationResponse(jwt), HttpStatus.OK);
+            return new ResponseEntity<>(new AuthenticationResponse(jwt, userMapper.appUserToUserProfile(appUser)), HttpStatus.OK);
         }
         catch (BadCredentialsException e) {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
