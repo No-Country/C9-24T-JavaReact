@@ -25,6 +25,12 @@ export default function rootReducer(state = initialState, actions) {
         saldo: actions.payload,
       };
     }
+    case "@saldo/update": {
+      return {
+        ...state,
+        saldo: actions.payload,
+      };
+    }
 
     case "GET_PRODUCT": {
       return {
@@ -110,6 +116,13 @@ export default function rootReducer(state = initialState, actions) {
           ...state.itemsCarrito.slice(0, indice),
           ...state.itemsCarrito.slice(indice + 1),
         ],
+      };
+    }
+
+    case "@carrito/carrito/vaciarCarrito": {
+      return {
+        ...state,
+        itemsCarrito: [],
       };
     }
 

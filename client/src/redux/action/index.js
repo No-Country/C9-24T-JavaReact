@@ -141,12 +141,33 @@ export function getSaldoUser() {
   };
 }
 
+export function updateSaldoUser(newSaldo) {
+  return async function (dispatch) {
+    dispatch({
+      type: "@saldo/update",
+      payload: newSaldo,
+    });
+  };
+}
+
 export function removeProduct(idProduct) {
   return async function (dispatch) {
     try {
       dispatch({
         type: "@carrito/eliminarProducto",
         payload: { idProduct },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function vaciarCarrito() {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@carrito/vaciarCarrito",
       });
     } catch (error) {
       console.log(error);

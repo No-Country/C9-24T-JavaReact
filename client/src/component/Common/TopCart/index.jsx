@@ -19,7 +19,7 @@ export default function TopCart() {
         component="div"
         sx={{ textAlign: "left", marginLeft: "1em" }}
       >
-        Resumen de compra
+        Carrito
       </Typography>
     </>
   );

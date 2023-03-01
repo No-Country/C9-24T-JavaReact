@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { vaciarCarrito } from "../../redux/action";
 
 import { Typography, Stack, Box, Modal, Button } from "@mui/material/";
 
@@ -10,6 +11,7 @@ export const MiModal = () => {
 
   const backHome = () => {
     navigate("/");
+    dispatch(vaciarCarrito());
   };
 
   return (

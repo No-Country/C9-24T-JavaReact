@@ -34,13 +34,17 @@ export default function Home() {
       {/* {bar?<TopBar isBuscar="true" />:<TopBar isBuscar="true" />} */}
       <TopBar />
 
-      <Main>
+      <Main sx={{ paddingBottom: "0em" }}>
         <Typography
           variant="h6"
           sx={{
             textAlign: "center",
             padding: "1em 0 1em 0.5em",
-            fontsize: "1.25rem",
+            fontfamily: "Roboto",
+            fontstyle: "normal",
+            lineheight: "24px",
+            fontSize: "1.25rem",
+            fontWeight: "500",
           }}
         >
           ¡Te damos la bienvenida!
@@ -50,14 +54,19 @@ export default function Home() {
             backgroundColor: "#00838F",
             boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.25)",
             borderRadius: "15px",
-            padding: "1em",
             margin: "0.5em",
+            height: "4.5em",
+            padding: "1em 0 0.3em 1em",
           }}
         >
           <Typography
             sx={{
               color: "white",
+              fontfamily: "Roboto",
+              fontstyle: "normal",
+              lineheight: "1.5rem",
               fontSize: "1rem",
+              fontWeight: "600",
             }}
           >
             Tu saldo disponible es
@@ -65,8 +74,11 @@ export default function Home() {
           <Typography
             sx={{
               color: "white",
-              fontSize: "20px",
-              fontWeight: "bold",
+              fontfamily: "Roboto",
+              fontstyle: "normal",
+              lineheight: "1.5rem",
+              fontSize: "1.5rem",
+              fontWeight: "600",
             }}
           >
             {convertCurrency({ currency: "USD", value: saldo })}
@@ -79,8 +91,11 @@ export default function Home() {
             sx={{
               textAlign: "left",
               padding: "0.5em 0 0 0.5em",
-              fontSize: "14px",
               fontFamily: "roboto",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "1rem",
+              lineHeight: "1.5rem",
             }}
           >
             Categorias

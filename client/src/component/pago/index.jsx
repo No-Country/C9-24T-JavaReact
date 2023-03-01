@@ -4,11 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { Modal } from "../Layout/Modal";
 import { MyAlert } from "../Common/MyAlert";
 
+import { updateSaldoUser } from "../../redux/action";
+
 import {
   Container,
   Typography,
   Stack,
   Box,
+  Divider,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -35,6 +38,8 @@ const ContainerPago = styled(Box)`
 `;
 
 export const Pago = () => {
+  const dispatch = useDispatch();
+
   const saldo = useSelector((state) => state && state.saldo);
   const items = useSelector((state) => state.itemsCarrito);
   const [total, setTotal] = useState(0);
@@ -66,8 +71,14 @@ export const Pago = () => {
     if (saldo < total) {
       setAlertaSaldo(true);
     } else {
-      setOpenModal(true);
-      setAlertaSaldo(false);
+      if (total > 0) {
+        // actualizar el estado de saldo.
+        const newSaldo = saldo - total;
+        console.log(newSaldo);
+        dispatch(updateSaldoUser(newSaldo));
+        setOpenModal(true);
+      }
+      // setAlertaSaldo(false);
     }
   };
 
@@ -87,6 +98,7 @@ export const Pago = () => {
           <AccordionDetails>
             <DetallesPago title="Saldo" monto={saldo} />
             <DetallesPago title="Descuento" monto={0} />
+            <Divider />
             <DetallesPago title="Total" monto={total} />
           </AccordionDetails>
         </Accordion>
@@ -122,7 +134,7 @@ export const Pago = () => {
         />
       )}
       {openModal && (
-        <Modal open={openModal}>
+        <Modal>
           <p>sdadas</p>
         </Modal>
       )}

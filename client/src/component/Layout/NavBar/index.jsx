@@ -26,6 +26,7 @@ export function NavBar() {
   const handleAddBuscar = () => {
     dispatch(togleSearch(true));
   };
+
   const handleremoveBuscar = () => {
     dispatch(togleSearch(false));
   };
@@ -39,10 +40,6 @@ export function NavBar() {
           textDecoration: "none",
           backgroundColor: "#673AB7",
         }}
-        // value={value}
-        /* onChange={(event, newValue) => {
-          setValue(newValue);
-        }} */
       >
         <Link to="/">
           <BottomNavigationAction
@@ -50,6 +47,7 @@ export function NavBar() {
             icon={<HomeIcon />}
             showLabel
             onClick={handleremoveBuscar}
+            sx={{ color: "white" }}
           />
         </Link>
 
@@ -58,6 +56,7 @@ export function NavBar() {
           label="Buscar"
           icon={<SearchIcon />}
           onClick={handleAddBuscar}
+          sx={{ color: "white" }}
         />
 
         <Link to="/">
@@ -65,6 +64,7 @@ export function NavBar() {
             showLabel
             label="Cuenta"
             icon={<PersonIcon />}
+            sx={{ color: "white" }}
           />
         </Link>
       </BottomNavigation>
