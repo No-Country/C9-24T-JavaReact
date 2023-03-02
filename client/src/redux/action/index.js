@@ -1,9 +1,22 @@
 import axios from "axios";
 
 import { getSaldo } from "../../services/saldo";
+import { postPedido } from "../../services/pedido";
 // ACTION CREATORS : son funciones que devuelven una acción!
 
 // const urlAPI = process.env.REACT_APP_API;
+export function createUser(data) {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@login/create",
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
 
 export function getCategory() {
   return async function (dispatch) {
@@ -127,12 +140,12 @@ export function conterModify({ idProduct, counter }) {
 
 export function getSaldoUser() {
   return async function (dispatch) {
-    getSaldo(true)
-      .then((saldo) => {
-        console.log(saldo.monto);
+    getSaldo()
+      .then((data) => {
+        console.log(data);
         dispatch({
           type: "GET_SALDO",
-          payload: saldo.monto,
+          payload: data.saldo,
         });
       })
       .catch((error) => {
@@ -172,5 +185,21 @@ export function vaciarCarrito() {
     } catch (error) {
       console.log(error);
     }
+  };
+}
+
+export function crearPedido(productos) {
+  return async function (dispatch) {
+    postPedido(productos)
+      .then((data) => {
+        console.log(data);
+        dispatch({
+          type: "@pedido/crear",
+          payload: 100,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 }

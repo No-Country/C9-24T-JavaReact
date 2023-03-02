@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Modal } from "../Layout/Modal";
 import { MyAlert } from "../Common/MyAlert";
 
-import { updateSaldoUser } from "../../redux/action";
+import { updateSaldoUser, crearPedido } from "../../redux/action";
 
 import {
   Container,
@@ -67,7 +67,7 @@ export const Pago = () => {
 
   console.log(saldo, "cartt");
 
-  const abrirModal = () => {
+  const pagarProductos = () => {
     if (saldo < total) {
       setAlertaSaldo(true);
     } else {
@@ -76,6 +76,7 @@ export const Pago = () => {
         const newSaldo = saldo - total;
         console.log(newSaldo);
         dispatch(updateSaldoUser(newSaldo));
+        dispatch(crearPedido({ productos: items }));
         setOpenModal(true);
       }
       // setAlertaSaldo(false);
@@ -115,7 +116,7 @@ export const Pago = () => {
           }}
         >
           <DivCarrito
-            onClick={abrirModal}
+            onClick={pagarProductos}
             direction="row"
             justifyContent="center"
             alignItems="center"
@@ -130,7 +131,7 @@ export const Pago = () => {
         <MyAlert
           type="warning"
           delay={5000}
-          msg="no tenés saldo suficiente para comprar!!"
+          msg="No tenés saldo suficiente para comprar!!"
         />
       )}
       {openModal && (

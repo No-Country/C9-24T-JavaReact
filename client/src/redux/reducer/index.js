@@ -8,10 +8,19 @@ const initialState = {
   search: false,
   itemsCarrito: [],
   saldo: null,
+  pedido: null,
+  sesion: { jwt: null, isAuthenticated: false, profile: null },
 };
 
 export default function rootReducer(state = initialState, actions) {
   switch (actions.type) {
+    case "@login/create": {
+      return {
+        ...state,
+        sesion: actions.payload,
+      };
+    }
+
     case "GET_CATEGORY": {
       return {
         ...state,
@@ -119,10 +128,17 @@ export default function rootReducer(state = initialState, actions) {
       };
     }
 
-    case "@carrito/carrito/vaciarCarrito": {
+    case "@carrito/vaciarCarrito": {
       return {
         ...state,
         itemsCarrito: [],
+      };
+    }
+
+    case "@pedido/crear": {
+      return {
+        ...state,
+        pedido: actions.payload,
       };
     }
 

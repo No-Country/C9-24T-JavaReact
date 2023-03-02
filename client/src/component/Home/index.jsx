@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { useSelector, useDispatch } from "react-redux";
 import CardProduct from "../Common/CardProduct";
 import CategoryCard from "../Common/CategoryCard";
@@ -14,9 +16,25 @@ import { Link } from "react-router-dom";
 import { capitalizeFirstLetter, convertCurrency } from "../../helpers";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const saldo = useSelector((state) => state && state.saldo);
+  const autentificado = useSelector(
+    (state) => state && state.sesion.isAuthenticated
+  );
+  const token = useSelector((state) => state && state.sesion.jwt);
+
+  useEffect(() => {
+    if (autentificado) {
+      console.log("autentificado");
+      localStorage.setItem("token", token);
+    } else {
+      navigate("/login");
+      console.log("no autentificado");
+    }
+  }, []);
 
   // const carrito = useSelector((state) => state && state.itemsCarrito);
 
@@ -82,7 +100,6 @@ export default function Home() {
             }}
           >
             {convertCurrency({ currency: "USD", value: saldo })}
-            {console.log(convertCurrency({ currency: "ARS", saldo }))}
           </Typography>
         </Box>
         <Box>

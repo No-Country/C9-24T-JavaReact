@@ -22,7 +22,8 @@ export function MyAlert({ type, delay, msg }) {
       style={{
         display: visible ? "block" : "none",
         position: "absolute",
-        top: "60px",
+        bottom: "70px",
+        zIndex: "11111",
       }}
     >
       <Alert severity={type}>{msg}</Alert>

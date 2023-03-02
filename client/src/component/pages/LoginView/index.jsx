@@ -1,11 +1,12 @@
-import React from "react";
+import { useLogin } from "../../../hooks/useLogin";
+
 import IconButton from "@mui/material/IconButton";
-import Input from "@mui/material/Input";
-import FilledInput from "@mui/material/FilledInput";
+// import Input from "@mui/material/Input";
+// import FilledInput from "@mui/material/FilledInput";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
-import FormHelperText from "@mui/material/FormHelperText";
+// import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -15,14 +16,21 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import kioscoApp from "../../../assets/imagenes/kioscoAppPNG.png";
 
+import { MyAlert } from "../../Common/MyAlert";
+
 export default function LoginView() {
-  const [showPassword, setShowPassword] = React.useState(false);
+  const {
+    login,
+    alertLogin,
+    showPassword,
+    handleClickShowPassword,
+    handleInputChange,
+    handleSubmit,
+  } = useLogin();
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
+  console.log(login.email);
+  console.log(login.password);
+  console.log(alertLogin, "en vista");
 
   return (
     <Stack justifyContent="center" alignItems="center" sx={{ height: "100vh" }}>
@@ -37,18 +45,23 @@ export default function LoginView() {
         </div>
         <FormControl sx={{ m: 1, width: "300px" }} variant="outlined">
           <TextField
-            id="Usuario"
+            name="email"
             label="Usuario"
             variant="outlined"
+            value={login.email}
+            onChange={handleInputChange}
             fullWidth
           />
         </FormControl>
 
         <FormControl sx={{ m: 1, width: "300px" }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">
-            Password
+            Contraseña
           </InputLabel>
           <OutlinedInput
+            name="password"
+            value={login.password}
+            onChange={handleInputChange}
             id="outlined-adornment-password"
             type={showPassword ? "text" : "password"}
             endAdornment={
@@ -56,7 +69,7 @@ export default function LoginView() {
                 <IconButton
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
+                  // onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
                   {showPassword ? <VisibilityOff /> : <Visibility />}
@@ -66,8 +79,10 @@ export default function LoginView() {
             label="Password"
           />
         </FormControl>
+
         <Box sx={{ paddingTop: "2em" }}>
           <Button
+            onClick={handleSubmit}
             variant="contained"
             sx={{
               textTransform: "none",
@@ -81,6 +96,13 @@ export default function LoginView() {
           </Button>
         </Box>
       </Stack>
+      {alertLogin && (
+        <MyAlert
+          type="warning"
+          delay={7000}
+          msg="El usuario y/o la contraseña ingresada es incorrecta. Por favor, intenta nuevamente."
+        />
+      )}
     </Stack>
   );
 }
