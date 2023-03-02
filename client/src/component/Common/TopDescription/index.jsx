@@ -23,7 +23,14 @@ export function TopDescription() {
       sx={{
         position: "absolute",
         zIndex: 2,
-        width: 330,
+        width: {
+          xs: "90%",
+          sm: "90%",
+          md: "90%",
+          lg: "1100px",
+          xl: "1100px",
+        },
+        marginRight: "15em",
       }}
       avatar={
         <IconButton onClick={handleBack}>

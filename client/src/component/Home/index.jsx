@@ -117,11 +117,34 @@ export default function Home() {
           >
             Categorias
           </Typography>
-          <Container sx={{ margin: 0, padding: "0.5em", marginBottom: "10em" }}>
+          <Container
+            sx={{
+              margin: 0,
+              padding: "0.5em",
+              marginBottom: "4em",
+              maxWidth: {
+                xs: 600,
+                sm: 900,
+                md: 1200,
+                lg: 1536,
+                xl: 5600,
+              },
+            }}
+          >
             <Grid
               container
-              spacing={0.5}
-              sx={{ width: 340, margin: 0, padding: 0 }}
+              spacing={{ xs: 0.5, sm: 1.5, md: 2 }}
+              sx={{
+                maxWidth: {
+                  xs: 600,
+                  sm: 900,
+                  md: 1200,
+                  lg: 1536,
+                  xl: 5600,
+                },
+                margin: 0,
+                padding: 0,
+              }}
             >
               {state &&
                 state.category.map((dato) => (
@@ -130,15 +153,18 @@ export default function Home() {
                     sx={{
                       borderRadius: "15px",
                       margin: 0,
-                      marginBottom: "0.5em",
+                      marginBottom: { xs: "1em", sm: "1.5em", md: "2em" },
                       padding: 0,
                       boxShadow: "none",
-                      width: "160px",
-                      height: "120px",
+                      width: { xs: 160, sm: 192, md: 224, lg: 272 },
+                      height: { xs: 120, sm: 144, md: 168, lg: 204 },
+                      /* alignItems: "center",
+                      justifyContent: "center", */
                     }}
                     item
                     xs={6}
-                    md={8}
+                    sm={4}
+                    md={3}
                   >
                     <Link to={`/products/${dato.id}`}>
                       <CategoryCard

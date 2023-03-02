@@ -35,11 +35,13 @@ import { validarImg } from "../../../helpers";
 const ViewProduct = styled(Container)`
   height: 100vh;
   padding: 0;
+  width: "100%";
 `;
 
 const MyCard = styled(Card)`
-  width: 360px;
+  /* width: 360px; */
   height: 90vh;
+  width: "100%";
 `;
 
 const DivCarrito = styled(Stack)`

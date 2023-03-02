@@ -29,10 +29,21 @@ export default function CartView() {
       <Main>
         <FilterProduct sx={{ marginTop: "200px" }} />
         <Container>
-          <Grid container spacing={2} sx={{ width: 340 }}>
+          <Grid
+            container
+            spacing={2}
+            sx={{
+              maxWidth: {
+                xs: 600,
+                sm: 900,
+                md: 1200,
+                lg: 1536,
+              },
+            }}
+          >
             {state &&
               state.categoryProducts.map((dato) => (
-                <Grid key={dato.id} item xs={6} md={8}>
+                <Grid key={dato.id} item xs={6} sm={4} md={3}>
                   <Link to={`/description/${dato.id}`}>
                     <CardProduct
                       title={capitalizeFirstLetter(dato.nombre)}

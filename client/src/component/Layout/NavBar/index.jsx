@@ -32,9 +32,19 @@ export function NavBar() {
   };
 
   return (
-    <MyAppBar sx={{ width: "360px" }}>
+    <MyAppBar
+      sx={{
+        minWidth: "360px",
+        width: { xs: "100vw", sm: "100vw", md: "100vw", lg: "100vw" },
+        margin: "auto",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <BottomNavigation
         sx={{
+          // width: { xs: "100vw", sm: "100vw", md: "100vw" },
+          margin: "auto",
           justifyContent: "space-around",
           alignItems: "center",
           textDecoration: "none",

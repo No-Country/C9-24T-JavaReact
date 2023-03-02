@@ -14,7 +14,15 @@ export function TopBar({ isSearch, isCategory, isTitle, isCart }) {
   return (
     <AppBar
       position="fixed"
-      sx={{ backgroundColor: "#673AB7", width: "360px" }}
+      sx={{
+        backgroundColor: "#673AB7",
+        maxWidth: {
+          xs: 600,
+          sm: 900,
+          md: 1200,
+          lg: 1536,
+        },
+      }}
     >
       <Toolbar>
         {/* {console.log(state && state.search)} */}
