@@ -100,7 +100,20 @@ export default function Home() {
           >
             Categorias
           </Typography>
-          <Container sx={{ margin: 0, padding: "0.5em", marginBottom: "4em" }}>
+          <Container
+            sx={{
+              margin: 0,
+              padding: "0.5em",
+              marginBottom: "4em",
+              maxWidth: {
+                xs: 600,
+                sm: 900,
+                md: 1200,
+                lg: 1536,
+                xl: 5600,
+              },
+            }}
+          >
             <Grid
               container
               spacing={{ xs: 0.5, sm: 1.5, md: 2 }}
@@ -110,6 +123,7 @@ export default function Home() {
                   sm: 900,
                   md: 1200,
                   lg: 1536,
+                  xl: 5600,
                 },
                 margin: 0,
                 padding: 0,
@@ -125,8 +139,8 @@ export default function Home() {
                       marginBottom: { xs: "1em", sm: "1.5em", md: "2em" },
                       padding: 0,
                       boxShadow: "none",
-                      width: { xs: 160, sm: 192, md: 224 },
-                      height: { xs: 120, sm: 144, md: 168 },
+                      width: { xs: 160, sm: 192, md: 224, lg: 272 },
+                      height: { xs: 120, sm: 144, md: 168, lg: 204 },
                       /* alignItems: "center",
                       justifyContent: "center", */
                     }}

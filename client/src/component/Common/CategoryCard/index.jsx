@@ -10,8 +10,8 @@ export default function CategoryCard({ title, img }) {
   return (
     <Card
       sx={{
-        width: { xs: 160, sm: 192, md: 224 },
-        height: { xs: 120, sm: 144, md: 168 },
+        width: { xs: 160, sm: 192, md: 224, lg: 272 },
+        height: { xs: 120, sm: 144, md: 168, lg: 204 },
         padding: 0,
         margin: "auto",
         backgroundImage: `url(
@@ -25,8 +25,8 @@ export default function CategoryCard({ title, img }) {
       {/* <CardMedia image={`${img}`} component="img" /> */}
       <CardContent
         sx={{
-          width: { xs: 160, sm: 192, md: 224 },
-          height: { xs: 120, sm: 144, md: 168 },
+          width: { xs: 160, sm: 192, md: 224, lg: 272 },
+          height: { xs: 120, sm: 144, md: 168, lg: 204 },
           borderRadius: "15px",
           padding: 0,
           marging: 0,

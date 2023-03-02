@@ -35,7 +35,7 @@ export function NavBar() {
     <MyAppBar
       sx={{
         minWidth: "360px",
-        width: { xs: "100vw", sm: "100vw", md: "100vw" },
+        width: { xs: "100vw", sm: "100vw", md: "100vw", lg: "100vw" },
         margin: "auto",
         alignItems: "center",
         justifyContent: "center",
