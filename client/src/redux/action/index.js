@@ -192,10 +192,10 @@ export function crearPedido(productos) {
   return async function (dispatch) {
     postPedido(productos)
       .then((data) => {
-        console.log(data);
+        console.log(data.id);
         dispatch({
           type: "@pedido/crear",
-          payload: 100,
+          payload: data.id,
         });
       })
       .catch((error) => {

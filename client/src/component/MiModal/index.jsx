@@ -8,6 +8,7 @@ export const MiModal = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+  const pedido = useSelector((state) => state && state.pedido);
 
   const backHome = () => {
     navigate("/");
@@ -65,7 +66,7 @@ export const MiModal = () => {
             variant="h6"
             component="h2"
           >
-            Pedido #00001
+            Pedido {`#0000${pedido}`}
           </Typography>
         </Box>
         <Button

@@ -76,7 +76,7 @@ export const Pago = () => {
         const newSaldo = saldo - total;
         console.log(newSaldo);
         dispatch(updateSaldoUser(newSaldo));
-        // dispatch(crearPedido({ productos: items }));
+        dispatch(crearPedido({ productos: items }));
         setOpenModal(true);
       }
       // setAlertaSaldo(false);
