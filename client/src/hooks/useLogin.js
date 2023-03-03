@@ -43,7 +43,6 @@ export function useLogin() {
               profile: data.profile,
             })
           );
-          console.log(data);
           navigate("/");
           setAlertLogin(false);
         }
