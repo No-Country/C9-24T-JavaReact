@@ -48,7 +48,8 @@ export function NavBar() {
           justifyContent: "space-around",
           alignItems: "center",
           textDecoration: "none",
-          backgroundColor: "#673AB7",
+          backgroundColor: "white",
+          padding: "0 8%",
         }}
       >
         <Link to="/">
@@ -57,7 +58,7 @@ export function NavBar() {
             icon={<HomeIcon />}
             showLabel
             onClick={handleremoveBuscar}
-            sx={{ color: "white" }}
+            sx={{ color: "#673AB7" }}
           />
         </Link>
 
@@ -66,7 +67,7 @@ export function NavBar() {
           label="Buscar"
           icon={<SearchIcon />}
           onClick={handleAddBuscar}
-          sx={{ color: "white" }}
+          sx={{ color: "#673AB7" }}
         />
 
         <Link to="/">
@@ -74,7 +75,7 @@ export function NavBar() {
             showLabel
             label="Cuenta"
             icon={<PersonIcon />}
-            sx={{ color: "white" }}
+            sx={{ color: "#673AB7" }}
           />
         </Link>
       </BottomNavigation>

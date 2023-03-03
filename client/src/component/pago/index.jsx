@@ -94,7 +94,9 @@ export const Pago = () => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography sx={{ fontWeight: "bold" }}>Detalles</Typography>
+            <Typography sx={{ fontWeight: "bold", fontFamily: "roboto" }}>
+              Detalles
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <DetallesPago title="Saldo" monto={saldo} />
@@ -121,7 +123,7 @@ export const Pago = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Typography variant="p" component="p" sx={{}}>
+            <Typography variant="p" component="p" sx={{ fontFamily: "roboto" }}>
               COMPRAR
             </Typography>
           </DivCarrito>

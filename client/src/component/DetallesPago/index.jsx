@@ -13,6 +13,7 @@ export const DetallesPago = ({ title, monto }) => {
           padding: "0.5em 0 0 0.5em",
           paddingLeft: "2em",
           fontWeight: "500",
+          fontFamily: "roboto",
           fontSize: "0.875rem",
         }}
       >
@@ -23,6 +24,7 @@ export const DetallesPago = ({ title, monto }) => {
         sx={{
           // display: "inline",
           textAlign: "right",
+          fontFamily: "roboto",
           padding: "0.5em 0 0 0.5em",
           margin: "0 2em 0 auto",
           fontWeight: "500",

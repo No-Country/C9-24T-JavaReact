@@ -15,8 +15,27 @@ import Stack from "@mui/material/Stack";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import kioscoApp from "../../../assets/imagenes/kioscoAppPNG.png";
+import Styles from "../LoginView/Login.css";
 
 import { MyAlert } from "../../Common/MyAlert";
+
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { color } from "@mui/system";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: "#673AB7",
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      main: "#00838F",
+      // dark: will be calculated from palette.secondary.main,
+    },
+  },
+});
 
 export default function LoginView() {
   const {
@@ -43,56 +62,67 @@ export default function LoginView() {
         <div>
           <img src={kioscoApp} alt="" />
         </div>
-        <FormControl sx={{ m: 1, width: "300px" }} variant="outlined">
-          <TextField
-            name="email"
-            label="Usuario"
-            variant="outlined"
-            value={login.email}
-            onChange={handleInputChange}
-            fullWidth
-          />
-        </FormControl>
+        <ThemeProvider theme={theme}>
+          <FormControl sx={{ m: 1, width: "300px" }} variant="outlined">
+            <TextField
+              name="email"
+              color="primary"
+              autoFocus="true"
+              label="Usuario"
+              variant="outlined"
+              value={login.email}
+              onChange={handleInputChange}
+              fullWidth
+            />
+          </FormControl>
+        </ThemeProvider>
 
-        <FormControl sx={{ m: 1, width: "300px" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">
-            Contraseña
-          </InputLabel>
-          <OutlinedInput
-            name="password"
-            value={login.password}
-            onChange={handleInputChange}
-            id="outlined-adornment-password"
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  // onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
-        </FormControl>
+        <ThemeProvider theme={theme}>
+          <FormControl sx={{ m: 1, width: "300px" }} variant="outlined">
+            <InputLabel htmlFor="outlined-adornment-password">
+              Contraseña
+            </InputLabel>
+            <OutlinedInput
+              name="password"
+              className="outLine"
+              color="primary"
+              value={login.password}
+              onChange={handleInputChange}
+              id="outlined-adornment-password"
+              type={showPassword ? "text" : "password"}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    color="primary"
+                    onClick={handleClickShowPassword}
+                    // onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Password"
+            />
+          </FormControl>
+        </ThemeProvider>
 
         <Box sx={{ paddingTop: "2em" }}>
           <Button
             onClick={handleSubmit}
             variant="contained"
+            className="Button"
             sx={{
               textTransform: "none",
               borderRadius: "15px",
               padding: "1em 3em",
               lineHeight: "16px",
               backgroundColor: "#00838F",
+              fontFamily: "roboto",
             }}
           >
-            Iniciar Sesión
+            INGRESAR
           </Button>
         </Box>
       </Stack>

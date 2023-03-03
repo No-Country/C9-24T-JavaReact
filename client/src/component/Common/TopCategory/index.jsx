@@ -19,7 +19,7 @@ export default function TopCategory() {
       <Typography
         variant="h6"
         component="div"
-        sx={{ textAlign: "left", marginLeft: "1em" }}
+        sx={{ textAlign: "left", marginLeft: "1em", fontFamily: "roboto" }}
       >
         Bebidas
       </Typography>

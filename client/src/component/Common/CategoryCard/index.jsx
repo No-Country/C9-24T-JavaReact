@@ -12,6 +12,7 @@ export default function CategoryCard({ title, img }) {
       sx={{
         width: { xs: 160, sm: 192, md: 224, lg: 272 },
         height: { xs: 120, sm: 144, md: 168, lg: 204 },
+        boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.25)",
         padding: 0,
         margin: "auto",
         backgroundImage: `url(
@@ -19,14 +20,16 @@ export default function CategoryCard({ title, img }) {
         )`,
         backgroundSize: "cover",
         borderRadius: "15px",
-        boxShadow: "unset",
+        // boxShadow: "unset",
       }}
     >
       {/* <CardMedia image={`${img}`} component="img" /> */}
+
       <CardContent
         sx={{
           width: { xs: 160, sm: 192, md: 224, lg: 272 },
           height: { xs: 120, sm: 144, md: 168, lg: 204 },
+          boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.25)",
           borderRadius: "15px",
           padding: 0,
           marging: 0,
@@ -34,12 +37,16 @@ export default function CategoryCard({ title, img }) {
           alignItems: "flex-end",
           justifyContent: "center",
           // backgroundColor: "red",
-          boxShadow: "unset",
+          // boxShadow: "unset",
         }}
       >
         <Typography
           variant="subtitle1"
-          sx={{ marginBottom: "0.5em", fontWeight: "bold" }}
+          sx={{
+            marginBottom: "0.1em",
+            fontWeight: "bold",
+            fontFamily: "roboto",
+          }}
         >
           {title}
         </Typography>

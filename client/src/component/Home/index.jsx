@@ -57,7 +57,7 @@ export default function Home() {
           variant="h6"
           sx={{
             textAlign: "center",
-            padding: "1em 0 1em 0.5em",
+            padding: "24px 0 16px 0.5em",
             fontfamily: "Roboto",
             fontstyle: "normal",
             lineheight: "24px",
@@ -72,7 +72,7 @@ export default function Home() {
             backgroundColor: "#00838F",
             boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.25)",
             borderRadius: "15px",
-            margin: "0.5em",
+            margin: "0 1em",
             height: "4.5em",
             padding: "1em 0 0.3em 1em",
           }}
@@ -107,7 +107,8 @@ export default function Home() {
             variant="h6"
             sx={{
               textAlign: "left",
-              padding: "0.5em 0 0 0.5em",
+
+              padding: "32px 0 8px 0.5em",
               fontFamily: "roboto",
               fontStyle: "normal",
               fontWeight: "500",
