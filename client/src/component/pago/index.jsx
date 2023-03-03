@@ -98,10 +98,10 @@ export const Pago = () => {
               Detalles
             </Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails sx={{ paddingTop: 0 }}>
             <DetallesPago title="Saldo" monto={saldo} />
             <DetallesPago title="Descuento" monto={0} />
-            <Divider />
+            <Divider sx={{ marginTop: "0.75em" }} />
             <DetallesPago title="Total" monto={total} />
           </AccordionDetails>
         </Accordion>

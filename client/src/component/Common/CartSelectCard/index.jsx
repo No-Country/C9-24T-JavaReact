@@ -39,11 +39,18 @@ export default function CartSelectCard({ idProducto }) {
         alt="Live from space album cover"
       />
       <Box sx={{ display: "flex", flexDirection: "column", width: 220 }}>
-        <CardContent sx={{ flex: "1 0 auto", paddingBottom: 0 }}>
+        <CardContent sx={{ flex: "1 0 auto", padding: "1em 0 0 1em" }}>
           <Typography
             component="div"
             variant="caption"
-            sx={{ textAlign: "left", fontWeight: "bold" }}
+            sx={{
+              textAlign: "left",
+              fontFamily: "Roboto",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "0.875rem",
+              color: "black",
+            }}
           >
             {producto.nombre}
           </Typography>
@@ -51,7 +58,14 @@ export default function CartSelectCard({ idProducto }) {
             variant="subtitle1"
             color="text.secondary"
             component="div"
-            sx={{ textAlign: "left" }}
+            sx={{
+              textAlign: "left",
+              fontFamily: "Roboto",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "0.875rem",
+              color: "black",
+            }}
           >
             ${producto.precio}
           </Typography>
@@ -86,7 +100,18 @@ export default function CartSelectCard({ idProducto }) {
             </IconButton>
           )}
 
-          <Typography variant="p">{counter}</Typography>
+          <Typography
+            sx={{
+              fontFamily: "Roboto",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "0.875rem",
+              color: "black",
+            }}
+            variant="p"
+          >
+            {counter}
+          </Typography>
           <IconButton onClick={incrementarCounter} aria-label="add">
             <AddCircleRoundedIcon
               sx={{
