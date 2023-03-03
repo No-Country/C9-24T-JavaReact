@@ -21,9 +21,16 @@ export default function CardProduct({ title, precio, img }) {
         />
         <CardContent>
           <Typography
+            sx={{
+              fontFamily: "Roboto",
+              fontStyle: "normal",
+              fontWeight: "400",
+              fontSize: "0.875rem",
+              textAlign: "left",
+            }}
             variant="caption"
             component="div"
-            sx={{ textAlign: "left", fontFamily: "roboto" }}
+            // sx={{ , fontFamily: "roboto" }}
           >
             {title}
           </Typography>
@@ -32,9 +39,10 @@ export default function CardProduct({ title, precio, img }) {
             color="black"
             sx={{
               textAlign: "left",
-              fontWeight: "bold",
-              fontSize: "12px",
-              fontFamily: "roboto",
+              fontFamily: "Roboto",
+              fontStyle: "normal",
+              fontWeight: "600",
+              fontSize: "0.875rem",
             }}
           >
             {`$${precio}`}
