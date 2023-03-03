@@ -29,9 +29,11 @@ export default function Filter() {
             <MenuItem value="">
               <em>Filtro</em>
             </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            <MenuItem value={10}>contiene gluten</MenuItem>
+            <MenuItem value={20}>contiene lactosa</MenuItem>
+            <MenuItem value={30}>contiene azúcar</MenuItem>
+            <MenuItem value={30}>alto en azúcar</MenuItem>
+            <MenuItem value={30}>alto en sodio</MenuItem>
           </Select>
         </Stack>
       </FormControl>

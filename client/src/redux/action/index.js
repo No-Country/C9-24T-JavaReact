@@ -216,3 +216,16 @@ export function buscarProductos(value) {
     }
   };
 }
+
+export function borrarProductos(value) {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@producto/borrarBuscar",
+        payload: "",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

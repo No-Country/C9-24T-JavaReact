@@ -150,6 +150,13 @@ export default function rootReducer(state = initialState, actions) {
       };
     }
 
+    case "@producto/borrarBuscar": {
+      return {
+        ...state,
+        searchValue: actions.payload,
+      };
+    }
+
     default:
       state;
   }

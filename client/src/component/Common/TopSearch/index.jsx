@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { togleSearch } from "../../../redux/action";
 import { buscarProductos } from "../../../redux/action";
+import { borrarProductos } from "../../../redux/action";
 
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
@@ -57,6 +58,7 @@ export default function TopSearch() {
 
   const handleremoveBuscar = () => {
     dispatch(togleSearch(false));
+    dispatch(borrarProductos());
   };
 
   const onSearchValueChange = (e) => {
