@@ -33,7 +33,9 @@ body {
 a:-webkit-any-link {
   text-decoration: none;
 }
-
+a {
+  text-decoration: none;
+}
 /* .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
   margin: 1px 0;
 } */

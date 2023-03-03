@@ -14,15 +14,45 @@ import { capitalizeFirstLetter } from "../../../helpers";
 
 import { validarImg } from "../../../helpers";
 
+import { getProductSearch } from "../../../services/product";
+
 export default function CartView() {
   const dispatch = useDispatch();
+
   const state = useSelector((state) => state);
+  const searchValue = useSelector((state) => state && state.searchValue);
+  const [products, setProducts] = useState([]);
+
   const { id } = useParams();
 
   useEffect(() => {
+    console.log(state.categoryProducts, "p*c");
     dispatch(getCategoryProducts(id));
-  }, [dispatch, id]);
+    console.log(state && state.categoryProducts, "p*c2");
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (!(searchValue.length > 1)) {
+      console.log("productos normal");
+    } else {
+      getProductSearch(searchValue)
+        .then((productos) => {
+          console.log(productos.content);
+          setProducts(productos.content);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    console.log(products);
+
+    console.log(state);
+    console.log(searchValue, "categoryView");
+  }, [searchValue]);
+
   console.log(state);
+
+  // !searchedTodos.length
   return (
     <>
       <TopBar isCategory={true} />
@@ -41,18 +71,30 @@ export default function CartView() {
               },
             }}
           >
-            {state &&
-              state.categoryProducts.map((dato) => (
-                <Grid key={dato.id} item xs={6} sm={4} md={3}>
-                  <Link to={`/description/${dato.id}`}>
-                    <CardProduct
-                      title={capitalizeFirstLetter(dato.nombre)}
-                      precio={dato.precio}
-                      img={dato.imagenes[0].url}
-                    />
-                  </Link>
-                </Grid>
-              ))}
+            {!products.length
+              ? state &&
+                state.categoryProducts.map((dato) => (
+                  <Grid key={dato.id} item xs={6} sm={4} md={3}>
+                    <Link to={`/description/${dato.id}`}>
+                      <CardProduct
+                        title={capitalizeFirstLetter(dato.nombre)}
+                        precio={dato.precio}
+                        img={dato.imagenes[0].url}
+                      />
+                    </Link>
+                  </Grid>
+                ))
+              : products.map((dato) => (
+                  <Grid key={dato.id} item xs={6} sm={4} md={3}>
+                    <Link to={`/description/${dato.id}`}>
+                      <CardProduct
+                        title={capitalizeFirstLetter(dato.nombre)}
+                        precio={dato.precio}
+                        img={dato.imagenes[0].url}
+                      />
+                    </Link>
+                  </Grid>
+                ))}
           </Grid>
         </Container>
       </Main>

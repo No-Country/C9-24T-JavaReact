@@ -16,11 +16,12 @@ export function TopBar({ isSearch, isCategory, isTitle, isCart }) {
       position="fixed"
       sx={{
         backgroundColor: "#673AB7",
-        maxWidth: {
-          xs: 600,
-          sm: 900,
-          md: 1200,
-          lg: 1536,
+        minWidth: {
+          xs: 360,
+          sm: 600,
+          md: 900,
+          lg: 1200,
+          xl: 1536,
         },
       }}
     >

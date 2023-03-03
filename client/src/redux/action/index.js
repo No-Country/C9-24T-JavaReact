@@ -203,3 +203,16 @@ export function crearPedido(productos) {
       });
   };
 }
+
+export function buscarProductos(value) {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "@producto/buscar",
+        payload: value,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

@@ -1,6 +1,7 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { togleSearch } from "../../../redux/action";
+import { buscarProductos } from "../../../redux/action";
 
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
@@ -47,11 +48,22 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function TopSearch() {
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
+  const [searchValue, setSearchValue] = useState("");
+
+  // useEffect(() => {
+  //   console.log(searchValue);
+  // }, [searchValue]);
 
   const handleremoveBuscar = () => {
     dispatch(togleSearch(false));
+  };
+
+  const onSearchValueChange = (e) => {
+    console.log(e.target.value);
+    setSearchValue(e.target.value);
+    console.log(searchValue, "enviado");
+    dispatch(buscarProductos(searchValue));
   };
 
   return (
@@ -61,6 +73,8 @@ export default function TopSearch() {
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
+          value={searchValue}
+          onChange={onSearchValueChange}
           placeholder="Buscar..."
           inputProps={{ "aria-label": "search" }}
         />

@@ -15,6 +15,16 @@ import { Link } from "react-router-dom";
 export default function CategoryView() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
+  const searchValue = useSelector((state) => state && state.searchValue);
+  console.log(state);
+
+  useEffect(() => {
+    console.log(state);
+
+    console.log(searchValue, "categoryView");
+  }, [searchValue]);
+
+  // const [productos, setproductos] = useState([]);
 
   // const [nombre, setNombre] = useState(category.nombre);
 

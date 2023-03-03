@@ -10,6 +10,7 @@ const initialState = {
   saldo: null,
   pedido: null,
   sesion: { jwt: null, isAuthenticated: false, profile: null },
+  searchValue: "",
 };
 
 export default function rootReducer(state = initialState, actions) {
@@ -139,6 +140,13 @@ export default function rootReducer(state = initialState, actions) {
       return {
         ...state,
         pedido: actions.payload,
+      };
+    }
+
+    case "@producto/buscar": {
+      return {
+        ...state,
+        searchValue: actions.payload,
       };
     }
 
