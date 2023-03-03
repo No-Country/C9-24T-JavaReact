@@ -20,7 +20,7 @@ export default function CategoryCard({ title, img }) {
         )`,
         backgroundSize: "cover",
         borderRadius: "15px",
-        boxShadow: "unset",
+        // boxShadow: "unset",
       }}
     >
       {/* <CardMedia image={`${img}`} component="img" /> */}
@@ -37,13 +37,13 @@ export default function CategoryCard({ title, img }) {
           alignItems: "flex-end",
           justifyContent: "center",
           // backgroundColor: "red",
-          boxShadow: "unset",
+          // boxShadow: "unset",
         }}
       >
         <Typography
           variant="subtitle1"
           sx={{
-            marginBottom: "0.5em",
+            marginBottom: "0.1em",
             fontWeight: "bold",
             fontFamily: "roboto",
           }}
