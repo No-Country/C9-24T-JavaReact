@@ -161,6 +161,38 @@ export default function RecipeReviewCard() {
           >
             {state && state.productDescription.descripcion}
           </Typography>
+          <Stack
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="center"
+            spacing={2}
+            paddingTop={4}
+            sx={{ flexWrap: "wrap" }}
+          >
+            {!state.productDescription.caracteristicas
+              ? "sin caracteristicas"
+              : state &&
+                state.productDescription.caracteristicas.map((data) => (
+                  <Chip
+                    sx={{ margin: "1em" }}
+                    key={data.id}
+                    label={data.nombre}
+                    size="medium"
+                  />
+                ))}
+
+            {/* 
+          state.categoryProducts.map((dato) => (
+                  <Grid key={dato.id} item xs={6} sm={4} md={3}>
+                    <Link to={`/description/${dato.id}`}>
+                      <CardProduct
+                        title={capitalizeFirstLetter(dato.nombre)}
+                        precio={dato.precio}
+                        img={dato.imagenes[0].url}
+                      />
+                    </Link>
+                  </Grid> */}
+          </Stack>
         </CardContent>
       </MyCard>
       <Stack
