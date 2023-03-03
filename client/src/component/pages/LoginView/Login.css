@@ -1,0 +1,7 @@
+.Button:hover {
+  background-color: #673ab7;
+}
+
+.outLine {
+  border: 1.5px solid #673ab7;
+}

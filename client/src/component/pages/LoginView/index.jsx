@@ -15,6 +15,7 @@ import Stack from "@mui/material/Stack";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import kioscoApp from "../../../assets/imagenes/kioscoAppPNG.png";
+import Styles from "../LoginView/Login.css";
 
 import { MyAlert } from "../../Common/MyAlert";
 
@@ -82,6 +83,7 @@ export default function LoginView() {
             </InputLabel>
             <OutlinedInput
               name="password"
+              className="outLine"
               color="primary"
               value={login.password}
               onChange={handleInputChange}
@@ -109,6 +111,7 @@ export default function LoginView() {
           <Button
             onClick={handleSubmit}
             variant="contained"
+            className="Button"
             sx={{
               textTransform: "none",
               borderRadius: "15px",
