@@ -145,8 +145,11 @@ export default function RecipeReviewCard() {
               color="text.primary"
               sx={{
                 textAlign: "left",
-                fontWeight: "bold",
-                fontFamily: "roboto",
+                fontFamily: "Roboto",
+                fontStyle: "normal",
+                fontWeight: "500",
+                fontSize: "1rem",
+                color: "black",
               }}
             >
               {state && state.productDescription.nombre
@@ -162,10 +165,13 @@ export default function RecipeReviewCard() {
             variant="h6"
             color="text.secondary"
             sx={{
+              marginTop: "0.5em",
               textAlign: "left",
-              weigth: "bold",
               color: "black",
-              fontFamily: "roboto",
+              fontFamily: "Roboto",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "0.875rem",
             }}
           >
             $ {state && state.productDescription.precio}
@@ -174,7 +180,15 @@ export default function RecipeReviewCard() {
           <Typography
             variant="h6"
             color="text.secondary"
-            sx={{ textAlign: "left", color: "black", fontFamily: "roboto" }}
+            sx={{
+              textAlign: "left",
+              color: "black",
+              fontFamily: "Roboto",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "0.875rem",
+              marginTop: "1em",
+            }}
           >
             Información adicional
           </Typography>
@@ -182,7 +196,13 @@ export default function RecipeReviewCard() {
           <Typography
             variant="body2"
             color="text.secondary"
-            sx={{ textAlign: "left", fontFamily: "roboto" }}
+            sx={{
+              textAlign: "left",
+              fontFamily: "Roboto",
+              fontStyle: "normal",
+              fontWeight: "400",
+              fontSize: "0.875rem",
+            }}
           >
             {state && state.productDescription.descripcion}
           </Typography>
@@ -242,7 +262,12 @@ export default function RecipeReviewCard() {
               <Typography
                 variant="p"
                 component="p"
-                sx={{ fontFamily: "roboto" }}
+                sx={{
+                  fontFamily: "Roboto",
+                  fontStyle: "normal",
+                  fontWeight: "500",
+                  fontSize: "0.875rem",
+                }}
               >
                 AGREGAR
               </Typography>
@@ -257,7 +282,12 @@ export default function RecipeReviewCard() {
               <Typography
                 variant="p"
                 component="p"
-                sx={{ fontFamily: "roboto" }}
+                sx={{
+                  fontFamily: "Roboto",
+                  fontStyle: "normal",
+                  fontWeight: "500",
+                  fontSize: "0.875rem",
+                }}
               >
                 AGREGAR
               </Typography>
