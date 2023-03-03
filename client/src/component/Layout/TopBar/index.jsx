@@ -5,10 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import TopCategory from "../../Common/TopCategory";
 import TopSearch from "../../Common/TopSearch";
 import TopCart from "../../Common/TopCart";
+import { useParams } from "react-router-dom";
 
 import kioscoApp from "../../../assets/imagenes/kioscoApp_white.png";
 
-export function TopBar({ isSearch, isCategory, isTitle, isCart }) {
+export function TopBar({ isSearch, isCategory, title, isCart }) {
   const state = useSelector((state) => state);
 
   return (

@@ -15,7 +15,7 @@ import Stack from "@mui/material/Stack";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import kioscoApp from "../../../assets/imagenes/kioscoAppPNG.png";
-import Styles from "../LoginView/Login.css";
+// import Styles from "../LoginView/Login.css";
 
 import { MyAlert } from "../../Common/MyAlert";
 
@@ -67,7 +67,7 @@ export default function LoginView() {
             <TextField
               name="email"
               color="primary"
-              autoFocus="true"
+              // autoFocus="true"
               label="Usuario"
               variant="outlined"
               value={login.email}

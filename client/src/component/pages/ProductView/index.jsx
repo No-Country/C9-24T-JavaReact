@@ -22,14 +22,29 @@ export default function CartView() {
   const state = useSelector((state) => state);
   const searchValue = useSelector((state) => state && state.searchValue);
   const [products, setProducts] = useState([]);
+  const [title, setTitle] = useState("categorias");
 
   const { id } = useParams();
 
+  // const getNameCategory = (id, categories) => {
+  //   categories.forEach((element) => {
+  //     if (element.id === id) {
+  //       return element.nombre;
+  //     }
+  //     return "categorias";
+  //   });
+  // };
+  // useEffect(() => {
+  //   setTitle(getNameCategory(id, state.category));
+  //   console.log(title, "mi title");
+  // }, []);
+
   useEffect(() => {
-    console.log(state.categoryProducts, "p*c");
+    // console.log(state.categoryProducts, "p*c");
     dispatch(getCategoryProducts(id));
-    console.log(state && state.categoryProducts, "p*c2");
-  }, [dispatch]);
+
+    // console.log(state && state.categoryProducts, "p*c2");
+  }, [dispatch, id]);
 
   useEffect(() => {
     if (!(searchValue.length > 1)) {

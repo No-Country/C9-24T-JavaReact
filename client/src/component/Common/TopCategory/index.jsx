@@ -21,7 +21,7 @@ export default function TopCategory() {
         component="div"
         sx={{ textAlign: "left", marginLeft: "1em", fontFamily: "roboto" }}
       >
-        Bebidas
+        Productos
       </Typography>
       <IconButton sx={{ marginLeft: "auto" }}>
         <ShoppingCartSharpIcon sx={{ color: "white" }} />
