@@ -45,9 +45,13 @@ export const MiModal = () => {
         <Typography
           sx={{
             fontFamily: "Roboto",
+            fontStyle: "normal",
             fontWeight: "500",
+            fontSize: "0.875rem",
             color: "#777777",
             marginTop: "1em",
+            width: "70%",
+            marginRight: "auto",
           }}
           variant="h6"
           component="h2"
