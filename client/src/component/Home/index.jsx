@@ -108,7 +108,7 @@ export default function Home() {
             sx={{
               textAlign: "left",
 
-              padding: "32px 0 8px 0.5em",
+              padding: "32px 0 8px 16px",
               fontFamily: "roboto",
               fontStyle: "normal",
               fontWeight: "500",
