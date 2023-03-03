@@ -50,6 +50,16 @@ const DivCarrito = styled(Stack)`
   border-radius: 15px;
   width: 10rem;
   height: 2.5em;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+`;
+
+const DivCarritoDisable = styled(Stack)`
+  background: #d9d9d9;
+  color: #000000;
+  border-radius: 15px;
+  width: 10rem;
+  height: 2.5em;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export default function RecipeReviewCard() {
@@ -100,6 +110,12 @@ export default function RecipeReviewCard() {
         console.log(state.itemsCarrito, "actu");
       }
     } else {
+      // setDisabled({
+      //   opacity: 0.5,
+      //   pointerEvents: "none",
+      //   backgroundColor: "red",
+      // });
+
       console.log(e.target);
       e.preventDefault();
     }
@@ -180,18 +196,6 @@ export default function RecipeReviewCard() {
                     size="medium"
                   />
                 ))}
-
-            {/* 
-          state.categoryProducts.map((dato) => (
-                  <Grid key={dato.id} item xs={6} sm={4} md={3}>
-                    <Link to={`/description/${dato.id}`}>
-                      <CardProduct
-                        title={capitalizeFirstLetter(dato.nombre)}
-                        precio={dato.precio}
-                        img={dato.imagenes[0].url}
-                      />
-                    </Link>
-                  </Grid> */}
           </Stack>
         </CardContent>
       </MyCard>
@@ -218,8 +222,39 @@ export default function RecipeReviewCard() {
           </IconButton>
         </DivCarrito>
 
-        <Link sx={{ color: "red" }} to="/cart">
-          <DivCarrito
+        <Link to="/cart">
+          {counter !== 0 ? (
+            <DivCarrito
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              onClick={handleAgregar}
+            >
+              <Typography
+                variant="p"
+                component="p"
+                sx={{ fontFamily: "roboto" }}
+              >
+                AGREGAR
+              </Typography>
+            </DivCarrito>
+          ) : (
+            <DivCarritoDisable
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              onClick={handleAgregar}
+            >
+              <Typography
+                variant="p"
+                component="p"
+                sx={{ fontFamily: "roboto" }}
+              >
+                AGREGAR
+              </Typography>
+            </DivCarritoDisable>
+          )}
+          {/* <DivCarrito
             direction="row"
             justifyContent="center"
             alignItems="center"
@@ -228,7 +263,7 @@ export default function RecipeReviewCard() {
             <Typography variant="p" component="p" sx={{ fontFamily: "roboto" }}>
               AGREGAR
             </Typography>
-          </DivCarrito>
+          </DivCarrito> */}
         </Link>
       </Stack>
     </ViewProduct>
