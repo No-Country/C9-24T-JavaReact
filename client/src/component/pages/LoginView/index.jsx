@@ -20,6 +20,7 @@ import Styles from "../LoginView/Login.css";
 import { MyAlert } from "../../Common/MyAlert";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { color } from "@mui/system";
 
 const theme = createTheme({
   palette: {

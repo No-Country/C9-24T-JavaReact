@@ -127,7 +127,11 @@ export default function RecipeReviewCard() {
               component="h5"
               variant="h5"
               color="text.primary"
-              sx={{ textAlign: "left", fontWeight: "bold" }}
+              sx={{
+                textAlign: "left",
+                fontWeight: "bold",
+                fontFamily: "roboto",
+              }}
             >
               {state && state.productDescription.nombre
                 ? capitalizeFirstLetter(state.productDescription.nombre)
@@ -141,7 +145,12 @@ export default function RecipeReviewCard() {
           <Typography
             variant="h6"
             color="text.secondary"
-            sx={{ textAlign: "left", weigth: "bold", color: "black" }}
+            sx={{
+              textAlign: "left",
+              weigth: "bold",
+              color: "black",
+              fontFamily: "roboto",
+            }}
           >
             $ {state && state.productDescription.precio}
           </Typography>
@@ -149,7 +158,7 @@ export default function RecipeReviewCard() {
           <Typography
             variant="h6"
             color="text.secondary"
-            sx={{ textAlign: "left", color: "black" }}
+            sx={{ textAlign: "left", color: "black", fontFamily: "roboto" }}
           >
             Información adicional
           </Typography>
@@ -157,7 +166,7 @@ export default function RecipeReviewCard() {
           <Typography
             variant="body2"
             color="text.secondary"
-            sx={{ textAlign: "left" }}
+            sx={{ textAlign: "left", fontFamily: "roboto" }}
           >
             {state && state.productDescription.descripcion}
           </Typography>
