@@ -44,8 +44,10 @@ export default function CategoryCard({ title, img }) {
           variant="subtitle1"
           sx={{
             marginBottom: "0.1em",
-            fontWeight: "bold",
             fontFamily: "roboto",
+            fontWeight: "500",
+            fontSize: "0.875rem",
+            lineHeight: "1.5rem",
           }}
         >
           {title}

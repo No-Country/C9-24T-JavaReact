@@ -84,7 +84,7 @@ export default function Home() {
               fontstyle: "normal",
               lineheight: "1.5rem",
               fontSize: "1rem",
-              fontWeight: "600",
+              fontWeight: "500",
             }}
           >
             Tu saldo disponible es
