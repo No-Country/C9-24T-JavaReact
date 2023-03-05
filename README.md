@@ -55,3 +55,15 @@ Developed features:
   - Student flow
   - Parent flow
   - Add funds using credit card 
+ 
+## Setup
+### Prerequistes
+For running this project you need:
+- SDK Java 18
+- Maven 3.8 or above
+- NodeJs
+- MySQL
+### Database
+
+### Backend
+### Frontend
