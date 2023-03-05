@@ -9,7 +9,7 @@
 </p>
 
 ## General Information
-This project was made for [_No Country_](https://www.nocountry.tech/perfilesit). Our objective was to develop an application that enables high school students to make purchases at the school cafeteria without having to endure lengthy queues. This can be achieved by allowing students to select items and add them to their cart, place an order, and simply collect it without any hassle. Additionally, this system eliminates the need for cash transactions, provides parents with greater control over their children's consumption habits, and facilitates data collection for the school to analyze consumption patterns and develop strategies to promote healthier lifestyles among students.
+This project was carried out over a period of one month for [_No Country_](https://www.nocountry.tech/perfilesit). Our objective was to develop an application that enables high school students to make purchases at the school cafeteria without having to endure lengthy queues. This can be achieved by allowing students to select items and add them to their cart, place an order, and simply collect it without any hassle. Additionally, this system eliminates the need for cash transactions, provides parents with greater control over their children's consumption habits, and facilitates data collection for the school to analyze consumption patterns and develop strategies to promote healthier lifestyles among students.
 
 ## Our Team
 **Frontend**
@@ -113,3 +113,49 @@ or you can create a build using:
 ```console
 npm run build
 ```
+## Usage
+
+### Backend (Postman collection and Swagger)
+You can acces api documentation in swagger in http://localhost:8080/swagger-ui/index.html#.
+
+[_Here_](https://www.example.com) you have a postman collection with examples of api usage
+
+### Frontend
+<p align="center">
+  <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/userflow1.png" alt="screenshot of the app"/>
+</p>
+<p align="center">
+  <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/userflow2.png" alt="screenshot of the app"/>
+</p>
+<p align="center">
+  <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/userflow3.png" alt="screenshot of the app"/>
+</p>
+<p align="center">
+  <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/userflow4.png" alt="screenshot of the app"/>
+</p>
+<p align="center">
+  <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/userflow5.png" alt="screenshot of the app"/>
+</p>
+<p align="center">
+  <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/userflow6.png" alt="screenshot of the app"/>
+</p>
+
+
+## Project Status
+
+Project is _no longer being worked on_ since it was a one month project
+
+## Room for Improvement
+Room for improvement:
+- Integration tests
+- Unit tests
+- The footer in some devices doesn't work properly
+- Sometimes the frontend does not show the order number
+
+To do: 
+- Implement frontend for administration: full CRUD of product, categories and characteristics. Users registration. Add funds to students. View of orders and the possibility of cancel an order.
+- Implement frontend for parents: view students consumitions
+- Implement frontend search bar and filtering by characteristics
+- Implement creditcard payment
+- Allow parents to restrict products for their sons
+- Add an option to the admin for making offers
