@@ -13,18 +13,18 @@ This project was made for [_No Country_](https://www.nocountry.tech/perfilesit).
 
 ## Our Team
 **Frontend**
-- Luis Manuel Velasquez Enciso
-- Dedwison Alvarez
+- Luis Manuel Velasquez Enciso: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
+- Dedwison Alvarez: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
 
 **Backend**
-- Alex Lihuel Mujica
+- Alex Lihuel Mujica: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
 
 **UX/UI**
-- Franco De Carli
-- Daniela Gil
+- Franco De Carli: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
+- Daniela Gil: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
 
 **Team Leader**
-- Josefina Anschütz
+- Josefina Anschütz: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
 
 ## Technologies Used
 - **Backend:** Java, Spring Boot, Spring Security, Hibernate, REST, API, JWT, JSON, Maven, Apache, JUnit, Swagger, MapStruct
