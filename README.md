@@ -72,6 +72,9 @@ git clone https://github.com/your-username/your-repository.git
 You have the script for generating the database on model.sql. 
 
 Here is the ERD: 
+<p align="center">
+  <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/ERD.png" alt="ERD"/>
+</p>
 
 ### Backend
 1. Install any required dependencies by running the following command in the backend directory of the project:
