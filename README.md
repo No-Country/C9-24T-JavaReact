@@ -8,6 +8,18 @@
   <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/inicio.png" alt="screenshot of the app"/>
 </p>
 
+## Table of Contents
+* [General Info](#general-information)
+* [Our Team](#our-team)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Setup](#setup)
+* [Usage](#usage)
+  * [Backend (Postman collection and Swagger)](#backend-postman-collection-and-swagger)
+  * [Frontend](#frontend-1)
+* [Project Status](#project-status)
+* [Room for Improvement](#room-for-improvement))
+
 ## General Information
 This project was carried out over a period of one month for [_No Country_](https://www.nocountry.tech/perfilesit). Our objective was to develop an application that enables high school students to make purchases at the school cafeteria without having to endure lengthy queues. This can be achieved by allowing students to select items and add them to their cart, place an order, and simply collect it without any hassle. Additionally, this system eliminates the need for cash transactions, provides parents with greater control over their children's consumption habits, and facilitates data collection for the school to analyze consumption patterns and develop strategies to promote healthier lifestyles among students.
 
