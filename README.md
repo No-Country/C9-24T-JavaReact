@@ -22,6 +22,7 @@ This project was made for [_No Country_](https://www.nocountry.tech/perfilesit).
 **UX/UI**
 - Franco De Carli
 - Daniela Gil
+
 **Team Leader**
 - Josefina Anschütz
 
