@@ -41,9 +41,9 @@ This project was carried out over a period of one month for [_No Country_](https
 ## Technologies Used
 - **Backend:** Java, Spring Boot, Spring Security, Hibernate, REST, API, JWT, JSON, Maven, Apache, JUnit, Swagger, MapStruct
 - **Database:** MySQL
-- **Frontend:** HTML, CSS, JavaScript, React, Redux, Material Design, Axios, React Router
-- **Infrastructure:** EC2, S3, RDS
-- **Tools:** Git, GitHub, Postman, Trello, Discord, Slack, Figma
+- **Frontend:** HTML, CSS, JavaScript, React, Redux, Material UI, Axios, React Router, Styled Components, Hooks
+- **Infrastructure:** EC2, S3, RDS, Docker, Docker-Compose
+- **Tools:** Git, GitHub, VSCode, IntelliJ IDEA, ESLint Postman, Trello, Discord, Meet, Slack, Figma
 
 ## Features
 Developed features:
