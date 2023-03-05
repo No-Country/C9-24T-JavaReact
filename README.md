@@ -25,7 +25,7 @@ This project was carried out over a period of one month for [_No Country_](https
 
 ## Our Team
 **Frontend**
-- Luis Manuel Velasquez Enciso: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
+- Luis Manuel Velasquez Enciso: [**GitHub**](https://github.com/luisvelark) [**LinkedIn**](https://www.linkedin.com/in/luisvelark)
 - Dedwison Alvarez: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
 
 **Backend**
