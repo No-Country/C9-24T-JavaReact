@@ -100,3 +100,16 @@ java -jar target/your-project.jar
 This will start the Spring Boot application and make it available at http://localhost:8080/
 
 ### Frontend
+1. Install any required dependencies by running the following command in the backend directory of the project:
+```console
+npm i
+```
+2. Configure the backend url in client/src/services/configAxios.js, put your backend url in the variable baseURL in line 4
+3. Run the frontend in dev mod using
+```console
+npm run dev
+```
+or you can create a build using:
+```console
+npm run build
+```
