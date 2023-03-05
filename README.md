@@ -44,7 +44,7 @@ Developed features:
 - REST API:
   - Category full crud
   - Characteristic full crud of characteristics
-  - Product full crud
+  - Product full crud including diffrent filterings
   - Add funds to student wallet
   - Create and cancell orders
   - List all orders
@@ -63,7 +63,36 @@ For running this project you need:
 - Maven 3.8 or above
 - NodeJs
 - MySQL
+- Git
+- You have to clone this repository using: 
+```console
+git clone https://github.com/your-username/your-repository.git
+```
 ### Database
+You have the script for generating the database on model.sql. 
+
+Here is the ERD: 
 
 ### Backend
+1. Install any required dependencies by running the following command in the backend directory of the project:
+```console
+mvn install
+```
+2. Configure any necessary settings, such as database credentials, by editing the application.properties file located in the src/main/resources directory.
+```console
+spring.datasource.url=jdbc:mysql://localhost:3306/mydatabase
+spring.datasource.username=dbuser
+spring.datasource.password=dbpass
+```
+3. Build the project using the following command:
+```console
+mvn package
+```
+4. Run the project using the following command:
+```console
+java -jar target/your-project.jar
+```
+
+This will start the Spring Boot application and make it available at http://localhost:8080/
+
 ### Frontend
