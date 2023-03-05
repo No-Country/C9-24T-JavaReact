@@ -31,3 +31,27 @@ This project was made for [_No Country_](https://www.nocountry.tech/perfilesit).
 - **Frontend:** HTML, CSS, JavaScript, React, Redux, Material Design, Axios, React Router
 - **Infrastructure:** EC2, S3, RDS
 - **Tools:** Git, GitHub, Postman, Trello, Discord, Slack, Figma
+
+## Features
+Developed features:
+
+- Student login
+- Product list
+- Inspect product details and characteristics
+- Product filtering using category
+- Add to cart
+- Purchase cart
+- REST API:
+  - Category full crud
+  - Characteristic full crud of characteristics
+  - Product full crud
+  - Add funds to student wallet
+  - Create and cancell orders
+  - List all orders
+  - Filter orders by student or parent identification 
+  - Student and Parent registration and authentication
+  - Security
+- UX/UI:
+  - Student flow
+  - Parent flow
+  - Add funds using credit card 
