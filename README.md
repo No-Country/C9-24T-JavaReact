@@ -130,7 +130,7 @@ npm run build
 ### Backend (Postman collection and Swagger)
 You can acces api documentation in swagger in http://localhost:8080/swagger-ui/index.html#.
 
-[_Here_](https://www.example.com) you have a postman collection with examples of api usage
+[_Here_](https://elements.getpostman.com/redirect?entityId=18775030-f492f3cd-2492-4dac-9182-a3eebfb888c1&entityType=collection) you have a postman collection with examples of api usage
 
 ### Frontend
 <p align="center">
