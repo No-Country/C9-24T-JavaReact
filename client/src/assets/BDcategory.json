@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "sandwiches",
+    "imagen": "https://bit.ly/3XK5DDn"
+  },
+  {
+    "id": 2,
+    "nombre": "gaseosas",
+    "imagen": "https://bit.ly/3YGGpqV"
+  },
+  {
+    "id": 3,
+    "nombre": "galletas",
+    "imagen": "https://bit.ly/3Z46XBU"
+  },
+  {
+    "id": 5,
+    "nombre": "aguas",
+    "imagen": "https://static1.abc.es/media/bienestar/2020/12/04/tipos-agua-kroC--620x349@abc.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "chocolates",
+    "imagen": "http://cdn.shopify.com/s/files/1/0507/0071/4176/collections/TabletaChocolateconLechex45grs_1200x630.jpg?v=1614616596"
+  },
+  {
+    "id": 8,
+    "nombre": "golosinas",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_896669-MLA51720786124_092022-O.webp"
+  }
+]
