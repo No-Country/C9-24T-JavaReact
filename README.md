@@ -29,7 +29,7 @@ This project was carried out over a period of one month for [_No Country_](https
 - Dedwison Alvarez: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
 
 **Backend**
-- Alex Lihuel Mujica: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
+- Alex Lihuel Mujica: [**GitHub**](https://github.com/LihuelMujica) [**LinkedIn**](https://www.linkedin.com/in/lihuelmujica)
 
 **UX/UI**
 - Franco De Carli: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
