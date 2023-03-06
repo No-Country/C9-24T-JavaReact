@@ -1,8 +1,8 @@
 # ![Logo](./img/Group.png)
 
 > Kiosko app is a platform designed to allow students to purchase items from the school cafeteria without having to queue or handle cash.
-> Live demo [_here_](http://3.88.177.40:8080/swagger-ui/index.html#). (email: test@test.com password: testuser)  
-> Backend Demo [_here_](https://www.example.com).
+> Live demo [_here_](http://no-country-kioskoapp-react.s3-website-us-east-1.amazonaws.com/). (email: test@test.com password: testuser)  
+> Backend Demo [_here_](https://www.example.com](http://3.88.177.40:8080/swagger-ui/index.html#).
 
 <p align="center">
   <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/inicio.png" alt="screenshot of the app"/>
@@ -32,8 +32,8 @@ This project was carried out over a period of one month for [_No Country_](https
 - Alex Lihuel Mujica: [**GitHub**](https://github.com/LihuelMujica) [**LinkedIn**](https://www.linkedin.com/in/lihuelmujica)
 
 **UX/UI**
-- Franco De Carli: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
-- Daniela Gil: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
+- Franco De Carli: [**LinkedIn**](https://www.example.com)
+- Daniela Gil: [**LinkedIn**](https://www.example.com)
 
 **Team Leader**
 - Josefina Anschütz: [**LinkedIn**](https://www.linkedin.com/in/josefina-anschutz/)
