@@ -78,15 +78,15 @@ public class ProductoController {
         return new ResponseEntity<>(imagenService.create(imagenCreateDTO, productoId), HttpStatus.CREATED);
     }
 
-    @PatchMapping("/{productId}/imagen/{imagenId}")
-    public ResponseEntity<ImagenDTO> updateImagen(@PathVariable("productoId") int productoId,
-                                            @PathVariable("imagenId") int imagenId,
+    @PatchMapping("/{productoId}/imagen/{imagenId}")
+    public ResponseEntity<ImagenDTO> updateImagen(@PathVariable("productoId") int productoId, @PathVariable("imagenId") int imagenId,
                                             @RequestBody ImagenCreateDTO imagenCreateDTO) throws ResourceNotFoundException {
+        System.out.println(productoId);
         return new ResponseEntity<>(imagenService.update(imagenCreateDTO, imagenId, productoId), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{productId}/imagen/{imagenId}")
-    public ResponseEntity<?> deleteImagen(@PathVariable("productoId") int productoId, @PathVariable("imagenId") int imagenId) throws ResourceNotFoundException {
+    @RequestMapping(value = "/{productoId}/imagen/{imagenId}", method = RequestMethod.DELETE)
+    public ResponseEntity<?> deleteImagen(@PathVariable int productoId, @PathVariable int imagenId) throws ResourceNotFoundException {
         imagenService.delete(imagenId, productoId);
         return new ResponseEntity<>(HttpStatus.OK);
     }

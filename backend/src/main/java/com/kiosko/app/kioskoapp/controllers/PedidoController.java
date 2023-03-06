@@ -49,7 +49,7 @@ public class PedidoController {
     }
 
     @GetMapping("/padre/{dni}")
-    public ResponseEntity<List<PedidoDTO>> getByPadreDni(String dniPadre) throws ResourceNotFoundException {
+    public ResponseEntity<List<PedidoDTO>> getByPadreDni(@PathVariable("dni") String dniPadre) throws ResourceNotFoundException {
         return new ResponseEntity<>(pedidoService.getByPadreDni(dniPadre), HttpStatus.OK);
     }
 

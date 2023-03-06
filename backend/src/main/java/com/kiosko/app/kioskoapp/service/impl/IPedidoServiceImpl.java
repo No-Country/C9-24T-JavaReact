@@ -77,7 +77,7 @@ public class IPedidoServiceImpl implements IPedidoService {
 
     @Override
     public List<PedidoDTO> getByPadreDni(String dniPadre) throws ResourceNotFoundException {
-        if(appUserService.getProfileByDni(dniPadre).getRol() != Rol.PADRE) throw new ResourceNotFoundException("Padre no encontrado");
+        if(appUserService.getProfileByDni(dniPadre).getRol() != Rol.PADRE && appUserService.getProfileByDni(dniPadre).getRol() != Rol.ADMIN) throw new ResourceNotFoundException("Padre no encontrado");
         return pedidoMapper.pedidosToPedidosDto(
                 pedidoRepository.findByEstudiantePadreDni(dniPadre)
         );
