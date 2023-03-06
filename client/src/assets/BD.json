@@ -1,0 +1,417 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "nombre": "Sandwich de pollo",
+      "descripcion": "Nuestro sándwich está hecho con pechuga de pollo a la parrilla, jugosa y sabrosa, y se sirve en un pan recién horneado. Además, está acompañado con una variedad de ingredientes frescos y sabrosos para llevarlo al siguiente nivel.Nuestro pan es suave y esponjoso, hecho con los ingredientes más frescos, para que cada bocado sea un placer. La pechuga de pollo a la parrilla se cocina perfectamente, lo que le da un sabor delicioso y una textura tierna y jugosa. Añadimos lechuga crujiente, tomate fresco y cebolla roja para darle un toque extra de sabor.",
+      "precio": 171,
+      "stock": 100,
+      "categoria": {
+        "id": 1,
+        "nombre": "Sandwich",
+        "imagen": "https://bit.ly/3XK5DDn"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        },
+        {
+          "id": 2,
+          "nombre": "contiene azucar"
+        },
+        {
+          "id": 3,
+          "nombre": "alto en sodio"
+        },
+        {
+          "id": 4,
+          "nombre": "contiene gluten"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 4,
+          "url": "https://bit.ly/3YTVOny"
+        },
+        {
+          "id": 5,
+          "url": "2"
+        },
+        {
+          "id": 6,
+          "url": "3"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Sandwich vegano",
+      "descripcion": "El sándwich vegano se basa en una base de pan fresco y suave, tostado a la perfección para crear la textura perfecta. El pan se complementa con una variedad de ingredientes frescos y vibrantes, como tomate maduro, hojas crujientes de lechuga, cebolla roja y aguacate cremoso. Nuestra proteína vegana es un ingrediente clave en nuestro sándwich. Usamos una opción de proteína vegetal, como tofu o tempeh, sazonado con una mezcla de especias deliciosas para darle un sabor y textura satisfactorios. También puedes optar por agregar una opción de proteína vegetal a base de garbanzos, lentejas, frijoles o seitan, todo cocinado a la perfección para satisfacer tu hambre.",
+      "precio": 160,
+      "stock": 50,
+      "categoria": {
+        "id": 1,
+        "nombre": "Sandwich",
+        "imagen": "https://bit.ly/3XK5DDn"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 7,
+          "url": "https://bit.ly/3Sc1iYj"
+        },
+        {
+          "id": 8,
+          "url": "2"
+        },
+        {
+          "id": 9,
+          "url": "3"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Sprite",
+      "descripcion": " Sprite es una bebida gaseosa de limón-lima, ligera y refrescante, elaborada con ingredientes de alta calidad para ofrecerte un sabor excepcional. Su  sabor cítrico es para satisfacer la sed en cualquier momento del día.",
+      "precio": 80,
+      "stock": 25,
+      "categoria": {
+        "id": 2,
+        "nombre": "gaseosas",
+        "imagen": "https://bit.ly/3YGGpqV"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        },
+        {
+          "id": 2,
+          "nombre": "contiene azucar"
+        },
+        {
+          "id": 3,
+          "nombre": "alto en sodio"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 10,
+          "url": "https://bit.ly/3xvLx54"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Coca cola sin azucar",
+      "descripcion": "Descripcion de prueba",
+      "precio": 40,
+      "stock": 4,
+      "categoria": {
+        "id": 2,
+        "nombre": "gaseosas",
+        "imagen": "https://bit.ly/3YGGpqV"
+      },
+      "caracteristicas": [
+        {
+          "id": 3,
+          "nombre": " No contiene azucar"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": "11",
+          "url": "https://bit.ly/3k9v2bT"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "Galleta club social",
+      "descripcion": "La galleta Club Social está hecha con ingredientes de alta calidad, incluyendo harina de trigo, aceite vegetal y sal, lo que le da un sabor crujiente y salado. Es la opción perfecta para disfrutar como snack en cualquier momento del día o como acompañamiento para tus comidas favoritas.",
+      "precio": 120,
+      "stock": 30,
+      "categoria": {
+        "id": 3,
+        "nombre": "galletas",
+        "imagen": "https://bit.ly/3Z46XBU"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        },
+        {
+          "id": 4,
+          "nombre": "contiene sal"
+        },
+        {
+          "id": 3,
+          "nombre": "alto en sodio"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 12,
+          "url": "https://bit.ly/3xRIyEt"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nombre": "Galletas Chips Colores",
+      "descripcion": "está hecha con ingredientes de alta calidad, incluyendo una mezcla de harina, mantequilla y azúcar, con trozos de chocolate semidulce mezclados en la masa. Esta combinación de ingredientes le da a la galleta una textura crujiente y un sabor dulce y delicioso que es difícil de resistir.",
+      "precio": 40,
+      "stock": 40,
+      "categoria": {
+        "id": 2,
+        "nombre": "galletas",
+        "imagen": "https://bit.ly/3Z46XBU"
+      },
+      "caracteristicas": [
+        {
+          "id": 2,
+          "nombre": "contiene azucar"
+        },
+        {
+          "id": 3,
+          "nombre": "alto en sodio"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 13,
+          "url": "https://bit.ly/3KiQJkz"
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "nombre": "sierra de los andes",
+      "descripcion": "agua mineral de los andes",
+      "precio": 100,
+      "stock": 10,
+      "categoria": {
+        "id": 5,
+        "nombre": "aguas",
+        "imagen": "https://i.blogs.es/1cbc97/collage_sanwich/1366_2000.jpg"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://http2.mlstatic.com/D_NQ_NP_720324-MLA49590956564_042022-O.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "nombre": "nestle pureza vital",
+      "descripcion": "agua mineral con proteinas",
+      "precio": 200,
+      "stock": 10,
+      "categoria": {
+        "id": 5,
+        "nombre": "aguas",
+        "imagen": "https://i.blogs.es/1cbc97/collage_sanwich/1366_2000.jpg"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene lactosa"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://kioscokoala.com.ar/wp-content/uploads/2020/09/Agua_Nestle_x_1_Litro-324x324.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "nombre": "cofler blockazo",
+      "descripcion": "el mejor chocolate de tu infancia ",
+      "precio": 350,
+      "stock": 10,
+      "categoria": {
+        "id": 7,
+        "nombre": "chocolates",
+        "imagen": "http://cdn.shopify.com/s/files/1/0507/0071/4176/collections/TabletaChocolateconLechex45grs_1200x630.jpg?v=1614616596"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene lactosa"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://forexport.tradicionesargentinas.com/wp-content/uploads/2020/06/cofler-1-kg.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "nombre": "milka oreo",
+      "descripcion": "el chocolate con sabor a galleta",
+      "precio": 450,
+      "stock": 10,
+      "categoria": {
+        "id": 7,
+        "nombre": "chocolates",
+        "imagen": "http://cdn.shopify.com/s/files/1/0507/0071/4176/collections/TabletaChocolateconLechex45grs_1200x630.jpg?v=1614616596"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene lactosa"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://wowco.com.ar/img/producto/mediana/1664-337-chocolate-milka-155-gramos-oreo-blanco-wowco-importados.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "nombre": "rocklets 150g",
+      "descripcion": "rocklets tu mejor golosina",
+      "precio": 450,
+      "stock": 10,
+      "categoria": {
+        "id": 8,
+        "nombre": "golosinas",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_896669-MLA51720786124_092022-O.webp"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://www.arcor.com/ar/uploads/product_images/90101010763.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "nombre": "globo pop",
+      "descripcion": "el chupetin que necesitas comerte",
+      "precio": 150,
+      "stock": 10,
+      "categoria": {
+        "id": 8,
+        "nombre": "golosinas",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_896669-MLA51720786124_092022-O.webp"
+      },
+      "caracteristicas": [
+        {
+          "id": 1,
+          "nombre": "contiene gluten"
+        },
+        {
+          "id": 2,
+          "nombre": "contiene lactosa"
+        }
+      ],
+      "imagenes": [
+        {
+          "id": 1,
+          "url": "https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/img-scHHpV7X.jpg"
+        },
+        {
+          "id": 2,
+          "url": "https://img-global.cpcdn.com/recipes/recipes_36842_v1427967693_receta_foto_00036842-clamcb740wxuoclvwlzf/1200x630cq70/photo.jpg"
+        },
+        {
+          "id": 3,
+          "url": "https://www.petitchef.es/imgupl/recipe/pan-para-pebetes--179694p269197.jpg"
+        }
+      ]
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 10,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1,
+  "totalElements": 10,
+  "last": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 10,
+  "first": true,
+  "empty": false
+}

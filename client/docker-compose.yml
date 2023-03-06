@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  kiosco-app:
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      stdin_open: true
+      ports:
+        - 5175:5173
+      volumes:
+        - .:/usr/src/app:cached
+        - /usr/src/app/node_modules
+      tty: true
