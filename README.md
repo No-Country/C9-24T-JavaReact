@@ -36,7 +36,7 @@ This project was carried out over a period of one month for [_No Country_](https
 - Daniela Gil: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
 
 **Team Leader**
-- Josefina Anschütz: [**GitHub**](https://www.example.com) [**LinkedIn**](https://www.example.com)
+- Josefina Anschütz: [**LinkedIn**](https://www.linkedin.com/in/josefina-anschutz/)
 
 ## Technologies Used
 - **Backend:** Java, Spring Boot, Spring Security, Hibernate, REST, API, JWT, JSON, Maven, Apache, JUnit, Swagger, MapStruct
