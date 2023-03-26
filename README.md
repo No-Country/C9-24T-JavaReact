@@ -4,6 +4,12 @@
 > Live demo [_here_](http://no-country-kioskoapp-react.s3-website-us-east-1.amazonaws.com/). (email: test@test.com password: testuser)  
 > Backend Demo [_here_](http://3.88.177.40:8080/swagger-ui/index.html#).
 
+
+
+https://user-images.githubusercontent.com/62969028/227791794-54326cfc-6e78-4e16-8d59-69bbb6470653.mp4
+
+
+
 <p align="center">
   <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/inicio.png" alt="screenshot of the app"/>
 </p>
