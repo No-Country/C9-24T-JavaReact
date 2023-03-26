@@ -9,7 +9,8 @@
 <p align="center">
   <img src="https://github.com/No-Country/C9-24T-JavaReact/blob/main/img/inicio.png" alt="screenshot of the app"/>
 </p>
-  https://user-images.githubusercontent.com/62969028/227791794-54326cfc-6e78-4e16-8d59-69bbb6470653.mp4
+
+https://user-images.githubusercontent.com/62969028/227791794-54326cfc-6e78-4e16-8d59-69bbb6470653.mp4
 
 
 ## Table of Contents
